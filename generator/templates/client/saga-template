@@ -1,0 +1,10 @@
+import { call, put } from 'redux-saga/effects';
+// import <%= sagaNameUppercase %>Actions, { <%= sagaNameUppercase %>Types } from 'actions/redux/<%= sagaName %>';
+// import {  } from 'actions/redux/<%= sagaName %>/interfaces';
+
+export function* mySaga() {
+	// const response: AxiosResponse<Example> = yield call(api.someApi);
+
+	// yield put(<%= sagaNameUppercase %>Actions.someAction(response.data));
+}
+

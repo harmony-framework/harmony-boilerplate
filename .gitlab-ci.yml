@@ -1,0 +1,17 @@
+image: node:latest
+
+stages:
+  - build
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+
+variables:
+  GIT_SSL_NO_VERIFY: "true"

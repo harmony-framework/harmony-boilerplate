@@ -1,0 +1,42 @@
+import Immutable, { ImmutableObject } from 'seamless-immutable';
+import { createReducer, createActions } from 'reduxsauce';
+import { ApplicationState } from '../index';
+import {
+	<%= reducerNameCapital %>State, TypesNames, ActionCreator, <%= reducerNameCapital %>Action
+} from './interfaces';
+
+// TODO: Do not for get add your reducer to index file
+
+/* ------------- Types and Action Creators ------------- */
+
+const { Creators } = createActions<TypesNames, ActionCreator>({
+	setExample: ['exampleData']
+});
+
+export const <%= reducerNameCapital %>Types = TypesNames;
+export default Creators;
+
+/* ------------- Initial State ------------- */
+
+const INITIAL_STATE = Immutable<<%= reducerNameCapital %>State>({
+	exampleData: 'Initial Data Example'
+});
+
+/* ------------- Selectors ------------- */
+
+export const <%= reducerName %>Selector = {
+	getExampleData: (state: ApplicationState) => state.<%= reducerName %>.exampleData
+};
+
+/* ------------- Reducers ------------- */
+
+const setExampleReducer = (state: ImmutableObject<<%= reducerNameCapital %>State>, action: <%= reducerNameCapital %>Action) => {
+	const { exampleData } = action;
+	return state.merge({ exampleData });
+};
+
+/* ------------- Hookup Reducers To Types ------------- */
+
+export const reducer = createReducer<ImmutableObject<any, any>(INITIAL_STATE, {
+	[<%= reducerNameCapital %>Types.SET_EXAMPLE]: setExampleReducer
+});

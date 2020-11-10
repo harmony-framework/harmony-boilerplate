@@ -1,0 +1,14 @@
+{
+  "deviceGallery": {
+    "pageTitle": "Galerie D'appareils",
+    "addToCartButton": "Ajouter au Chariot",
+    "removeFromCartButton": "Retirer",
+    "priceTitle": "Prix",
+    "clearCartButton": "Vider le Panier",
+    "checkoutButton": "Check-out"
+  },
+  "checkout": {
+    "pageTitle": "Check-out",
+    "totalPriceTitle": "Prix Total"
+  }
+}

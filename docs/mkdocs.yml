@@ -1,0 +1,104 @@
+# Copyright (c) 2016-2017 Martin Donath <martin.donath@squidfunk.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+# Project information
+site_name: Harmony Boilerplate
+site_description: Branding new web architecture.
+site_author: Harmony Framework Team
+site_url: https://harmony-framework.github.io/harmony-boilerplate/
+
+# Repository
+repo_name: harmony-framework/harmony-boilerplate
+repo_url: https://github.com/harmony-framework/harmony-boilerplate
+
+
+
+# Theme directory
+theme: 'material'
+icon:
+    logo: material/library
+    repo: fontawesome/brands/git-alt
+# Options
+extra:
+  feature:
+    tabs: false
+  palette:
+    primary: Cyan
+    accent: Orange
+
+extra_css: [css/styles.css]
+
+# Extensions
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
+  - admonition
+
+# Page tree 
+nav:
+  - Harmony: 'index.md'
+  - Getting started: 'getting-started.md'
+  - Harmony Architecture: 'develop-with-harmony.md'
+  - Features & Guidelines:
+    - Client Introduction: 'extensions/client/client.md'
+    - Main Configuration: 'extensions/client/config.md'
+    - Base Folder: 'extensions/client/base.md'
+    - Code Guards: 'extensions/client/development.md'
+    - Features:
+      - Requests: 'extensions/client/requests.md'
+      - Cart: 'extensions/client/cart.md'
+      - Flow Manager: 'extensions/client/flow_manager.md'
+      - RBA: 'extensions/client/rba.md'
+      - Error Handler: 'extensions/client/error_handler.md'
+      - Global Spinner: 'extensions/client/global_spinner.md'
+      - Translator: 'extensions/client/multilingual.md'
+      - Mobile Ready: 'extensions/client/render_mobile.md'
+    - Generators:
+      - Generate Component: 'extensions/client/components.md'
+      - Generate Container: 'extensions/client/containers.md'
+      - Generate Form Container: 'extensions/client/form_containers.md'
+      - Generate Saga: 'extensions/client/sagas.md'
+      - Generate Redux: 'extensions/client/reducers.md'
+  - Release notes: 'release-notes.md'
+  - Contributing: 'contributing.md'
+  - License: 'license.md'
+  - Harmony Team: 'team.md'
+
+google_analytics:
+  - 'UA-33876059-14'
+  - 'auto'
+
+

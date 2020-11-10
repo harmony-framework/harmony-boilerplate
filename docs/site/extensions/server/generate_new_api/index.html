@@ -1,0 +1,774 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Branding new web architecture.">
+      
+      
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/server/generate_new_api/">
+      
+      
+        <meta name="author" content="Harmony Framework Team">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.9">
+    
+    
+      
+        <title>Generate New API - Harmony Boilerplate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.36ee6aaa.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/styles.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-33876059-14","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generate-new-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://harmony-framework.github.io/harmony-boilerplate/" title="Harmony Boilerplate" class="md-header-nav__button md-logo" aria-label="Harmony Boilerplate">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Harmony Boilerplate
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Generate New API
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/harmony-framework/harmony-boilerplate/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    harmony-framework/harmony-boilerplate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://harmony-framework.github.io/harmony-boilerplate/" title="Harmony Boilerplate" class="md-nav__button md-logo" aria-label="Harmony Boilerplate">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Harmony Boilerplate
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/harmony-framework/harmony-boilerplate/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    harmony-framework/harmony-boilerplate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Harmony" class="md-nav__link">
+      Harmony
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../develop-with-harmony/" title="Harmony Architecture" class="md-nav__link">
+      Harmony Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Features & Guidelines
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Features & Guidelines" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Features & Guidelines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/client/" title="Client Introduction" class="md-nav__link">
+      Client Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/config/" title="Main Configuration" class="md-nav__link">
+      Main Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/base/" title="Base Folder" class="md-nav__link">
+      Base Folder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/development/" title="Code Guards" class="md-nav__link">
+      Code Guards
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Features
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Features" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Features
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/requests/" title="Requests" class="md-nav__link">
+      Requests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/cart/" title="Cart" class="md-nav__link">
+      Cart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/flow_manager/" title="Flow Manager" class="md-nav__link">
+      Flow Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/rba/" title="RBA" class="md-nav__link">
+      RBA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/error_handler/" title="Error Handler" class="md-nav__link">
+      Error Handler
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/global_spinner/" title="Global Spinner" class="md-nav__link">
+      Global Spinner
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/multilingual/" title="Translator" class="md-nav__link">
+      Translator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/render_mobile/" title="Mobile Ready" class="md-nav__link">
+      Mobile Ready
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      Generators
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Generators" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Generators
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/components/" title="Generate Component" class="md-nav__link">
+      Generate Component
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/containers/" title="Generate Container" class="md-nav__link">
+      Generate Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/form_containers/" title="Generate Form Container" class="md-nav__link">
+      Generate Form Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/sagas/" title="Generate Saga" class="md-nav__link">
+      Generate Saga
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../client/reducers/" title="Generate Redux" class="md-nav__link">
+      Generate Redux
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../release-notes/" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../team/" title="Harmony Team" class="md-nav__link">
+      Harmony Team
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-api" class="md-nav__link">
+    Creating API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templating" class="md-nav__link">
+    Templating
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/harmony-framework/harmony-boilerplate/edit/master/docs/extensions/server/generate_new_api.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="generate-new-api">Generate New API</h1>
+<p>A proper API consist the following:</p>
+<ul>
+<li>Model ( Using Mongoose )</li>
+<li>Controller ( Holding the main functions like create, update, delete, get, etc..)</li>
+<li>Responses ( JS file that contain responses relate to the current API )</li>
+<li>routes ( Mapping the routes to the Controller )</li>
+</ul>
+<h3 id="creating-api">Creating API</h3>
+<p>Inorder to create your API, We suggest to use our CLI script<br/></p>
+<p><code>gulp createApi --name "YOUR_API_NAME"</code></p>
+<p>Note - 
+If you are going to use MySQL  SQL  PostgreSQL  MSSQL you should add this:
+<code>--apiType sql</code> 
+otherwise it will use mongodb</p>
+<p>It will generate under <code>server/src/api</code> folder with the files of your api :</p>
+<h2 id="usage">Usage</h2>
+<p><code>gulp createApi --name post</code></p>
+<h2 id="result">Result</h2>
+<pre><code>.
+├── post         
+|     ├── post.controller.js                    
+|     ├── index.js   
+|     ├── model   
+|           ├── post.js 
+|     ├── responses
+|           ├── index.js
+</code></pre>
+<h2 id="templating">Templating</h2>
+<p>If you want to create your own templates you will need to add the template file under <code>generator/templates/server</code>
+and under <code>createApi</code> task in the <code>gulpfile.js</code> on the root folder do the following :</p>
+<div class="highlight"><pre><span></span><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;createApi&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">apiName</span> <span class="o">=</span> <span class="nx">getArg</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">validateName</span><span class="p">(</span><span class="nx">apiName</span><span class="p">,</span> <span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">UPPERCASE_MODEL_NAME</span> <span class="o">=</span> <span class="nx">apiName</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">toUpperCase</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">CapitalLetterModelName</span> <span class="o">=</span> <span class="nx">capitalize</span><span class="p">(</span><span class="nx">apiName</span><span class="p">);</span>
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/api-controller-template&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;.controller.js&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
+         <span class="nx">upperCaseModelName</span> <span class="o">:</span> <span class="nx">UPPERCASE_MODEL_NAME</span><span class="p">,</span>
+         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/model-template&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/model/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;.js&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/responses-template&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/responses/index.js&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span><span class="p">,</span>
+         <span class="nx">upperCaseModelName</span> <span class="o">:</span> <span class="nx">UPPERCASE_MODEL_NAME</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/index-template&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/index.js&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
+         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+
+    <span class="cm">/***** YOUR ADDITIONS *****/</span>
+    <span class="nx">createTemplate</span><span class="p">(</span>
+        <span class="s1">&#39;./generator/templates/server/YOUR_TEMPLATE_FILE_NAME&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;server/src/api/&#39;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s1">&#39;/DESTINATION_FILE_NAME&#39;</span><span class="p">,</span>
+        <span class="p">{</span>
+         <span class="nx">name</span><span class="o">:</span> <span class="nx">apiName</span><span class="p">,</span>
+         <span class="nx">capitalLetterModelName</span><span class="o">:</span> <span class="nx">CapitalLetterModelName</span>
+        <span class="p">}</span>
+    <span class="p">);</span>
+
+    <span class="nx">replaceText</span><span class="p">(</span>
+        <span class="s1">&#39;./server/src/routes/index.js&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;./server/src/routes/&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;// LASTLINE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;app.use(&#39;/&quot;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s2">&quot;&#39;, require(&#39;../api/&quot;</span><span class="o">+</span><span class="nx">apiName</span><span class="o">+</span><span class="s2">&quot;&#39;));\r\n// LASTLINE&quot;</span>
+    <span class="p">);</span>
+
+<span class="p">});</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

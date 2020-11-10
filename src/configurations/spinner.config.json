@@ -1,0 +1,6 @@
+{
+  "ignoreList": [
+    ".*/sockjs-node/.*",
+    ".*/v1/devices"
+  ]
+}
