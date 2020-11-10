@@ -1,0 +1,89 @@
+@import '../../../public/sass/vars/colors';
+
+button{
+  &.btn{
+    color:$super-light;
+    border-radius: 8px;
+    font-size: 14px;
+    min-width: 115px;
+    height: 32px;
+    border:none;
+    line-height:32px;
+    padding: 0;
+    &:not(:disabled):not(.disabled):active {
+      color:$super-light!important;
+      border-color: initial!important;
+    }
+    &:not(:disabled):not(.disabled):active:focus {
+      box-shadow:none;
+    }
+
+    &.primary{
+      background-color: $pink;
+      &:hover{
+        background-color: #CC0063;
+      }
+      &:active,  &:not(:disabled):not(.disabled):active{
+        background-color: #CC0063;
+      }
+      &.btn-primary:not(:disabled):not(.disabled):active {
+        color:$super-light;
+        background-color: #CC0063;
+        border-color: initial;
+      }
+    }
+    &.primaryWithIcon{ // todo check if this is dropdown
+      background-color: $pink;
+      &:hover{
+        background-color: #CC0063;
+      }
+      &:active{
+        background-color: #CC0063;
+      }
+    }
+    &.important{
+      background-color: $b75;
+      &:hover, &:active,  &:not(:disabled):not(.disabled):active{
+        background-color: #262626;
+      }
+    }
+    &.secondaryAction{
+      color:$cl-black;
+      background-color: $l-grey;
+      &:not(:disabled):not(.disabled):active{
+        background-color: #D6D6D6;
+        color:$cl-black!important;
+      }
+      &:hover{
+        color:$cl-black!important;
+        background-color: #D6D6D6;
+      }
+    }
+    &.destructive{
+      background-color: $red;
+      &:hover,  &:not(:disabled):not(.disabled):active{
+        background-color: #CC161E;
+      }
+    }
+
+    &:disabled{
+      background-color: $l-grey;
+      color:$b25!important;
+
+      &:hover{
+        background-color: $l-grey;
+        color:$b25;
+        cursor: not-allowed;
+
+        &.secondaryAction{
+          color:$b25!important;
+        }
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+

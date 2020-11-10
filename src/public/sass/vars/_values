@@ -1,0 +1,6 @@
+@import './colors';
+
+$margin: 16px;
+$padding: 16px;
+$border-radius-lg: 10px;
+$box-shadow: 1px 1px 8px 0px $b25;

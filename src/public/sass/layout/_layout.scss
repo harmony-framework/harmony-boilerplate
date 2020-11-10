@@ -1,0 +1,39 @@
+@import '../vars/colors';
+
+.app-container {
+  width: 100%;
+  height: calc(100vh - 52px);
+  margin: 0;
+  .sub-app-container {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+
+    nav.nav {
+      padding: 0;
+
+      .nav-item {
+        border: 0;
+        width: auto;
+        max-width: 120px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: right;
+        color: $b50;
+
+        &.active {
+          font-weight: bold;
+          color: $purple;
+          background-color: unset;
+          border-bottom: 2px solid $purple;
+        }
+      }
+    }
+
+    .app-content {
+      margin-right: 16px;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import '../../../public/sass/vars/colors';
+
+.inputTextWrapper {
+  &.mandatory {
+    label:before {
+      content: "*";
+      color: $red;
+    }
+  }
+
+  &.error {
+    input[type=text] {
+      border-color: $red;
+    }
+
+    span {
+      font-size:12px; line-height: 16px;letter-spacing: 0.2px;
+      color: $red;
+      display: inherit;
+      margin-top: -15px;
+    }
+  }
+
+  &.mini {
+    input[type=text] {
+      width: 64px;
+    }
+  }
+
+  &.small {
+    input[type=text] {
+      width: 224px;
+    }
+  }
+
+  &.large {
+    input[type=text] {
+      width: 304px;
+    }
+  }
+
+  label {
+    font-size: 12px;
+    line-height: 16px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input[type=text] {
+    border-radius: 4px;
+    margin-bottom: 16px;
+    margin-left: 12px;
+    height: 32px;
+    padding-right: 8px;
+    font-size: 14px;
+    line-height: 20px;
+
+    border: 1px solid $b25;
+    color: $b75;
+    background-color: $white;
+    outline: none;
+
+    &::placeholder {
+      font-style: italic;
+      color: $cl-black;
+      opacity: 0.4;
+    }
+
+    &:focus, &:active, &:hover {
+      border: 1.5px solid $purple;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+
+      &:hover {
+        border: 1px solid $b25;
+      }
+    }
+  }
+}
+

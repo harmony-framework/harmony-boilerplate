@@ -1,0 +1,13 @@
+@import '../../../../public/sass/vars/colors';
+@import '../../../../public/sass/vars/values';
+
+.section-container {
+  width: 100%;
+  height: auto;
+  margin: $margin;
+  padding: $margin;
+  background-color: $white;
+  border: 1px solid $grey;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow;
+}

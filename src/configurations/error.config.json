@@ -1,0 +1,23 @@
+{
+  "pathToErrorCode": "data.errorCode",
+  "handlers": {
+    "someErrorCode_500": {
+      "component": "toaster",
+      "payload": {
+        "type": "error",
+        "header": "Error",
+        "body": "Error with Toaster of type warning"
+      }
+    },
+    "devicesListFailed_400": {
+      "component": "modal",
+      "payload": {
+        "header": "Error",
+        "body": "Error with Fetch Device List"
+      }
+    },
+    "devicesListFailed_500": {
+      "component": "ignore"
+    }
+  }
+}

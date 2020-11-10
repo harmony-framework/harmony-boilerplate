@@ -1,0 +1,228 @@
+/* override bootstrap*/
+.btn:focus, .btn-primary.focus, .btn-primary:focus {
+  box-shadow: none;
+}
+
+.btn-primary, .btn-primary.focus, .btn-primary:focus {
+  border: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  color: inherit;
+  background-color: inherit;
+  border-color: inherit;
+}
+
+/* end override bootstrap*/
+
+h1 {
+  font-family: opensansBold;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -0.2px;
+}
+
+h2 {
+  font-family: opensansReg;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h3 {
+  font-family: opensansBold;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+h4 {
+  font-family: opensansBold;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+body {
+  font-size: 14px;
+  line-height: 20px;
+  direction: rtl;
+  text-align: right;
+  font-family: opensansReg;
+}
+
+.b1 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.b2 {
+}
+
+.b3 {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+}
+
+.b4 {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+}
+
+.b5 {
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 0.2px;
+}
+
+.styleGuideHiddenBtn {
+  position: fixed;
+  left: -113px;
+  top: 0;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+
+  &:hover {
+    left: 0;
+  }
+}
+
+.btn-group-toggle.btn-group {
+  .btn-primary {
+    color: $b50;
+    border: 1px solid $grey;
+    padding: 0 8px;
+    height: 32px;
+    min-width: 20px;
+    background-color: white;
+    line-height: 32px;
+
+    &.active {
+      background-color: rgba(107, 32, 127, 0.08);
+      color: $purple;
+      border: 1px solid $purple;
+    }
+
+    &:first-child {
+      border-radius: 2px 2px 0 0;
+
+    }
+
+    &:last-child {
+      border-radius: 0 0 2px 2px;
+    }
+  }
+}
+
+.wizzard {
+  transition: width .6s ease;
+
+  ul {
+    counter-reset: number;
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+    li {
+      float: right;
+      width: 182px;
+      text-align: right;
+      padding-right: 32px;
+      position: relative;
+      color: purple;
+      font-size: 14px;
+      height: 66px;
+      line-height: 66px;
+    &:first-child{
+      padding-right: 87px;
+      &:before{ right: 60px;
+       }
+      &:after{ right: 56px;}
+    }
+      &.active {
+        background: none;
+
+        &:before {
+          color: purple;
+          background: none;
+          font-size: 12px;
+          line-height: 12px;
+          right:9px;
+          top: 27px;
+        }
+
+        &:after {
+          background-color: white;
+          border: 1px solid purple;
+        }
+
+        & ~ li {
+          color: $b75;
+
+          &:before {
+            background: none;
+            font-size: 12px;
+            line-height: 12px;
+            right: 9px;
+            top: 27px;
+            color: $b75;
+          }
+
+          &:after {
+            background-color: $l-grey;
+          }
+        }
+      }
+
+      &:before {
+        counter-increment: number;
+        content: counter(number) "\a0";
+        background: url('/assets/images/v.png') no-repeat 0 0;
+        width: 14px;
+        height: 12px;
+        position: absolute;
+        right: 4px;
+        top: 26px;
+        display: block;
+        z-index: 2;
+        color: white;
+        font-size: 0;
+      }
+
+      &:after {
+        display: block;
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-color: purple;
+        position: absolute;
+        z-index: 1;
+        right:0px;
+        top: 20px;
+        border-radius: 15px;
+      }
+    }
+
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+
+  }
+  .progress {
+    height: 4px;
+    background-color: $l-grey;
+
+    .progress-bar {
+      border-radius: 2px 0 0 2px;
+      background-color: $purple;
+    }
+  }
+}

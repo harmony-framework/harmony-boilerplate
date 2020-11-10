@@ -1,0 +1,14 @@
+{
+  "deviceGallery": {
+    "pageTitle": "Gallery",
+    "addToCartButton": "Add to Cart",
+    "removeFromCartButton": "Remove",
+    "priceTitle": "Price",
+    "clearCartButton": "Clear",
+    "checkoutButton": "Checkout"
+  },
+  "checkout": {
+    "pageTitle": "Done",
+    "totalPriceTitle": "Total Price"
+  }
+}

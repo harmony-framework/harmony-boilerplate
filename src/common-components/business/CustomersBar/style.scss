@@ -1,0 +1,46 @@
+$color-blue: #002b43;
+$color-white: #fff;
+$color-side-bar-name: #a6becc;
+
+.side-bar-customers-component {
+  display: block;
+  position: relative;
+  z-index: 2;
+  width: 64px;
+  height: 100%;
+  min-height: 100%;
+  background-color: $color-blue;
+  border-radius: 12px 0 0 12px;
+  margin: 0;
+
+  .side-bar-customers-container {
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+
+  .side-bar-customers-buttons {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    padding: 0;
+
+    .side-bar-customers-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      margin: 8px auto;
+      &.search {
+        background-image: url('/assets/images/side-bar-search-icon.png');
+      }
+
+      &.menu {
+        background-image: url('/assets/images/side-bar-menu-icon.png');
+      }
+    }
+  }
+}

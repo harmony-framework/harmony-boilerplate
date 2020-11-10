@@ -1,0 +1,54 @@
+@import '../../../public/sass/vars/colors';
+@import '../../../public/sass/fonts/fonts';
+
+.textareaWrapper {
+  textarea {
+    border: 1px solid $b25;
+    border-radius: 4px;
+    width: 468px;
+    max-width: 468px;
+    resize: none;
+    height: 56px;
+    padding: 8px;
+    outline: none;
+
+    &::placeholder {
+      font-style: italic;
+      color: $cl-black;
+      opacity: 0.4;
+    }
+
+    &:focus, &:active, &:hover {
+      border: 1.5px solid $purple;
+    }
+  }
+
+  &.error {
+    input[type=text] {
+      border-color: $red;
+    }
+
+    span {
+      font-size:12px; line-height: 16px;letter-spacing: 0.2px;
+      color: $red;
+      display: inherit;
+      margin-top: -3px;
+    }
+  }
+
+  &.mandatory {
+    label:before {
+      content: "*";
+      color: $red;
+    }
+  }
+
+  label {
+    font-size: 12px;
+    line-height: 16px;
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+

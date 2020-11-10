@@ -1,0 +1,50 @@
+import * as React from 'react';
+import { baseConnectForm } from '@base/features/base-redux-react-connect';
+import { InjectedFormProps, Form } from 'redux-form';
+import { ApplicationState } from 'actions/redux';
+// import <%= className %>Actions, { <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
+
+interface Props extends InjectedFormProps {
+
+}
+
+class <%= className %> extends React.Component<Props> {
+	render() {
+		return (
+			<Form onSubmit={this.props.handleSubmit(this.handleSubmit.bind(this))} >
+
+			</Form>
+		);
+	}
+
+	handleSubmit(props: Props) {
+		// handle submit here
+	}
+
+	validate(values: any) {
+		const errors = {};
+
+		/* EXAMPLE CODE
+		if (!values.title) {
+			errors.title = 'someTitle';
+		}
+		*/
+
+		return errors;
+	}
+}
+
+export default baseConnectForm(<%= className %>,
+	(state: ApplicationState) => {
+		return {
+
+		}
+	},
+	{
+
+	},
+	{
+		form : '<%= className %>Form',
+		fields: []
+	}
+);

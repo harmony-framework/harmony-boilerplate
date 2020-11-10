@@ -1,0 +1,98 @@
+@import '../../../public/sass/vars/colors';
+
+.checkboxWrapper {
+  display: block;
+  position: relative;
+  padding-right: 28px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked {
+      ~ {
+        .checkmark {
+          background-color: $purple;
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &:disabled {
+      ~ {
+        .checkmark {
+          background-color: $l-grey;
+          border-color: $b25;
+
+          &:after {
+            border: solid $b25;
+            border-width: 0 2px 2px 0;
+          }
+
+          &:hover {
+            border-color: $b25;
+          }
+        }
+      }
+    }
+  }
+
+  &:hover {
+    input {
+      ~ {
+        .checkmark {
+          border-color: $purple;
+        }
+      }
+    }
+
+    color: $b75;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    background-color: $white;
+    border-radius: 2px;
+    border: 1px solid $b25;
+
+    &:after {
+      left: 6px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+
+  &.disabled {
+    &:hover {
+      cursor: default;
+
+      input ~ .checkmark {
+        border-color: $b25;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "deviceGallery": {
+    "pageTitle": "גלריה",
+    "addToCartButton": "הוסף לסל",
+    "removeFromCartButton": "מחיקה",
+    "priceTitle": "מחיר",
+    "clearCartButton": "מחק",
+    "checkoutButton": "סיום"
+  },
+  "checkout": {
+    "pageTitle": "סיום",
+    "totalPriceTitle": "מחיר סופי"
+  }
+}

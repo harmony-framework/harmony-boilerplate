@@ -1,0 +1,29 @@
+import * as React from 'react';
+import { baseConnect } from '@base/features/base-redux-react-connect';
+import { ApplicationState } from 'actions/redux';
+// import <%= className %>Actions, { <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
+
+interface Props {
+
+}
+
+class <%= className %> extends React.Component<Props> {
+	render() {
+		return (
+			<div>
+				<%= className %> New Container
+			</div>
+		);
+	}
+}
+
+export default baseConnect(<%= className %>,
+	(state: ApplicationState) => {
+		return {
+
+		};
+	},
+	{
+
+	}
+);

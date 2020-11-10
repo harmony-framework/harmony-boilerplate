@@ -1,0 +1,17 @@
+import { Action } from 'redux';
+
+export interface <%= reducerNameCapital %>State {
+	exampleData: string;
+}
+
+export enum TypesNames {
+	SET_EXAMPLE = 'SET_EXAMPLE'
+}
+
+export interface ActionCreator {
+	setExample: (exampleData: string) => <%= reducerNameCapital %>Action;
+}
+
+export interface <%= reducerNameCapital %>Action extends Action<TypesNames.SET_EXAMPLE> {
+	exampleData: string;
+}
