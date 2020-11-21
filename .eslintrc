@@ -4,13 +4,23 @@
   "plugins": [
     "@typescript-eslint"
   ],
+  "settings": {
+    "react": {
+      "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+    }
+  },
   "extends": [
     "airbnb-typescript",
-    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
+    "ecmaFeatures": {
+      "jsx": true // Allows for the parsing of JSX
+    }
   },
   "rules": {
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
