@@ -1,7 +1,7 @@
 import {
 	all, call, fork, put, takeLatest
 } from 'redux-saga/effects';
-import * as responseExample from './response_example.json';
+import responseExample from './response_example.json';
 import CatalogActions, { CatalogTypes } from 'actions/redux/catalog';
 import { Device } from 'actions/redux/catalog/interfaces';
 import GenericMobileImage from './generic-mobile.jpg';
