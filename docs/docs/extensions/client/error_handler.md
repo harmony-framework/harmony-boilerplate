@@ -32,6 +32,15 @@ Let's look first how this config look like with the example<br/>
         "body": "Error with Fetch Device List"
       }
     },
+    "devicesListFailed_206": {
+      "level": "component",
+      "component": "notification",
+      "payload": {
+        "type": "danger",
+        "header": "deviceGallery.specificErrorHandlerToComponentHeader",
+        "body": "deviceGallery.specificErrorHandlerToComponentBody"
+      }
+    },
     "devicesListFailed_500": {
       "component": "ignore"
     }
@@ -41,6 +50,7 @@ Let's look first how this config look like with the example<br/>
 
 `pathToErrorCode` - the path to the error code from the response.<br /><br />
 `handlers` - here we define our handlers `<errorCode>_<statusCode>`.<br /><br />
+`level <optional>` - when set level to `component` then the error will be display only for specific component that handle it with `withErrorHandler`<br /><br />
 `component` - the component type to render inc case of this error.<br /><br />
 `payload` - any payload data that can be use for the render component.<br /><br />
 `ignore` - ignore component will ignore the error handler for that failure and error handler will do nothing for this error.<br /><br />
@@ -48,103 +58,51 @@ Let's look first how this config look like with the example<br/>
 if we look at the example, when we get error code `devicesListFailed` and status code `400` we will display modal component.
 The payload can be anything that we want to send to that component as props.
 
+## Handle Error on Specific Component `@withErrorHandler`
+
+In some cases when api failed, you want to display error only on specific component on the screen, and not some global component such modal etc ..
+For that case, you can use the decorator `@withErrorHandler`.
+
+`@withErrorHandler` get the following config:
+
+- `errorCodes` - array of error codes from the error handler configuration file
+- `asComponent <optional>` - by default set to false. if set to true, the decorator will not replace the component by default with error component, but
+it will inject for you to the props `ErrorComponent`, and you can decide by your self where to render this component.
+
+``` markdown
+!!! note
+    In error handle configuration file you must to define this error code with `level` as `component` 
+```
+
+you can see here example how to use it:
+
+```typescript jsx
+import withErrorHandler from 'containers/ErrorHandler/withErrorHandler';
+
+@withErrorHandler({
+	errorCodes: ['devicesListFailed_206'],
+	asComponent: true // if set to false, all the component will be replaced with ErrorComponent by default
+})
+class DeviceGallery extends React.Component<Props, State> {
+	constructor(props: Props) {
+		super(props);
+
+		this.state = {
+			searchValue: ''
+		};
+	}
+
+    .....
+}
+```
+
 ## Customization
 
-<b>Location</b>: `src/containers/ErrorHandler/index.tsx`
+<b>Location for Global Error Handler</b>: `src/containers/ErrorHandler/index.tsx`
+<b>Location fir with error handler decorator</b>: `src/containers/ErrorHandler/withErrorHandler.tsx`
 
 In this location you can found the Error Handler "Decider".
 Each time error occurred this component will be invoke the render and will go inside a switch case.
 The switch case decide which component to render and what to do for each error component.
 
 So here you can easily do what ever you like and customize the modal and even add your own components for handler.
-
-```JS
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Modal, Button  } from 'react-bootstrap';
-import { baseConnect } from '@base/features/base-redux-react-connect';
-import { clearErrorHandler, IErrorHandlerRequest, BaseComponentTypes } from '@base/features/base-error-handler';
-import { IApplicationState } from 'actions/redux';
-import { RoutesPath } from 'routes';
-
-interface IProps {
-    errorHandler: IErrorHandlerRequest<any>;
-    history: any;
-}
-
-/***** Define Possibles Component Types *****/
-export enum ComponentTypes {
-    MODAL = 'modal'
-}
-
-class ErrorHandler extends React.Component<IProps> {
-     readonly appElement: HTMLElement | null;
-
-    constructor(props: IProps) {
-        super(props);
-
-        this.appElement = document.getElementById('app');
-    }
-
-    componentDidUpdate() {
-        const { errorHandler, history } = this.props;
-        const { component } = errorHandler || {};
-
-        // Base Error Handler set component to errorPage automatically in case the error was not handled in the config file
-        if (component === BaseComponentTypes.ERROR_PAGE) {
-            clearErrorHandler();
-            history.push(RoutesPath.ERROR_PAGE);
-        }
-    }
-
-    render() {
-        const { errorHandler } = this.props;
-        const { component, payload } = errorHandler;
-
-        if (!Object.keys(errorHandler).length || component === BaseComponentTypes.IGNORE) return null;
-
-        /***** Render th Corresponding Component According to Component value *****/
-        switch (component.toLowerCase()) {
-            case ComponentTypes.MODAL: {
-                /***** Here you can return your modal for display with any props you sent in payload *****/
-                return ReactDOM.createPortal(
-                    this.renderModal(payload),
-                    this.appElement as Element
-                );
-            }
-            default: {
-                return null;
-            }
-        }
-    }
-
-    renderModal(payload: any) {
-        return (
-            <Modal.Dialog>
-                <Modal.Header closeButton onClick={() => { clearErrorHandler(); }}>
-                    <Modal.Title>{payload.header}</Modal.Title>
-                </Modal.Header>
-
-                <Modal.Body>
-                    <p>{payload.body}</p>
-                </Modal.Body>
-
-                <Modal.Footer>
-                    <Button variant="primary" onClick={() => { clearErrorHandler(); }}>Close</Button>
-                </Modal.Footer>
-            </Modal.Dialog>
-        );
-    }
-}
-
-export default baseConnect(ErrorHandler,
-    (state: IApplicationState) => {
-        return {
-            errorHandler: state.errorHandler
-        };
-    },
-    {
-
-    }
-);
-```
