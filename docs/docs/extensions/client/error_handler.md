@@ -58,7 +58,7 @@ Let's look first how this config look like with the example<br/>
 if we look at the example, when we get error code `devicesListFailed` and status code `400` we will display modal component.
 The payload can be anything that we want to send to that component as props.
 
-## `@withErrorHandler` - Handle Error on Specific Component
+## Handle Error on Specific Component `@withErrorHandler`
 
 In some cases when api failed, you want to display error only on specific component on the screen, and not some global component such modal etc ..
 For that case, you can use the decorator `@withErrorHandler`.
@@ -69,36 +69,37 @@ For that case, you can use the decorator `@withErrorHandler`.
 - `asComponent <optional>` - by default set to false. if set to true, the decorator will not replace the component by default with error component, but
 it will inject for you to the props `ErrorComponent`, and you can decide by your self where to render this component.
 
-!!! warning "Do not forgot !"
 
+!!! tip "Configuration"
     In error handle configuration file you must to define this error code with `level` as `component` 
+
 
 you can see here example how to use it:
 
-```js
-    import withErrorHandler from 'containers/ErrorHandler/withErrorHandler';
-    
-    @withErrorHandler({
-        errorCodes: ['devicesListFailed_206'],
-        asComponent: true // if set to false, all the component will be replaced with ErrorComponent by default
-    })
-    class DeviceGallery extends React.Component<Props, State> {
-        constructor(props: Props) {
-            super(props);
-    
-            this.state = {
-                searchValue: ''
-            };
-        }
-    
-        .....
-    }
+```typescript
+import withErrorHandler from 'containers/ErrorHandler/withErrorHandler';
+
+@withErrorHandler({
+	errorCodes: ['devicesListFailed_206'],
+	asComponent: true // if set to false, all the component will be replaced with ErrorComponent by default
+})
+class DeviceGallery extends React.Component<Props, State> {
+	constructor(props: Props) {
+		super(props);
+
+		this.state = {
+			searchValue: ''
+		};
+	}
+
+    .....
+}
 ```
 
 ## Customization
 
 <b>Location for Global Error Handler</b>: `src/containers/ErrorHandler/index.tsx`
-<b>Location fir with error handler decorator</b>: `src/containers/ErrorHandler/withErrorHandler.tsx`
+<b>Location for with error handler decorator</b>: `src/containers/ErrorHandler/withErrorHandler.tsx`
 
 In this location you can found the Error Handler "Decider".
 Each time error occurred this component will be invoke the render and will go inside a switch case.
