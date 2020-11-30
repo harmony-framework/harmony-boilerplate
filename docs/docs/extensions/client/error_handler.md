@@ -69,14 +69,14 @@ For that case, you can use the decorator `@withErrorHandler`.
 - `asComponent <optional>` - by default set to false. if set to true, the decorator will not replace the component by default with error component, but
 it will inject for you to the props `ErrorComponent`, and you can decide by your self where to render this component.
 
-``` markdown
-!!! note
+
+!!! tip "Configuration"
     In error handle configuration file you must to define this error code with `level` as `component` 
-```
+
 
 you can see here example how to use it:
 
-```typescript jsx
+```typescript
 import withErrorHandler from 'containers/ErrorHandler/withErrorHandler';
 
 @withErrorHandler({
@@ -99,7 +99,7 @@ class DeviceGallery extends React.Component<Props, State> {
 ## Customization
 
 <b>Location for Global Error Handler</b>: `src/containers/ErrorHandler/index.tsx`
-<b>Location fir with error handler decorator</b>: `src/containers/ErrorHandler/withErrorHandler.tsx`
+<b>Location for with error handler decorator</b>: `src/containers/ErrorHandler/withErrorHandler.tsx`
 
 In this location you can found the Error Handler "Decider".
 Each time error occurred this component will be invoke the render and will go inside a switch case.
