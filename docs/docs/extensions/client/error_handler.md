@@ -70,7 +70,7 @@ For that case, you can use the decorator `@withErrorHandler`.
 it will inject for you to the props `ErrorComponent`, and you can decide by your self where to render this component.
 
 
-!!! tip "Configuration"
+!!! warning "Do not forget"
     In error handle configuration file you must to define this error code with `level` as `component` 
 
 
