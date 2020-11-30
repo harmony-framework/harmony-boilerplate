@@ -58,7 +58,7 @@ Let's look first how this config look like with the example<br/>
 if we look at the example, when we get error code `devicesListFailed` and status code `400` we will display modal component.
 The payload can be anything that we want to send to that component as props.
 
-## Handle Error on Specific Component `@withErrorHandler`
+## `@withErrorHandler`
 
 In some cases when api failed, you want to display error only on specific component on the screen, and not some global component such modal etc ..
 For that case, you can use the decorator `@withErrorHandler`.
@@ -70,8 +70,8 @@ For that case, you can use the decorator `@withErrorHandler`.
 it will inject for you to the props `ErrorComponent`, and you can decide by your self where to render this component.
 
 
-!!! warning "Do not forget"
-    In error handle configuration file you must to define this error code with `level` as `component` 
+!!! warning "Configuration"
+    In error handle configuration file you must to define this error code with `"level": "component"` 
 
 
 you can see here example how to use it:
