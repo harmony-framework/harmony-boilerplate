@@ -15,6 +15,7 @@ import { CartItem } from 'actions/redux/cart/interfaces';
 import DeviceCard from 'common-components/business/DeviceCard';
 // import { loadRBAData } from '@base/features/base-rba';
 import RBAC from '@base/features/base-rba/components/RBAC';
+import withErrorHandler from 'containers/ErrorHandler/withErrorHandler';
 
 interface Props {
 	getDeviceList: () => any;
@@ -25,12 +26,17 @@ interface Props {
 	cartItems: CartItem[];
 	translate: TranslateFunction;
 	moveToNextStep: (step?: string) => any;
+	ErrorComponent: any;
 }
 
 interface State {
 	searchValue: string;
 }
 
+@withErrorHandler({
+	errorCodes: ['devicesListFailed_206'],
+	asComponent: true // if set to false, all component will be replaced with ErrorComponent by default
+})
 class DeviceGallery extends React.Component<Props, State> {
 	constructor(props: Props) {
 		super(props);
@@ -64,8 +70,12 @@ class DeviceGallery extends React.Component<Props, State> {
 	render() {
 		const { searchValue } = this.state;
 		const {
-			deviceList, translate, addToCart, removeFromCart, cartItems, moveToNextStep, clearCart
+			deviceList, translate, addToCart, removeFromCart, cartItems, moveToNextStep, clearCart, ErrorComponent
 		} = this.props;
+
+		if (ErrorComponent) {
+			return <ErrorComponent />;
+		}
 
 		if (!deviceList || !deviceList.length) {
 			return null;
@@ -90,7 +100,7 @@ class DeviceGallery extends React.Component<Props, State> {
 							/>
 						</RBAC>
 					</Form.Group>
-					
+
 				</Form>
 				<Row>
 					<CardDeck>

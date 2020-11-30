@@ -5,7 +5,9 @@
     "removeFromCartButton": "Retirer",
     "priceTitle": "Prix",
     "clearCartButton": "Vider le Panier",
-    "checkoutButton": "Check-out"
+    "checkoutButton": "Check-out",
+    "specificErrorHandlerToComponentHeader": "Component with Error",
+    "specificErrorHandlerToComponentBody": "This is handled by error handler with component"
   },
   "checkout": {
     "pageTitle": "Check-out",

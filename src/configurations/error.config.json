@@ -16,6 +16,15 @@
         "body": "Error with Fetch Device List"
       }
     },
+    "devicesListFailed_206": {
+      "level": "component",
+      "component": "notification",
+      "payload": {
+        "type": "danger",
+        "header": "deviceGallery.specificErrorHandlerToComponentHeader",
+        "body": "deviceGallery.specificErrorHandlerToComponentBody"
+      }
+    },
     "devicesListFailed_500": {
       "component": "ignore"
     }

@@ -1,6 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
+import _ from 'lodash';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { config as appConfig } from 'config';
+import * as errorHandlerConfig from 'configurations/error.config.json';
 import { dispatchErrorHandler } from '@base/features/base-error-handler';
 import { endSpinner, startSpinner } from '@base/features/base-global-spinner';
 
@@ -45,6 +47,7 @@ class Request {
 
 		try {
 			const commonAuthHeader = appConfig.COMMON_AUTHORIZATION_HEADER;
+			const { pathToErrorCode } = errorHandlerConfig;
 
 			startSpinner(config.url, uuid);
 			response = await axios(config);
@@ -52,6 +55,12 @@ class Request {
 
 			if (commonAuthHeader && response?.headers && response.headers[commonAuthHeader]) {
 				this.setCommonHeader(commonAuthHeader, response.headers[commonAuthHeader]);
+			}
+
+			const errorCode = _.get(response, pathToErrorCode);
+
+			if (errorCode && response.status !== 200) {
+				dispatchErrorHandler({ ...response });
 			}
 
 			return response;

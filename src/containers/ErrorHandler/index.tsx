@@ -15,7 +15,8 @@ interface Props extends ToasterManager {
 /** *** Define Possibles Component Types **** */
 export enum ComponentTypes {
 	MODAL = 'modal',
-	TOASTER = 'toaster'
+	TOASTER = 'toaster',
+	NOTIFICATION = 'notification'
 }
 
 @withToast
@@ -30,9 +31,9 @@ class ErrorHandler extends React.Component<Props> {
 
 	componentDidUpdate() {
 		const { errorHandler, history } = this.props;
-		const { component } = errorHandler || {};
+		const { component, level } = errorHandler || {};
 
-		if (component === BaseComponentTypes.ERROR_PAGE) {
+		if (component === BaseComponentTypes.ERROR_PAGE && !level) {
 			clearErrorHandler();
 			history.push(RoutesPath.ERROR_PAGE);
 		}
@@ -40,7 +41,11 @@ class ErrorHandler extends React.Component<Props> {
 
 	render() {
 		const { errorHandler } = this.props;
-		const { component, payload } = errorHandler;
+		const { component, payload, level } = errorHandler;
+
+		if (level) {
+			return null;
+		}
 
 		if (!Object.keys(errorHandler).length || component === BaseComponentTypes.IGNORE) {
 			return null;

@@ -6,7 +6,12 @@ import { TypesNames } from './reducer';
 
 export interface ErrorHandlerRequest<T> {
 	component: string;
+	level?: string;
 	payload: T;
+}
+
+export enum ComponentLevels {
+	COMPONENT = 'component'
 }
 
 export enum BaseComponentTypes {
@@ -29,13 +34,21 @@ export const dispatchErrorHandler = (response: AxiosResponse) => {
 
 			if (errorData && errorData.component.toLocaleLowerCase() !== BaseComponentTypes.IGNORE) {
 				Store.dispatch({
-					payload: errorData,
+					payload: {
+						...errorData,
+						status,
+						errorCode
+					},
 					type: TypesNames.ERROR_HANDLER_INVOKE
 				});
 			}
 		} else {
 			Store.dispatch({
-				payload: { component: BaseComponentTypes.ERROR_PAGE },
+				payload: {
+					component: BaseComponentTypes.ERROR_PAGE,
+					status,
+					errorCode
+				},
 				type: TypesNames.ERROR_HANDLER_INVOKE
 			});
 		}
