@@ -14,7 +14,7 @@ const initConfig = (): Config => {
 		/* ---------- Config Development --------- */
 		appConfig = {
 			USE_WS_ACTION: false,
-			ROOT_SERVER_URL: 'https://fonoapi.freshpixl.com/v1/',
+			ROOT_SERVER_URL: 'http://localhost:5555/v1/',
 			COMMON_AUTHORIZATION_HEADER: 'uxfauthorization',
 			COMMON_URL_PARAMS: [{ key: 'salesChannel', value: 'retail' }],
 			ROOT_WS_URL: 'ws://localhost:3030',
@@ -23,7 +23,7 @@ const initConfig = (): Config => {
 		/* ---------- Config Production --------- */
 		appConfig = {
 			USE_WS_ACTION: false,
-			ROOT_SERVER_URL: 'https://fonoapi.freshpixl.com/v1/',
+			ROOT_SERVER_URL: 'http://localhost:5555/v1/',
 			COMMON_AUTHORIZATION_HEADER: 'uxfauthorization',
 			COMMON_URL_PARAMS: [{ key: 'salesChannel', value: 'retail' }],
 			ROOT_WS_URL: 'ws://localhost:3030'

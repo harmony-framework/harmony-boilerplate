@@ -35,7 +35,7 @@ interface State {
 
 @withErrorHandler({
 	errorCodes: ['devicesListFailed_206'],
-	asComponent: true // if set to false, all component will be replaced with ErrorComponent by default
+	asComponent: true // if set to false, all the component will be replaced with ErrorComponent by default
 })
 class DeviceGallery extends React.Component<Props, State> {
 	constructor(props: Props) {
