@@ -756,32 +756,33 @@ For that case, you can use the decorator <code>@withErrorHandler</code>.</p>
 <li><code>asComponent &lt;optional&gt;</code> - by default set to false. if set to true, the decorator will not replace the component by default with error component, but
 it will inject for you to the props <code>ErrorComponent</code>, and you can decide by your self where to render this component.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>!!! note
-    In error handle configuration file you must to define this error code with `level` as `component` 
+<div class="admonition tip">
+<p class="admonition-title">Configuration</p>
+<p>In error handle configuration file you must to define this error code with <code>level</code> as <code>component</code> </p>
+</div>
+<p>you can see here example how to use it:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="nx">withErrorHandler</span> <span class="nx">from</span> <span class="s1">&#39;containers/ErrorHandler/withErrorHandler&#39;</span><span class="p">;</span>
+
+<span class="kd">@withErrorHandler</span><span class="p">({</span>
+    <span class="nx">errorCodes</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;devicesListFailed_206&#39;</span><span class="p">],</span>
+    <span class="nx">asComponent</span>: <span class="kt">true</span> <span class="c1">// if set to false, all the component will be replaced with ErrorComponent by default</span>
+<span class="p">})</span>
+<span class="kr">class</span> <span class="nx">DeviceGallery</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">Props</span><span class="p">,</span> <span class="nx">State</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kr">constructor</span><span class="p">(</span><span class="nx">props</span>: <span class="kt">Props</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nx">searchValue</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+
+    <span class="p">.....</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<p>you can see here example how to use it:</p>
-<p>```typescript jsx
-import withErrorHandler from 'containers/ErrorHandler/withErrorHandler';</p>
-<p>@withErrorHandler({
-    errorCodes: ['devicesListFailed_206'],
-    asComponent: true // if set to false, all the component will be replaced with ErrorComponent by default
-})
-class DeviceGallery extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props);</p>
-<pre><code>    this.state = {
-        searchValue: ''
-    };
-}
-
-.....
-</code></pre>
-<p>}
-```</p>
 <h2 id="customization">Customization</h2>
 <p><b>Location for Global Error Handler</b>: <code>src/containers/ErrorHandler/index.tsx</code>
-<b>Location fir with error handler decorator</b>: <code>src/containers/ErrorHandler/withErrorHandler.tsx</code></p>
+<b>Location for with error handler decorator</b>: <code>src/containers/ErrorHandler/withErrorHandler.tsx</code></p>
 <p>In this location you can found the Error Handler "Decider".
 Each time error occurred this component will be invoke the render and will go inside a switch case.
 The switch case decide which component to render and what to do for each error component.</p>
