@@ -29,6 +29,13 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 			};
 		}
 
+		handledError() {
+			clearErrorHandler();
+			this.setState({
+				handleErrorData: null
+			});
+		}
+
 		static shouldHandleError = (props: Props): ErrorHandlerData => {
 			const { errorHandler } = props;
 			const { errorCodes } = config;
@@ -75,9 +82,10 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 				return (
 					<Component
 						{...this.props}
+						errorHandled={() => this.handledError()}
 						ErrorComponent={() => {
 							return (
-								<Alert variant={type} dismissible>
+								<Alert onClose={() => this.handledError()} variant={type} dismissible>
 									<Alert.Heading>{translate(header)}</Alert.Heading>
 									<p>{translate(body)}</p>
 								</Alert>

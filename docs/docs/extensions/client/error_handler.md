@@ -69,6 +69,11 @@ For that case, you can use the decorator `@withErrorHandler`.
 - `asComponent <optional>` - by default set to false. if set to true, the decorator will not replace the component by default with error component, but
 it will inject for you to the props `ErrorComponent`, and you can decide by your self where to render this component.
 
+`Injected Props` - to component that use this decorator, will get injected props:
+
+- `ErrorComponent` - a Component that can be render in your decorated component.
+- `errorHandled` - a function that once called he clear the error and not send `ErrorComponent` to props anymore.
+
 
 !!! warning "Configuration"
     In error handle configuration file you must to define this error code with `"level": "component"` 
