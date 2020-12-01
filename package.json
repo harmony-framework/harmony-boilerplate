@@ -37,7 +37,7 @@
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
     "babel-loader": "8.0.4",
-    "eslint-webpack-plugin": "2.4.0",
+    "eslint-webpack-plugin": "2.4.1",
     "chai": "4.2.0",
     "chai-jquery": "2.1.0",
     "copy-webpack-plugin": "6.2.0",
