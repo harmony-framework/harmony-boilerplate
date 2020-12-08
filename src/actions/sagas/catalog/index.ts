@@ -18,7 +18,7 @@ function* getDevices() {
 		});
 
 		// replace api with api.getDevices to point to server
-		const response: AxiosResponse<Array<Device>> = yield call(api.getDevices);
+		const response: AxiosResponse<Array<Device>> = yield call(api.getDevicesMock);
 
 		yield put(CatalogActions.setDeviceList(response.data));
 	} catch (e) {
