@@ -5,12 +5,16 @@
     "removeFromCartButton": "Remove",
     "priceTitle": "Price",
     "clearCartButton": "Clear Cart",
-    "checkoutButton": "Checkout",
-    "specificErrorHandlerToComponentHeader": "Component with Error",
-    "specificErrorHandlerToComponentBody": "This is handled by error handler with component"
+    "checkoutButton": "Checkout"
   },
   "checkout": {
     "pageTitle": "Checkout",
     "totalPriceTitle": "Total Price"
+  },
+  "errors": {
+    "specificErrorHandlerToComponentHeader": "Component with Error",
+    "specificErrorHandlerToComponentBody": "This is handled by error handler with component",
+    "errorHeaderExample": "Error",
+    "errorBodyExample": "Error Body Example"
   }
 }

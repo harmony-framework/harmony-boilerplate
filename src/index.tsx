@@ -4,6 +4,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { LocalizeProvider } from 'react-localize-redux';
+import { ToastProvider } from 'react-toast-notifications';
 
 /* -------- Load Styles --------- */
 import 'bootstrap/dist/css/bootstrap.min.css'; // Can be replace with other style framework
@@ -20,9 +21,11 @@ ReactDOM.render(
 	<Provider store={Store}>
 		<PersistGate persistor={persistor}>
 			<LocalizeProvider store={Store}>
-				<Router history={history}>
-					{routes}
-				</Router>
+				<ToastProvider>
+					<Router history={history}>
+						{routes}
+					</Router>
+				</ToastProvider>
 			</LocalizeProvider>
 		</PersistGate>
 	</Provider>,

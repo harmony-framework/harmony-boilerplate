@@ -10,9 +10,9 @@ import { Device } from '../actions/redux/catalog/interfaces';
 
 export const createApi = (baseURL = config.ROOT_SERVER_URL) => ({
 	getDevices: () => request.call({
-		baseURL,
+		baseURL: 'http://6ew7g.mocklab.io/',
 		method: 'get',
-		url: '/getlatest'
+		url: '/getlatestWithCustomResponseCode'
 	}),
 	getDevicesMock: () => {
 		const genericImage = GenericMobileImage;

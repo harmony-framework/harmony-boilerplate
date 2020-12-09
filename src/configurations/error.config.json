@@ -5,15 +5,15 @@
       "component": "toaster",
       "payload": {
         "type": "error",
-        "header": "Error",
-        "body": "Error with Toaster of type warning"
+        "header": "errors.errorHeaderExample",
+        "body": "errors.errorBodyExample"
       }
     },
     "devicesListFailed_400": {
       "component": "modal",
       "payload": {
-        "header": "Error",
-        "body": "Error with Fetch Device List"
+        "header": "errors.errorHeaderExample",
+        "body": "errors.errorBodyExample"
       }
     },
     "devicesListFailed_206": {
@@ -21,8 +21,8 @@
       "component": "notification",
       "payload": {
         "type": "danger",
-        "header": "deviceGallery.specificErrorHandlerToComponentHeader",
-        "body": "deviceGallery.specificErrorHandlerToComponentBody"
+        "header": "errors.specificErrorHandlerToComponentHeader",
+        "body": "errors.specificErrorHandlerToComponentBody"
       }
     },
     "devicesListFailed_500": {

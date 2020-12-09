@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Modal, Button } from 'react-bootstrap';
+import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { clearErrorHandler, ErrorHandlerRequest, BaseComponentTypes } from '@base/features/base-error-handler';
 import { ApplicationState } from 'actions/redux';
@@ -10,6 +11,7 @@ import { withToast, ToasterManager } from '@base/features/base-decorator';
 interface Props extends ToasterManager {
 	errorHandler: ErrorHandlerRequest<any>;
 	history: any;
+	translate: TranslateFunction;
 }
 
 /** *** Define Possibles Component Types **** */
@@ -67,13 +69,13 @@ class ErrorHandler extends React.Component<Props> {
 	}
 
 	displayToaster(payload: { body: string; header: string; type: 'success' | 'error' | 'warning' | 'info' }) {
-		const { toastManager } = this.props;
+		const { toastManager, translate } = this.props;
 		const { header, body, type } = payload;
 
 		const content = (
 			<div>
-				<h3>{header}</h3>
-				<p>{body}</p>
+				<h3>{translate(header)}</h3>
+				<p>{translate(body)}</p>
 			</div>
 		);
 
@@ -87,6 +89,8 @@ class ErrorHandler extends React.Component<Props> {
 	}
 
 	renderModal(payload: { body: string; header: string }) {
+		const { translate } = this.props;
+
 		return (
 			<Modal.Dialog>
 				<Modal.Header
@@ -95,11 +99,11 @@ class ErrorHandler extends React.Component<Props> {
 						clearErrorHandler();
 					}}
 				>
-					<Modal.Title>{payload.header}</Modal.Title>
+					<Modal.Title>{translate(payload.header)}</Modal.Title>
 				</Modal.Header>
 
 				<Modal.Body>
-					<p>{payload.body}</p>
+					<p>{translate(payload.header)}</p>
 				</Modal.Body>
 
 				<Modal.Footer>
