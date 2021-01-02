@@ -424,8 +424,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#handle-error-on-specific-component-witherrorhandler" class="md-nav__link">
-    Handle Error on Specific Component @withErrorHandler
+  <a href="#witherrorhandler" class="md-nav__link">
+    @withErrorHandler
   </a>
   
 </li>
@@ -668,8 +668,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#handle-error-on-specific-component-witherrorhandler" class="md-nav__link">
-    Handle Error on Specific Component @withErrorHandler
+  <a href="#witherrorhandler" class="md-nav__link">
+    @withErrorHandler
   </a>
   
 </li>
@@ -747,7 +747,7 @@ Each time a API failed, the API will return some status code + error code from t
 <code>ignore</code> - ignore component will ignore the error handler for that failure and error handler will do nothing for this error.<br /><br /></p>
 <p>if we look at the example, when we get error code <code>devicesListFailed</code> and status code <code>400</code> we will display modal component.
 The payload can be anything that we want to send to that component as props.</p>
-<h2 id="handle-error-on-specific-component-witherrorhandler">Handle Error on Specific Component <code>@withErrorHandler</code></h2>
+<h2 id="witherrorhandler"><code>@withErrorHandler</code></h2>
 <p>In some cases when api failed, you want to display error only on specific component on the screen, and not some global component such modal etc ..
 For that case, you can use the decorator <code>@withErrorHandler</code>.</p>
 <p><code>@withErrorHandler</code> get the following config:</p>
@@ -756,9 +756,14 @@ For that case, you can use the decorator <code>@withErrorHandler</code>.</p>
 <li><code>asComponent &lt;optional&gt;</code> - by default set to false. if set to true, the decorator will not replace the component by default with error component, but
 it will inject for you to the props <code>ErrorComponent</code>, and you can decide by your self where to render this component.</li>
 </ul>
-<div class="admonition tip">
+<p><code>Injected Props</code> - to component that use this decorator, will get injected props:</p>
+<ul>
+<li><code>ErrorComponent</code> - a Component that can be render in your decorated component.</li>
+<li><code>errorHandled</code> - a function that once called he clear the error and not send <code>ErrorComponent</code> to props anymore.</li>
+</ul>
+<div class="admonition warning">
 <p class="admonition-title">Configuration</p>
-<p>In error handle configuration file you must to define this error code with <code>level</code> as <code>component</code> </p>
+<p>In error handle configuration file you must to define this error code with <code>"level": "component"</code> </p>
 </div>
 <p>you can see here example how to use it:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="nx">withErrorHandler</span> <span class="nx">from</span> <span class="s1">&#39;containers/ErrorHandler/withErrorHandler&#39;</span><span class="p">;</span>
