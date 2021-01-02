@@ -12,6 +12,7 @@
   "extends": [
     "airbnb-typescript",
     "plugin:react/recommended",
+    "plugin:harmony-boilerplate/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "parserOptions": {
