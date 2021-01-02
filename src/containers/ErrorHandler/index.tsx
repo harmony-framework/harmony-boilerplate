@@ -28,6 +28,7 @@ class ErrorHandler extends React.Component<Props> {
 		this.appElement = document.getElementById('app');
 	}
 
+	// eslint-disable-next-line harmony-boilerplate/no-component-did-update
 	componentDidUpdate() {
 		const { errorHandler, history, applicationDetails } = this.props;
 		const { appId, subAppId } = applicationDetails;
