@@ -36,7 +36,7 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 			});
 		}
 
-		static shouldHandleError = (props: Props): ErrorHandlerData => {
+		static shouldHandleError(props: Props): ErrorHandlerData {
 			const { errorHandler } = props;
 			const { errorCodes } = config;
 
@@ -59,7 +59,7 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 			}
 
 			return null;
-		};
+		}
 
 		static getDerivedStateFromProps(props: Props) {
 			const handleErrorData = Container.shouldHandleError(props);
