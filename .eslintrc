@@ -24,6 +24,7 @@
     }
   },
   "rules": {
+    "max-lines-per-function": ["error", 150],
     "max-lines": ["error", { "max": 350 }],
     "max-depth": "error",
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
