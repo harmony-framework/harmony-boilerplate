@@ -24,6 +24,8 @@
     }
   },
   "rules": {
+    "max-lines": ["error", { "max": 350 }],
+    "max-depth": "error",
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
     "react/sort-comp": ["off"],
     "react/prefer-stateless-function": ["off"],
