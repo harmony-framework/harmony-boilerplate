@@ -1,17 +1,23 @@
 import * as React from 'react';
-import { baseConnectForm } from '@base/features/base-redux-react-connect';
+import { LocalizeContextProps } from 'react-localize-redux';
 import { InjectedFormProps, Form } from 'redux-form';
+import { baseConnectForm } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions/redux';
 // import <%= className %>Actions, { <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
 
-interface Props extends InjectedFormProps {
+interface Props {
 
 }
 
-class <%= className %> extends React.Component<Props> {
+interface OwnProps extends Props, LocalizeContextProps {
+
+}
+
+class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
 	render() {
+	    const { handleSubmit } = this.props;
 		return (
-			<Form onSubmit={this.props.handleSubmit(this.handleSubmit.bind(this))} >
+			<Form onSubmit={handleSubmit(this.handleSubmit.bind(this))} >
 
 			</Form>
 		);
@@ -20,21 +26,10 @@ class <%= className %> extends React.Component<Props> {
 	handleSubmit(props: Props) {
 		// handle submit here
 	}
-
-	validate(values: any) {
-		const errors = {};
-
-		/* EXAMPLE CODE
-		if (!values.title) {
-			errors.title = 'someTitle';
-		}
-		*/
-
-		return errors;
-	}
 }
 
-export default baseConnectForm(<%= className %>,
+export default baseConnectFormt<any, any, Props>(
+    <%= className %>,
 	(state: ApplicationState) => {
 		return {
 
@@ -44,7 +39,6 @@ export default baseConnectForm(<%= className %>,
 
 	},
 	{
-		form : '<%= className %>Form',
-		fields: []
+		form : '<%= className %>Form'
 	}
 );
