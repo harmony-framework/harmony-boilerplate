@@ -1,12 +1,14 @@
-import { createStore, applyMiddleware, Store } from 'redux';
+import {
+	createStore, applyMiddleware, Store, compose
+} from 'redux';
+import Immutable from 'seamless-immutable';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { globalStoreListener, STORE_ACTION_LISTENERS } from '@base/features/base-services';
 import { Request } from '@base/features/base-api';
 import { createApi } from 'requests';
 import { config } from 'config';
-import { CreateReducer, CreateMainReducer } from 'actions/redux';
+import { CreateReducer, CreateMainReducer, ApplicationState } from 'actions/redux';
 import rootSaga from 'actions/sagas';
 import { consoleSelector } from 'actions/redux/console';
 
@@ -14,16 +16,21 @@ const stores = {};
 
 export const CreateStore = (name: string, id: string, isMainStore = false) => {
 	const sagaMiddleware = createSagaMiddleware();
-	const devTool = composeWithDevTools({
-		name: `${config.appName} ${name}`
-	});
-	/* -------- create the store with middleware ---------- */
-	const createStoreWithMiddleware = devTool(applyMiddleware(sagaMiddleware, globalActionListener))(createStore);
 
+	/* -------- create the store with middleware ---------- */
 	let store;
+	const customCompose = compose(
+		applyMiddleware(sagaMiddleware, globalActionListener),
+		window.devToolsExtension && window.devToolsExtension({
+			name: `${config.appName} ${name}`,
+			deserializeState: (state: ApplicationState) => {
+				return Immutable(state);
+			},
+		})
+	);
 
 	if (isMainStore) {
-		store = createStoreWithMiddleware(CreateMainReducer(id));
+		store = createStore(CreateMainReducer(id), customCompose);
 
 		const customStore = { ...store };
 		store.dispatch = (action: any) => {
@@ -39,7 +46,7 @@ export const CreateStore = (name: string, id: string, isMainStore = false) => {
 			return customStore.dispatch(newAction);
 		};
 	} else {
-		store = createStoreWithMiddleware(CreateReducer(id));
+		store = createStore(CreateReducer(id), customCompose);
 	}
 
 	/* -------- run root saga ---------- */

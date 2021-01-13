@@ -7,6 +7,12 @@ interface Config {
 	appName?: string;
 }
 
+declare global {
+	interface Window {
+		devToolsExtension: Function;
+	}
+}
+
 const initConfig = (): Config => {
 	let appConfig: Config = {};
 
