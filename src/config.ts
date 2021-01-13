@@ -7,6 +7,15 @@ interface Config {
 	appName?: string;
 }
 
+declare global {
+	interface Window {
+		devToolsExtension: Function;
+		serverConfig: {
+			'server-url': string;
+		};
+	}
+}
+
 const initConfig = (): Config => {
 	let appConfig: Config = {};
 
