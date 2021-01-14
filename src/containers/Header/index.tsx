@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
-import CartActions, { cartSelector } from 'actions/redux/cart';
+import { cartSelector, CartActions } from 'actions/cart';
 import FlowManagerActions from 'actions/redux/flowManager';
 import {
 	Row, Button
 } from 'react-bootstrap';
 import './style.scss';
-import { CartItem } from 'actions/redux/cart/interfaces';
+import { CartItem } from 'actions/cart/interface';
 import RoutesPath from 'routes/RoutesPath';
 
 interface Props {

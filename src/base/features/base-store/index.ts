@@ -17,7 +17,7 @@ export const globalActionListener = (/* store */) => (next: any) => (action: any
 const sagaMiddleware = createSagaMiddleware();
 
 /* -------- create the store with middleware ---------- */
-let customCompose
+let customCompose;
 
 if (window.devToolsExtension) {
 	customCompose = compose(

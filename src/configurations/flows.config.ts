@@ -1,7 +1,7 @@
 import { FlowTypes, SubFlowTypes } from 'configurations/flows.steps.types';
 import {
 	isTowSamsungInCart, isTowXiaomiInCart, someFailedCondition, someSuccessCondition
-} from 'actions/sagas/cart/flowConditionsExample';
+} from 'actions/cart/manager';
 
 export const flowsConfig = [
 	{

@@ -5,10 +5,7 @@ import { ApplicationState } from 'actions';
 import {
 	CartState, TypesNames, ActionCreator
 } from './interface';
-import { SetCartIdAction } from '../redux/cart/interfaces';
-import { makeCart } from '@base/features/base-cart';
-
-// TODO: Do not for get add your reducer to index file
+import { SetCartIdAction } from 'actions/cart/interface';
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -21,7 +18,7 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 });
 
 export const CartTypes = TypesNames;
-export const CatalogActions = Creators;
+export const CartActions = Creators;
 
 /* ------------- Initial State ------------- */
 
@@ -47,8 +44,8 @@ const setCartIdReducer = (state: any, action: SetCartIdAction) => {
 
 /* ------------- Hookup Reducers To Types ------------- */
 
-export const reducer = reduceReducers(
-	makeCart('cart').reducer,
+export const reducer = (baseCartReducer: any) => reduceReducers(
+	baseCartReducer,
 	createReducer(INITIAL_STATE, {
 		[CartTypes.SET_CART_ID]: setCartIdReducer
 	})
