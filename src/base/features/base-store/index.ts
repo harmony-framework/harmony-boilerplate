@@ -17,15 +17,21 @@ export const globalActionListener = (/* store */) => (next: any) => (action: any
 const sagaMiddleware = createSagaMiddleware();
 
 /* -------- create the store with middleware ---------- */
-const customCompose = compose(
-	applyMiddleware(sagaMiddleware, globalActionListener),
-	window.devToolsExtension && window.devToolsExtension({
-		name: config.appName,
-		deserializeState: (state: ApplicationState) => {
-			return Immutable(state);
-		},
-	})
-);
+let customCompose
+
+if (window.devToolsExtension) {
+	customCompose = compose(
+		applyMiddleware(sagaMiddleware, globalActionListener),
+		window.devToolsExtension && window.devToolsExtension({
+			name: config.appName,
+			deserializeState: (state: ApplicationState) => {
+				return Immutable(state);
+			},
+		})
+	);
+} else {
+	customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener));
+}
 
 const store = createStore(rootReducer, customCompose);
 
