@@ -1,0 +1,18 @@
+import { all, fork, takeLatest } from 'redux-saga/effects';
+import * as Sagas from './sagas';
+import { <%= actionNameUppercase %>Types } from 'actions/<%= actionName %>/redux';
+
+/* ------------- Export Redux ------------- */
+export * from 'actions/<%= actionName %>/redux';
+
+/* ------------- Export Sagas ------------- */
+function* watchMySaga() {
+	yield takeLatest(<%= actionNameUppercase %>Types.MY_SAGA, Sagas.mySaga);
+}
+
+// TODO: Do Not Forget to Add your new saga to index file
+export function* <%= actionName %>Saga() {
+	yield all([
+		fork(watchMySaga)
+	]);
+}

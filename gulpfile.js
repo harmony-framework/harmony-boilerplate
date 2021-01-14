@@ -59,6 +59,64 @@ gulp.task('createComponent', () => {
 
 });
 
+gulp.task('createAction', () => {
+	let actionName = lowerCaseFirstLater(getArg('name'));
+
+	if (!validateName(actionName, '--name', false)) return;
+
+
+	// create redux template
+	createTemplate(
+		'./generator/templates/client/redux-template',
+		`${process.env.INIT_CWD}/${actionName}/redux.ts`,
+		{
+			actionName,
+			actionNameUppercase: capitalizeFirstLate(actionName)
+		}
+	);
+
+	// create saga template
+	createTemplate(
+		'./generator/templates/client/saga-template',
+		`${process.env.INIT_CWD}/${actionName}/sagas.ts`,
+		{
+			actionName,
+			actionNameUppercase: capitalizeFirstLate(actionName)
+		}
+	);
+
+	// create action index
+	createTemplate(
+		'./generator/templates/client/action-index',
+		`${process.env.INIT_CWD}/${actionName}/index.ts`,
+		{
+			actionName,
+			actionNameUppercase: capitalizeFirstLate(actionName)
+		}
+	);
+
+	// create manager
+	createTemplate(
+		'./generator/templates/client/manager',
+		`${process.env.INIT_CWD}/${actionName}/manager.ts`,
+		{
+			actionName,
+			actionNameUppercase: capitalizeFirstLate(actionName)
+		}
+	);
+
+	// create interface
+	createTemplate(
+		'./generator/templates/client/interfaces-template',
+		`${process.env.INIT_CWD}/${actionName}/interface.ts`,
+		{
+			actionName,
+			actionNameUppercase: capitalizeFirstLate(actionName)
+		}
+	);
+
+});
+
 gulp.task('createSaga', () => {
 	let sagaName = lowerCaseFirstLater(getArg('name'));
 

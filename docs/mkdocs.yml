@@ -67,7 +67,7 @@ markdown_extensions:
   - pymdownx.tilde
   - admonition
 
-# Page tree 
+# Page tree
 nav:
   - Harmony: 'index.md'
   - Getting started: 'getting-started.md'
@@ -90,8 +90,7 @@ nav:
       - Generate Component: 'extensions/client/components.md'
       - Generate Container: 'extensions/client/containers.md'
       - Generate Form Container: 'extensions/client/form_containers.md'
-      - Generate Saga: 'extensions/client/sagas.md'
-      - Generate Redux: 'extensions/client/reducers.md'
+      - Generate Action: 'extensions/client/actions.md'
   - Release notes: 'release-notes.md'
   - Contributing: 'contributing.md'
   - License: 'license.md'

@@ -2,7 +2,7 @@ import Immutable, { ImmutableObject } from 'seamless-immutable';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
-	<%= actionNameUppercase %>State, TypesNames, ActionCreator, SetExampleAction
+	CatalogState, TypesNames, ActionCreator, SetExampleAction
 } from './interface';
 
 // TODO: Do not for get add your reducer to index file
@@ -14,24 +14,24 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 	setExample: ['exampleData']
 });
 
-export const <%= actionNameUppercase %>Types = TypesNames;
+export const CatalogTypes = TypesNames;
 export const CatalogActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<<%= actionNameUppercase %>State>({
+const INITIAL_STATE = Immutable<CatalogState>({
 	exampleData: 'Initial Data Example'
 });
 
 /* ------------- Selectors ------------- */
 
-export const <%= actionName %>Selector = {
-	getExampleData: (state: ApplicationState) => state.<%= actionName %>?.exampleData
+export const catalogSelector = {
+	getExampleData: (state: ApplicationState) => state.catalog?.exampleData
 };
 
 /* ------------- Reducers ------------- */
 
-const setExampleReducer = (state: ImmutableObject<<%= actionNameUppercase %>State>, action: SetExampleAction) => {
+const setExampleReducer = (state: ImmutableObject<CatalogState>, action: SetExampleAction) => {
 	const { exampleData } = action;
 	return state.merge({ exampleData });
 };
@@ -39,5 +39,5 @@ const setExampleReducer = (state: ImmutableObject<<%= actionNameUppercase %>Stat
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[<%= actionNameUppercase %>Types.SET_EXAMPLE]: setExampleReducer
+	[CatalogTypes.SET_EXAMPLE]: setExampleReducer
 });
