@@ -1,4 +1,4 @@
-import Immutable, { from } from 'seamless-immutable';
+import Immutable, { from, ImmutableObject } from 'seamless-immutable';
 import reduceReducers from 'reduce-reducers';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
@@ -36,8 +36,8 @@ export const cartSelector = {
 
 /* ------------- Reducers ------------- */
 
-const setCartIdReducer = (state: any, action: SetCartIdAction) => {
-	const newState = from(state);
+const setCartIdReducer = (state: ImmutableObject<CartState>, action: SetCartIdAction) => {
+	const newState: ImmutableObject<CartState> = from(state);
 	const { cartId } = action;
 	return newState.merge({ cartId });
 };

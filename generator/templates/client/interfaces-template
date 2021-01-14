@@ -10,8 +10,8 @@ export enum TypesNames {
 	MY_SAGA = 'MY_SAGA'
 }
 
-declare function SetExampleFunction(exampleData: string): SetExampleAction;
-declare function MySagaFunction(someData: string): MySagaAction;
+export declare function SetExampleFunction(exampleData: string): SetExampleAction;
+export declare function MySagaFunction(someData: string): MySagaAction;
 
 export interface ActionCreator {
 	setExample: typeof SetExampleFunction;

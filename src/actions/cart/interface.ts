@@ -3,7 +3,7 @@ import { BaseCartState } from '@base/features/base-cart/interfaces';
 
 /* ------------- Define Actions and State ------------- */
 export interface CartState extends BaseCartState<CartItem> {
-	cartId?: number;
+	cartId?: number | string;
 }
 
 export enum TypesNames {
@@ -14,16 +14,22 @@ export enum TypesNames {
 	CLEAR_CART = 'CLEAR_CART'
 }
 
+export declare function SetCartIdFunction(cartId: string | number): SetCartIdAction;
+export declare function AddToCartFunction(item: CartItem): AddToCartAction;
+export declare function UpdateCartFunction(item: CartItem): UpdateCartAction;
+export declare function RemoveFromCartFunction(id: number | string): RemoveFromCartAction;
+export declare function ClearCartFunction(): ClearCartAction;
+
 export interface ActionCreator {
-	setCartId: (cartId: string) => SetCartIdAction;
-	addToCart: (item: CartItem) => AddToCartAction;
-	updateCart: (item: CartItem) => UpdateCartAction;
-	removeFromCart: (id: number | string) => RemoveFromCartAction;
-	clearCart: () => ClearCart;
+	setCartId: typeof SetCartIdFunction;
+	addToCart: typeof AddToCartFunction;
+	updateCart: typeof UpdateCartFunction;
+	removeFromCart: typeof RemoveFromCartFunction;
+	clearCart: typeof ClearCartFunction;
 }
 
 export interface SetCartIdAction extends Action<TypesNames.SET_CART_ID> {
-	cartId: string;
+	cartId: string | number;
 }
 export interface AddToCartAction extends Action<TypesNames.ADD_TO_CART> {
 	item: CartItem;
@@ -37,7 +43,7 @@ export interface RemoveFromCartAction extends Action<TypesNames.REMOVE_FROM_CART
 	id: number | string;
 }
 
-export type ClearCart = {
+export type ClearCartAction = {
 	type: Action<TypesNames.CLEAR_CART>;
 };
 

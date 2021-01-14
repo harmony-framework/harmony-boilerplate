@@ -11,12 +11,12 @@ import {
 	Row, Button
 } from 'react-bootstrap';
 import './style.scss';
-import { CartItem } from 'actions/cart/interface';
+import { CartItem, ClearCartFunction } from 'actions/cart/interface';
 import RoutesPath from 'routes/RoutesPath';
 
 interface Props {
 	cartItems: CartItem[];
-	clearCart: () => any;
+	clearCart: typeof ClearCartFunction;
 	translate: TranslateFunction;
 	moveToNextStep: (step?: string) => any;
 }

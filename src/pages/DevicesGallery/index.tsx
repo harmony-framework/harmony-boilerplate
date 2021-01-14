@@ -7,21 +7,23 @@ import {
 } from 'react-bootstrap';
 import './style.scss';
 import { ApplicationState } from 'actions';
-import CatalogActions, { catalogSelector } from 'actions/redux/catalog';
+import { catalogSelector, CatalogActions } from 'actions/catalog';
 import FlowManagerActions from 'actions/redux/flowManager';
-import { Device } from 'actions/redux/catalog/interfaces';
 import { cartSelector, CartActions } from 'actions/cart';
-import { CartItem } from 'actions/cart/interface';
+import {
+	CartItem, AddToCartFunction, RemoveFromCartFunction, ClearCartFunction
+} from 'actions/cart/interface';
 import DeviceCard from 'common-components/business/DeviceCard';
 // import { loadRBAData } from '@base/features/base-rba';
 import RBAC from '@base/features/base-rba/components/RBAC';
 import withErrorHandler from 'containers/ErrorHandler/withErrorHandler';
+import { GetDeviceListFunction, Device } from 'actions/catalog/interface';
 
 interface Props {
-	getDeviceList: () => any;
-	addToCart: (item: CartItem) => any;
-	removeFromCart: (id: number | string) => any;
-	clearCart: () => any;
+	getDeviceList: typeof GetDeviceListFunction;
+	addToCart: typeof AddToCartFunction;
+	removeFromCart: typeof RemoveFromCartFunction;
+	clearCart: typeof ClearCartFunction;
 	deviceList: Device[];
 	cartItems: CartItem[];
 	translate: TranslateFunction;

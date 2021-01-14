@@ -3,11 +3,11 @@ import { fork, all } from 'redux-saga/effects';
 import baseReducers, { BaseApplicationState } from '@base/features/base-reducers';
 
 /* ------------- Import States ------------- */
-import { CatalogState } from './redux/catalog/interfaces';
+import { CatalogState } from 'actions/catalog/interface';
 import { CartState } from 'actions/cart/interface';
 
 /* ------------- Import Sagas ------------- */
-import catalogSaga from './sagas/catalog';
+import { catalogSaga } from 'actions/catalog';
 import flowManagerSaga from './sagas/flowManager';
 import makeCart from '@base/features/base-cart';
 
@@ -24,7 +24,7 @@ export const rootReducer: Reducer<ApplicationState> = combineReducers<Applicatio
 	...baseReducers,
 
 	cart: require('./cart').reducer(baseCartReducer),
-	catalog: require('./redux/catalog').reducer
+	catalog: require('./catalog').reducer
 });
 
 /* ------------- Export Sagas ------------- */
