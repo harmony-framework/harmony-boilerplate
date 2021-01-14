@@ -7,9 +7,9 @@ import {
 } from 'react-bootstrap';
 import './style.scss';
 import { ApplicationState } from 'actions';
-import CatalogActions, { catalogSelector } from 'actions/redux/catalog';
+import { catalogSelector, CatalogActions } from 'actions/catalog';
 import FlowManagerActions from 'actions/redux/flowManager';
-import { Device } from 'actions/redux/catalog/interfaces';
+import { Device, GetDeviceListFunction } from 'actions/catalog/interface';
 import { cartSelector, CartActions } from 'actions/cart';
 import DeviceCard from 'common-components/DeviceCard';
 // import { loadRBAData } from '@base/features/base-rba';
@@ -19,7 +19,7 @@ import {
 } from 'actions/cart/interface';
 
 interface Props {
-	getDeviceList: () => any;
+	getDeviceList: typeof GetDeviceListFunction;
 	addToCart: typeof AddToCartFunction;
 	removeFromCart: typeof RemoveFromCartFunction;
 	clearCart: typeof ClearCartFunction;

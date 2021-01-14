@@ -1,14 +1,12 @@
-import {
-	all, call, fork, put, takeLatest
-} from 'redux-saga/effects';
 import { AxiosResponse } from 'axios';
-import CatalogActions, { CatalogTypes } from 'actions/redux/catalog';
-import { startFlow } from '../flowManager';
-import { TypesNames } from 'actions/redux/flowManager/interfaces';
-import { FlowTypes, StepTypes } from 'configurations/flows.steps.types';
+import { call, put } from 'redux-saga/effects';
 import { AppContextProps } from '@base/features/base-context';
+import { CatalogActions } from 'actions/catalog';
+import { startFlow } from '../sagas/flowManager';
+import { TypesNames } from '../redux/flowManager/interfaces';
+import { FlowTypes, StepTypes } from 'configurations/flows.steps.types';
 
-function* getDevices(action: any & AppContextProps) {
+export function* getDevices(action: any & AppContextProps) {
 	try {
 		yield call(startFlow, {
 			type: TypesNames.START_FLOW,
@@ -28,13 +26,3 @@ function* getDevices(action: any & AppContextProps) {
 		console.log(e);
 	}
 }
-
-function* watchGetDevices() {
-	yield takeLatest(CatalogTypes.GET_DEVICE_LIST, getDevices);
-}
-
-function* catalogSaga() {
-	yield all([fork(watchGetDevices)]);
-}
-
-export default catalogSaga;

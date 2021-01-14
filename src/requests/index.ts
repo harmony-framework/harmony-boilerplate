@@ -6,7 +6,7 @@ import { Request } from '@base/features/base-api';
 import { config } from 'config';
 import GenericMobileImage from 'public/assets/images/generic-mobile.jpg';
 import responseExample from './mocks/response_example.json';
-import { Device } from 'actions/redux/catalog/interfaces';
+import { Device } from 'actions/catalog/interface';
 
 export interface Api {
 	getDevices: () => Promise<AxiosResponse>;

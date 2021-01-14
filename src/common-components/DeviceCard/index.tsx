@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { LocalizedElement, LocalizedElementMap } from 'react-localize-redux';
 import { Button, Card, Col } from 'react-bootstrap';
-import { Device } from 'actions/redux/catalog/interfaces';
+import { Device } from 'actions/catalog/interface';
 import './style.scss';
 import RBAC from '@base/features/base-rba/components/RBAC';
 
@@ -40,7 +40,7 @@ const DeviceCard: React.FC<Props> = (props: Props) => {
 							{ quantity ? removeButtonTitle : buttonTitle }
 						</Button>
 					</RBAC>
-					
+
 				</Card.Body>
 			</Card>
 		</Col>

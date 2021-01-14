@@ -2,8 +2,8 @@ import Immutable, { ImmutableObject } from 'seamless-immutable';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
-	TypesNames, ActionCreator, CatalogState, SetDeviceListAction
-} from './interfaces';
+	CatalogState, TypesNames, ActionCreator, SetDeviceListAction
+} from './interface';
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -13,20 +13,18 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 });
 
 export const CatalogTypes = TypesNames;
-export default Creators;
+export const CatalogActions = Creators;
 
 /* ------------- Initial State ------------- */
 
 const INITIAL_STATE = Immutable<CatalogState>({
 	deviceList: []
 });
-
 /* ------------- Selectors ------------- */
 
 export const catalogSelector = {
 	devices: (state: ApplicationState) => state.catalog.deviceList
 };
-
 /* ------------- Reducers ------------- */
 
 const setDeviceListReducer = (state: ImmutableObject<CatalogState>, action: SetDeviceListAction) => {
@@ -37,5 +35,5 @@ const setDeviceListReducer = (state: ImmutableObject<CatalogState>, action: SetD
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[CatalogTypes.SET_DEVICE_LIST]: setDeviceListReducer
+	[TypesNames.SET_DEVICE_LIST]: setDeviceListReducer
 });

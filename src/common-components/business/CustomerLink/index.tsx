@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Customer } from 'actions/redux/catalog/interfaces';
+import { Customer } from 'actions/catalog/interface';
 import { Nav } from 'react-bootstrap';
 import './style.scss';
 
@@ -16,7 +16,7 @@ interface State {
 
 class CustomerLink extends React.Component<Props, State> {
 	closeTimeout: any;
-	
+
 	constructor(props: Props) {
 		super(props);
 		this.state = {
@@ -27,7 +27,7 @@ class CustomerLink extends React.Component<Props, State> {
 	componentDidMount() {
 		this.closeTimeout = null;
 	}
-	
+
 	onClick() {
 		const { onClick, customer } = this.props;
 
@@ -50,7 +50,7 @@ class CustomerLink extends React.Component<Props, State> {
 	setCloseIcon(show: boolean) {
 		this.setState({ showClose: show });
 	}
-	
+
 	onCustomerMouseOver() {
 		if (this.closeTimeout) {
 			clearTimeout(this.closeTimeout);
@@ -67,7 +67,7 @@ class CustomerLink extends React.Component<Props, State> {
 		clearTimeout(this.closeTimeout);
 		this.closeTimeout = null;
 	}
-	
+
 	render() {
 		const { showClose } = this.state;
 		const { customer, active } = this.props;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Customer } from 'actions/redux/catalog/interfaces';
+import { Customer } from 'actions/catalog/interface';
 import CustomersBar from 'common-components/business/CustomersBar';
 import './style.scss';
 import CustomerLink from '../CustomerLink';
