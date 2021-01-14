@@ -3,9 +3,8 @@ import { getInstances } from '@base/features/base-cart';
 import { cartSelector, CartActions } from 'actions/cart';
 import { AddToCartAction, CartItem, RemoveFromCartAction } from 'actions/cart/interface';
 
-const [instance] = getInstances();
-
 export function* addSaga(action: AddToCartAction) {
+	const [instance] = getInstances();
 	const { item } = action;
 	const cartItems: CartItem[] = yield select(cartSelector.getCartItems);
 	const cartId: number = yield select(cartSelector.getCartId);
@@ -19,10 +18,13 @@ export function* addSaga(action: AddToCartAction) {
 
 export function* removeSaga(action: RemoveFromCartAction) {
 	const { id } = action;
+	const [instance] = getInstances();
 
 	yield put(instance.actions.remove(id));
 }
 
 export function* clearSaga() {
+	const [instance] = getInstances();
+
 	yield put(instance.actions.clear());
 }
