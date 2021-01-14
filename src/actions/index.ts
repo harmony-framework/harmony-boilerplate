@@ -8,7 +8,7 @@ import { CartState } from 'actions/cart/interface';
 
 /* ------------- Import Sagas ------------- */
 import { catalogSaga } from 'actions/catalog';
-import flowManagerSaga from './sagas/flowManager';
+import { flowManagerSaga } from 'actions/flowManager';
 import makeCart from '@base/features/base-cart';
 
 const baseCartReducer = makeCart('cart').reducer;

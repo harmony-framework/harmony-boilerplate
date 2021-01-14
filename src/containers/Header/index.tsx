@@ -6,19 +6,20 @@ import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
 import { cartSelector, CartActions } from 'actions/cart';
-import FlowManagerActions from 'actions/redux/flowManager';
+import { FlowManagerActions } from 'actions/flowManager';
 import {
 	Row, Button
 } from 'react-bootstrap';
 import './style.scss';
 import { CartItem, ClearCartFunction } from 'actions/cart/interface';
 import RoutesPath from 'routes/RoutesPath';
+import { MoveToNextStepFunction } from 'actions/flowManager/interface';
 
 interface Props {
 	cartItems: CartItem[];
 	clearCart: typeof ClearCartFunction;
 	translate: TranslateFunction;
-	moveToNextStep: (step?: string) => any;
+	moveToNextStep: typeof MoveToNextStepFunction;
 }
 interface HeaderState {
 	cartToggle: boolean;

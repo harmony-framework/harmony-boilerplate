@@ -3,8 +3,8 @@ import { call, put } from 'redux-saga/effects';
 import api from 'requests';
 import { CatalogActions } from 'actions/catalog';
 import { Device } from 'actions/catalog/interface';
-import { startFlow } from '../sagas/flowManager';
-import { TypesNames } from '../redux/flowManager/interfaces';
+import { startFlow } from 'actions/flowManager/sagas';
+import { TypesNames } from 'actions/flowManager/interface';
 import { FlowTypes, StepTypes } from 'configurations/flows.steps.types';
 
 export function* getDevices() {

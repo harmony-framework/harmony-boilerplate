@@ -1,5 +1,5 @@
 import { createActions } from 'reduxsauce';
-import { ActionCreator, TypesNames } from './interfaces';
+import { TypesNames, ActionCreator } from './interface';
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -8,4 +8,5 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 	moveToNextStep: ['step'] // handle by saga
 });
 
-export default Creators;
+export const FlowManagerTypes = TypesNames;
+export const FlowManagerActions = Creators;

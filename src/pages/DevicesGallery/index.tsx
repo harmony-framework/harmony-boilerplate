@@ -8,7 +8,7 @@ import {
 import './style.scss';
 import { ApplicationState } from 'actions';
 import { catalogSelector, CatalogActions } from 'actions/catalog';
-import FlowManagerActions from 'actions/redux/flowManager';
+import { FlowManagerActions } from 'actions/flowManager';
 import { cartSelector, CartActions } from 'actions/cart';
 import {
 	CartItem, AddToCartFunction, RemoveFromCartFunction, ClearCartFunction
@@ -18,6 +18,7 @@ import DeviceCard from 'common-components/business/DeviceCard';
 import RBAC from '@base/features/base-rba/components/RBAC';
 import withErrorHandler from 'containers/ErrorHandler/withErrorHandler';
 import { GetDeviceListFunction, Device } from 'actions/catalog/interface';
+import { MoveToNextStepFunction } from 'actions/flowManager/interface';
 
 interface Props {
 	getDeviceList: typeof GetDeviceListFunction;
@@ -27,7 +28,7 @@ interface Props {
 	deviceList: Device[];
 	cartItems: CartItem[];
 	translate: TranslateFunction;
-	moveToNextStep: (step?: string) => any;
+	moveToNextStep: typeof MoveToNextStepFunction;
 	ErrorComponent: any;
 }
 

@@ -15,7 +15,7 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 });
 
 export const <%= actionNameUppercase %>Types = TypesNames;
-export const CatalogActions = Creators;
+export const <%= actionNameUppercase %>Actions = Creators;
 
 /* ------------- Initial State ------------- */
 
