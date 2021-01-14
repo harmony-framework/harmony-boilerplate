@@ -19,15 +19,21 @@ export const CreateStore = (name: string, id: string, isMainStore = false) => {
 
 	/* -------- create the store with middleware ---------- */
 	let store;
-	const customCompose = compose(
-		applyMiddleware(sagaMiddleware, globalActionListener),
-		window.devToolsExtension && window.devToolsExtension({
-			name: `${config.appName} ${name}`,
-			deserializeState: (state: ApplicationState) => {
-				return Immutable(state);
-			},
-		})
-	);
+	let customCompose;
+
+	if (window.devToolsExtension) {
+		customCompose = compose(
+			applyMiddleware(sagaMiddleware, globalActionListener),
+			window.devToolsExtension && window.devToolsExtension({
+				name: `${config.appName} ${name}`,
+				deserializeState: (state: ApplicationState) => {
+					return Immutable(state);
+				},
+			})
+		);
+	} else {
+		customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener));
+	}
 
 	if (isMainStore) {
 		store = createStore(CreateMainReducer(id), customCompose);
