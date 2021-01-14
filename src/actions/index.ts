@@ -8,7 +8,7 @@ import { ConsoleState } from 'actions/console/interface';
 import { CartState } from 'actions/cart/interface';
 
 /* ------------- Import Sagas ------------- */
-import flowManagerSaga from './sagas/flowManager';
+import { flowManagerSaga } from 'actions/flowManager';
 import { cartSaga } from 'actions/cart';
 import { catalogSaga } from 'actions/catalog';
 import { consoleSaga } from 'actions/console';

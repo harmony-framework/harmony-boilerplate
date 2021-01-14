@@ -3,7 +3,7 @@ import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
 	LocalPersistDataState, TypesNames, ActionCreator, SetLocalDataExampleAction
-} from './interfaces';
+} from './interface';
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -11,8 +11,8 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 	setLocalDataExample: ['localDataExample']
 });
 
-export const LocalDataTypes = TypesNames;
-export default Creators;
+export const LocalPersistDataTypes = TypesNames;
+export const LocalPersistDataActions = Creators;
 
 /* ------------- Initial State ------------- */
 
@@ -25,7 +25,6 @@ const INITIAL_STATE = Immutable<LocalPersistDataState>({
 export const localDataSelector = {
 	localDataExample: (state: ApplicationState) => state.localPersistData.localDataExample
 };
-
 /* ------------- Reducers ------------- */
 
 const setLocalDataExampleReducer = (
@@ -42,5 +41,5 @@ const setLocalDataExampleReducer = (
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[LocalDataTypes.SET_LOCAL_DATA_EXAMPLE]: setLocalDataExampleReducer
+	[TypesNames.SET_LOCAL_DATA_EXAMPLE]: setLocalDataExampleReducer
 });

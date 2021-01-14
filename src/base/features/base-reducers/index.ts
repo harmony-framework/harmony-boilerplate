@@ -10,9 +10,9 @@ import rbaReducer from '@base/features/base-rba/reducer';
 import globalSpinnerReducer, { GlobalSpinnerState } from '@base/features/base-global-spinner/reducer';
 import { RBAState } from '@base/features/base-rba/interfaces';
 import { ErrorHandlerRequest } from '@base/features/base-error-handler';
-import { reducer as localPersistDataReducer } from 'actions/redux/localPersistData';
+import { reducer as localPersistDataReducer } from 'actions/localPersistData';
 import { reducer as sessionPersistDataReducer } from 'actions/redux/sessionPersistData';
-import { LocalPersistDataState } from 'actions/redux/localPersistData/interfaces';
+import { LocalPersistDataState } from 'actions/localPersistData/interface';
 import { SessionPersistDataState } from 'actions/redux/sessionPersistData/interfaces';
 
 export interface BaseApplicationState {

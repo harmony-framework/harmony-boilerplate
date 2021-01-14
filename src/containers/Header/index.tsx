@@ -6,7 +6,7 @@ import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
 import { cartSelector, CartActions } from 'actions/cart';
-import FlowManagerActions from 'actions/redux/flowManager';
+import { FlowManagerActions } from 'actions/flowManager';
 import {
 	Row, Button
 } from 'react-bootstrap';

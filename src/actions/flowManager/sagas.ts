@@ -1,14 +1,7 @@
-import {
-	all, fork, takeLatest
-} from 'redux-saga/effects';
 import { AppContextProps } from '@base/features/base-context';
+import { MoveToNextStepAction, StartFlowAction } from 'actions/flowManager/interface';
+import * as flowManagerManager from 'actions/flowManager/manager';
 import { StepTypes } from 'configurations/flows.steps.types';
-import * as flowManagerAPI from './api';
-import {
-	TypesNames,
-	StartFlowAction,
-	MoveToNextStepAction
-} from 'actions/redux/flowManager/interfaces';
 
 export function* startFlow(action: StartFlowAction & AppContextProps) {
 	const { flowType, currentStep, applicationDetails } = action;
@@ -20,12 +13,12 @@ export function* startFlow(action: StartFlowAction & AppContextProps) {
 export function* moveToNextStep(action: MoveToNextStepAction & AppContextProps) {
 	const { step, applicationDetails } = action;
 	const { flowManagerApi, history } = applicationDetails;
-	const { flowType } = flowManagerAPI.getFlowInformation(flowManagerApi);
+	const { flowType } = flowManagerManager.getFlowInformation(flowManagerApi);
 
 	if (!flowType) return;
 
 	yield flowManagerApi.updateInformation();
-	const isLastStep = flowManagerAPI.isLastStep(flowManagerApi);
+	const isLastStep = flowManagerManager.isLastStep(flowManagerApi);
 	const nextStep = flowManagerApi.nextStep(step);
 	const pathToMove = StepTypes[nextStep]?.path;
 
@@ -37,7 +30,7 @@ export function* moveToNextStep(action: MoveToNextStepAction & AppContextProps) 
 export function* moveToPrevStep(action: MoveToNextStepAction & AppContextProps) {
 	const { applicationDetails } = action;
 	const { flowManagerApi } = action.applicationDetails;
-	const { flowType, currentStep, steps } = flowManagerAPI.getFlowInformation(flowManagerApi);
+	const { flowType, currentStep, steps } = flowManagerManager.getFlowInformation(flowManagerApi);
 
 	if (!flowType || !currentStep || !steps) return;
 
@@ -50,21 +43,3 @@ export function* moveToPrevStep(action: MoveToNextStepAction & AppContextProps) 
 		} as MoveToNextStepAction & AppContextProps);
 	}
 }
-
-/** Watchers * */
-function* watchStartFlow() {
-	yield takeLatest(TypesNames.START_FLOW, startFlow);
-}
-
-function* watchMoveToNextStep() {
-	yield takeLatest(TypesNames.MOVE_TO_NEXT_STEP, moveToNextStep);
-}
-
-function* flowManagerSaga() {
-	yield all([
-		fork(watchStartFlow),
-		fork(watchMoveToNextStep)
-	]);
-}
-
-export default flowManagerSaga;
