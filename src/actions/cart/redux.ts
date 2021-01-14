@@ -2,7 +2,7 @@ import Immutable, { ImmutableObject } from 'seamless-immutable';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
-	<%= actionNameUppercase %>State, TypesNames, ActionCreator, SetExampleAction
+	CartState, TypesNames, ActionCreator, SetExampleAction
 } from './interface';
 
 // TODO: Do not for get add your reducer to index file
@@ -14,24 +14,24 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 	setExample: ['exampleData']
 });
 
-export const <%= actionNameUppercase %>Types = TypesNames;
-export const <%= actionNameUppercase %>Actions = Creators;
+export const CartTypes = TypesNames;
+export const CartActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<<%= actionNameUppercase %>State>({
+const INITIAL_STATE = Immutable<CartState>({
 	exampleData: 'Initial Data Example'
 });
 
 /* ------------- Selectors ------------- */
 
-export const <%= actionName %>Selector = {
-	getExampleData: (state: ApplicationState) => state.<%= actionName %>?.exampleData
+export const cartSelector = {
+	getExampleData: (state: ApplicationState) => state.cart?.exampleData
 };
 
 /* ------------- Reducers ------------- */
 
-const setExampleReducer = (state: ImmutableObject<<%= actionNameUppercase %>State>, action: SetExampleAction) => {
+const setExampleReducer = (state: ImmutableObject<CartState>, action: SetExampleAction) => {
 	const { exampleData } = action;
 	return state.merge({ exampleData });
 };
