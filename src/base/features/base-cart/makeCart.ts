@@ -8,7 +8,6 @@ export const getInstances = () => instances;
 
 export const makeCart = (cartName: any) => {
 	const actionTypes = makeActionTypes(cartName);
-
 	const instance = {
 		actionTypes: makeActionTypes(cartName),
 		actions: makeActions(cartName, actionTypes) as Actions,
