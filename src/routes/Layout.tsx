@@ -3,7 +3,7 @@ import { baseConnect } from '@base/features/base-redux-react-connect';
 import { PendingTasks } from '@base/features/base-global-spinner/reducer';
 import ErrorHandler from 'containers/ErrorHandler';
 import Localization from 'containers/Localization';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import { Spinner } from 'common-components/business';
 import Header from 'containers/Header';
 

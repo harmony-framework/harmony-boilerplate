@@ -2,7 +2,7 @@ import * as React from 'react';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { CustomRoute } from '@base/features/base-decorator';
 import { setCurrentStep } from 'actions/sagas/flowManager/api';
-import { ApplicationState } from '../actions/redux';
+import { ApplicationState } from '../actions';
 import { AppContextProps } from '@base/features/base-context';
 
 const routeDecorator = (WrappedComponent: any, step?: string) => {

@@ -4,19 +4,19 @@ import { Dispatch } from 'redux';
 import { Link } from 'react-router-dom';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ApplicationState } from 'actions/redux';
-import CartActions, { cartSelector } from 'actions/redux/cart';
+import { ApplicationState } from 'actions';
+import { cartSelector, CartActions } from 'actions/cart';
 import FlowManagerActions from 'actions/redux/flowManager';
 import {
 	Row, Button
 } from 'react-bootstrap';
 import './style.scss';
-import { CartItem } from 'actions/redux/cart/interfaces';
+import { CartItem, ClearCartFunction } from 'actions/cart/interface';
 import RoutesPath from 'routes/RoutesPath';
 
 interface Props {
 	cartItems: CartItem[];
-	clearCart: () => any;
+	clearCart: typeof ClearCartFunction;
 	translate: TranslateFunction;
 	moveToNextStep: (step?: string) => any;
 }

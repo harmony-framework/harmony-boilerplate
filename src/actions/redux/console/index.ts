@@ -1,7 +1,7 @@
 import Immutable, { ImmutableObject } from 'seamless-immutable';
 import { createReducer, createActions } from 'reduxsauce';
 import RoutesPath from 'routes/RoutesPath';
-import { MainApplicationState } from '../index';
+import { MainApplicationState } from 'actions';
 import {
 	ConsoleState,
 	TypesNames,

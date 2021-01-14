@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { clearErrorHandler, ErrorHandlerRequest, BaseComponentTypes } from '@base/features/base-error-handler';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import RoutesPath from 'routes/RoutesPath';
 import { AppContextProps } from '@base/features/base-context';
 import { withToast, ToasterManager } from '@base/features/base-decorator';

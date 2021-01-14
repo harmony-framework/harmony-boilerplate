@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ApplicationState } from 'actions/redux';
-import { CartItem } from 'actions/redux/cart/interfaces';
-import { cartSelector } from 'actions/redux/cart';
+import { ApplicationState } from 'actions';
+import { CartItem } from 'actions/cart/interface';
+import { cartSelector } from 'actions/cart';
 import RoutesPath from 'routes/RoutesPath';
 import {
 	Container, Row, Media

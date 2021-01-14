@@ -6,7 +6,7 @@ import { CreateStore } from '@base/features/base-store';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import SubApp from './SubApp';
 import ConsoleActions, { consoleSelector } from 'actions/redux/console';
-import { MainApplicationState } from 'actions/redux';
+import { MainApplicationState } from 'actions';
 import { TabAppTitle } from 'actions/redux/console/interfaces';
 
 export interface OwnProps {

@@ -1,5 +1,5 @@
 import { Store } from '@base/features';
-import { cartSelector } from 'actions/redux/cart';
+import { cartSelector } from 'actions/cart';
 
 export const isTowSamsungInCart = async () => {
 	const cartItems = cartSelector.getCartItems(Store.current.getState());

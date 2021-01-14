@@ -2,8 +2,8 @@ import {
 	all, fork, put, takeLatest, select
 } from 'redux-saga/effects';
 import { getInstances } from '@base/features/base-cart';
-import CartActions, { CartTypes, cartSelector } from 'actions/redux/cart';
-import { AddToCartAction, CartItem, RemoveFromCartAction } from 'actions/redux/cart/interfaces';
+import { CartTypes, cartSelector, CartActions } from 'actions/cart';
+import { AddToCartAction, CartItem, RemoveFromCartAction } from 'actions/cart/interface';
 
 const [instance] = getInstances();
 

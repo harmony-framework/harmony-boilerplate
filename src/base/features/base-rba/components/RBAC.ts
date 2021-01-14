@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
 import { connect } from 'react-redux';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import { AppContextProps } from '@base/features/base-context';
 import { RBAStatus } from '../consts';
 import { getPermissions } from '..';
@@ -78,7 +78,7 @@ export const mapStateToProps = (state: ApplicationState & AppContextProps) => {
 
 export const mapDispatchToProps = () => {
 	return {
-        
+
 	};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(RBAC);

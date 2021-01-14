@@ -7,7 +7,7 @@ import {
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import ConsoleActions, { consoleSelector } from 'actions/redux/console';
 import { App as IApp, OptionalLocation, TabAppTitle } from 'actions/redux/console/interfaces';
-import { MainApplicationState } from 'actions/redux';
+import { MainApplicationState } from 'actions';
 import { Apps, SubApps } from 'configurations/console.config';
 import App from './App';
 import { SideBar } from 'common-components/business';
@@ -57,7 +57,7 @@ class MainApp extends React.Component<Props> {
 		createApp(DemoApp.id, DemoApp.title);
 		createSubApp(DemoPage.id, DemoPage.title, DemoPage.location);
 	}
-	
+
 	getTabTitle(title: TabAppTitle): string {
 		const { translate } = this.props;
 

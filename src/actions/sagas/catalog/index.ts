@@ -8,6 +8,7 @@ import GenericMobileImage from './generic-mobile.jpg';
 import { startFlow } from '../flowManager';
 import { TypesNames } from 'actions/redux/flowManager/interfaces';
 import { FlowTypes, StepTypes } from 'configurations/flows.steps.types';
+import { AppContextProps } from '@base/features/base-context';
 
 const getDevicePrice = (device: any): number => {
 	if (device.price && device.price.includes('&#36;')) {
@@ -17,7 +18,7 @@ const getDevicePrice = (device: any): number => {
 	return Math.floor((Math.random() * 1000) + 1);
 };
 
-function* getDevices(action: any) {
+function* getDevices(action: any & AppContextProps) {
 	try {
 		yield call(startFlow, {
 			type: TypesNames.START_FLOW,

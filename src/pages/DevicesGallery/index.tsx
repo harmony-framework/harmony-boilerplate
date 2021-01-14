@@ -6,21 +6,23 @@ import {
 	Container, Row, CardDeck, Button, Form
 } from 'react-bootstrap';
 import './style.scss';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import CatalogActions, { catalogSelector } from 'actions/redux/catalog';
 import FlowManagerActions from 'actions/redux/flowManager';
 import { Device } from 'actions/redux/catalog/interfaces';
-import CartActions, { cartSelector } from 'actions/redux/cart';
-import { CartItem } from 'actions/redux/cart/interfaces';
+import { cartSelector, CartActions } from 'actions/cart';
 import DeviceCard from 'common-components/DeviceCard';
 // import { loadRBAData } from '@base/features/base-rba';
 import RBAC from '@base/features/base-rba/components/RBAC';
+import {
+	CartItem, AddToCartFunction, ClearCartFunction, RemoveFromCartFunction
+} from 'actions/cart/interface';
 
 interface Props {
 	getDeviceList: () => any;
-	addToCart: (item: CartItem) => any;
-	removeFromCart: (id: number | string) => any;
-	clearCart: () => any;
+	addToCart: typeof AddToCartFunction;
+	removeFromCart: typeof RemoveFromCartFunction;
+	clearCart: typeof ClearCartFunction;
 	deviceList: Device[];
 	cartItems: CartItem[];
 	translate: TranslateFunction;
@@ -90,7 +92,7 @@ class DeviceGallery extends React.Component<Props, State> {
 							/>
 						</RBAC>
 					</Form.Group>
-					
+
 				</Form>
 				<Row>
 					<CardDeck>
