@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { baseConnectForm } from '@base/features/base-redux-react-connect';
 import { InjectedFormProps, Field } from 'redux-form';
-import { ApplicationState } from 'actions';
 // import FormExampleActions, { formExampleSelector } from 'actions/redux/formExample';
 
 type Props = InjectedFormProps;
@@ -70,13 +69,13 @@ class FormExample extends React.Component<Props> {
 		);
 	}
 
-	handleSubmit(props: Props) {
+	handleSubmit() {
 
 	}
 }
 
 export default baseConnectForm(FormExample,
-	(state: ApplicationState) => {
+	() => {
 		return {};
 	},
 	{},

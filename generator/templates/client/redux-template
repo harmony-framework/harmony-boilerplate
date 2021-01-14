@@ -39,5 +39,5 @@ const setExampleReducer = (state: ImmutableObject<<%= actionNameUppercase %>Stat
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[<%= actionNameUppercase %>Types.SET_EXAMPLE]: setExampleReducer
+	[TypesNames.SET_EXAMPLE]: setExampleReducer
 });

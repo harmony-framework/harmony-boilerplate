@@ -1,5 +1,6 @@
 import { Action } from 'redux';
 
+/* ------------- Define Actions and State ------------- */
 export interface SessionPersistDataState {
 	sessionDataExample: string;
 }
@@ -14,4 +15,9 @@ export interface ActionCreator {
 
 export interface SetSessionDataExampleAction extends Action<TypesNames.SET_SESSION_DATA_EXAMPLE> {
 	sessionDataExample: string;
+}
+
+/* ------------- Define Any Interfaces ------------- */
+export interface ResponseExample {
+	name: string;
 }

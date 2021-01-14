@@ -1,5 +1,6 @@
 import { Action } from 'redux';
 
+/* ------------- Define Actions and State ------------- */
 export interface LocalPersistDataState {
 	localDataExample: string;
 }
@@ -15,3 +16,5 @@ export interface ActionCreator {
 export interface SetLocalDataExampleAction extends Action<TypesNames.SET_LOCAL_DATA_EXAMPLE> {
 	localDataExample: string;
 }
+
+/* ------------- Define Any Interfaces ------------- */

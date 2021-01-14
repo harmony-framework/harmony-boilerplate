@@ -3,9 +3,8 @@ import reduceReducers from 'reduce-reducers';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
-	CartState, TypesNames, ActionCreator
+	CartState, TypesNames, ActionCreator, SetCartIdAction
 } from './interface';
-import { SetCartIdAction } from 'actions/cart/interface';
 
 /* ------------- Types and Action Creators ------------- */
 

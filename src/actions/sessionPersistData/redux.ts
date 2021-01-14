@@ -3,7 +3,7 @@ import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
 	SessionPersistDataState, TypesNames, ActionCreator, SetSessionDataExampleAction
-} from './interfaces';
+} from './interface';
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -11,15 +11,14 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 	setSessionDataExample: ['sessionDataExample']
 });
 
-export const SessionDataTypes = TypesNames;
-export default Creators;
+export const SessionPersistDataTypes = TypesNames;
+export const SessionPersistDataActions = Creators;
 
 /* ------------- Initial State ------------- */
 
 const INITIAL_STATE = Immutable<SessionPersistDataState>({
 	sessionDataExample: 'Initial Data Example'
 });
-
 /* ------------- Selectors ------------- */
 
 export const sessionDataSelector = {
@@ -39,5 +38,5 @@ const setSessionDataExampleReducer = (state: any, action: SetSessionDataExampleA
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer(INITIAL_STATE, {
-	[SessionDataTypes.SET_SESSION_DATA_EXAMPLE]: setSessionDataExampleReducer
+	[TypesNames.SET_SESSION_DATA_EXAMPLE]: setSessionDataExampleReducer
 });
