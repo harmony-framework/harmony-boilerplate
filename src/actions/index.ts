@@ -9,7 +9,7 @@ import { CartState } from 'actions/cart/interface';
 
 /* ------------- Import Sagas ------------- */
 import flowManagerSaga from './sagas/flowManager';
-import cartSaga from './sagas/cart';
+import { cartSaga } from 'actions//cart';
 import catalogSaga from './sagas/catalog';
 import consoleSaga from './sagas/console';
 

@@ -28,10 +28,10 @@ function* getDevices(action: any & AppContextProps) {
 		});
 
 		const { api } = action.applicationDetails;
-		const response: AxiosResponse = yield call(api.getDevices);
+		const response: AxiosResponse = yield call(api.getDevicesMock);
 		const genericImage = GenericMobileImage;
 
-		if (response?.status === 200) {
+		if (response?.data) {
 			const deviceList: Device[] = response.data.map((device: any): Device => {
 				const newDevice: Device = {
 					id: device.DeviceName,
