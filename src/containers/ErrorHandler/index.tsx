@@ -4,7 +4,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { clearErrorHandler, ErrorHandlerRequest, BaseComponentTypes } from '@base/features/base-error-handler';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import RoutesPath from 'routes/RoutesPath';
 import { withToast, ToasterManager } from '@base/features/base-decorator';
 

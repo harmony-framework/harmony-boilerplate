@@ -10,9 +10,6 @@ interface Config {
 declare global {
 	interface Window {
 		devToolsExtension: Function;
-		serverConfig: {
-			'server-url': string;
-		};
 	}
 }
 

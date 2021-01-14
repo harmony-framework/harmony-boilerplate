@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import { CartItem } from 'actions/redux/cart/interfaces';
 import { cartSelector } from 'actions/redux/cart';
 import RoutesPath from 'routes/RoutesPath';

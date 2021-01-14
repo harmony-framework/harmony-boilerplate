@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Alert } from 'react-bootstrap';
 import { TranslateFunction } from 'react-localize-redux/es';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import { clearErrorHandler, ComponentLevels } from '@base/features/base-error-handler';
 import { ComponentTypes } from './index';
 

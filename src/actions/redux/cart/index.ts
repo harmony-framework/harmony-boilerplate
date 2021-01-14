@@ -2,7 +2,7 @@ import Immutable, { from } from 'seamless-immutable';
 import { createReducer, createActions } from 'reduxsauce';
 import reduceReducers from 'reduce-reducers';
 import { makeCart } from '@base/features/base-cart';
-import { ApplicationState } from '../index';
+import { ApplicationState } from 'actions';
 import {
 	CartState, TypesNames, ActionCreator, SetCartIdAction
 } from './interfaces';

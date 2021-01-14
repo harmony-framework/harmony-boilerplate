@@ -4,8 +4,7 @@ import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import { globalStoreListener, STORE_ACTION_LISTENERS } from '@base/features/base-services';
 import { config } from 'config';
-import reducers, { ApplicationState } from 'actions/redux';
-import rootSaga from 'actions/sagas';
+import { ApplicationState, rootReducer, rootSaga } from 'actions';
 
 /* --------- define middleware ---------- */
 
@@ -28,7 +27,7 @@ const customCompose = compose(
 	})
 );
 
-const store = createStore(reducers, customCompose);
+const store = createStore(rootReducer, customCompose);
 
 /* -------- run root saga ---------- */
 sagaMiddleware.run(rootSaga);

@@ -4,7 +4,7 @@ import { Dispatch } from 'redux';
 import { Link } from 'react-router-dom';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import CartActions, { cartSelector } from 'actions/redux/cart';
 import FlowManagerActions from 'actions/redux/flowManager';
 import {

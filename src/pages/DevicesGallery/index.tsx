@@ -6,7 +6,7 @@ import {
 	Container, Row, CardDeck, Button, Form
 } from 'react-bootstrap';
 import './style.scss';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import CatalogActions, { catalogSelector } from 'actions/redux/catalog';
 import FlowManagerActions from 'actions/redux/flowManager';
 import { Device } from 'actions/redux/catalog/interfaces';

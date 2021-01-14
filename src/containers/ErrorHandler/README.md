@@ -64,7 +64,7 @@ import * as ReactDOM from 'react-dom';
 import { Modal, Button  } from 'react-bootstrap';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { clearErrorHandler, IErrorHandlerRequest, BaseComponentTypes } from '@base/features/base-error-handler';
-import { IApplicationState } from 'actions/redux';
+import { IApplicationState } from 'actions';
 import RoutesPath from 'routes/RoutesPath';
 
 interface IProps {

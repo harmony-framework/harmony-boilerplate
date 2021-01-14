@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { baseConnectForm } from '@base/features/base-redux-react-connect';
 import { InjectedFormProps, Field } from 'redux-form';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 // import FormExampleActions, { formExampleSelector } from 'actions/redux/formExample';
 
 type Props = InjectedFormProps;

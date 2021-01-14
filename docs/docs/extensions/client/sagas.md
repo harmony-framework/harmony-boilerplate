@@ -25,7 +25,7 @@ The Generator of Saga will create 3 files:
 $ gulp createSaga --name mySaga
 ```
 
-## Example Code `index.js`
+## Example Code `index.ts`
 
 ```JS
 
@@ -42,7 +42,7 @@ function* catalogSaga() {
 export default catalogSaga;
 ```
 
-## Example Code `sagas.js`
+## Example Code `sagas.ts`
 
 ```JS
 import {all, call, fork, put, takeLatest} from 'redux-saga/effects';
@@ -77,4 +77,3 @@ function* getDevices() {
     Does not allow concurrent fetches of user. If "SOME_ACTION" gets
     dispatched while a fetch is already pending, that pending fetch is cancelled
     and only the latest one will be run.
-    

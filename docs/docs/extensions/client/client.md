@@ -10,6 +10,7 @@ Client based `reeact` and `redux`.
     |           ├── actions     
     |               ├── redux
     |               ├── saga
+    |               ├── index.ts
     |           ├── base
     |               ├── features
     |           ├── configurations

@@ -4,7 +4,7 @@ import { PendingTasks } from '@base/features/base-global-spinner/reducer';
 import ErrorHandler from 'containers/ErrorHandler';
 import Localization from 'containers/Localization';
 import Header from 'containers/Header';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 import { Spinner } from 'common-components/business';
 
 interface Props {
