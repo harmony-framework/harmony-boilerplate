@@ -31,20 +31,22 @@ function* getDevices(action: any & AppContextProps) {
 		const response: AxiosResponse = yield call(api.getDevices);
 		const genericImage = GenericMobileImage;
 
-		const deviceList: Device[] = response.data.map((device: any): Device => {
-			const newDevice: Device = {
-				id: device.DeviceName,
-				name: device.DeviceName,
-				price: getDevicePrice(device),
-				description: `${device.type} ${device.status}`,
-				brand: device.Brand,
-				image: genericImage
-			};
+		if (response?.status === 200) {
+			const deviceList: Device[] = response.data.map((device: any): Device => {
+				const newDevice: Device = {
+					id: device.DeviceName,
+					name: device.DeviceName,
+					price: getDevicePrice(device),
+					description: `${device.type} ${device.status}`,
+					brand: device.Brand,
+					image: genericImage
+				};
 
-			return newDevice;
-		});
+				return newDevice;
+			});
 
-		yield put(CatalogActions.setDeviceList(deviceList));
+			yield put(CatalogActions.setDeviceList(deviceList));
+		}
 	} catch (e) {
 		// eslint-disable-next-line no-console
 		console.log(e);

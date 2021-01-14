@@ -51,9 +51,9 @@ export const CreateMainReducer = (id: string) => {
 };
 
 /* ------------- Export Sagas ------------- */
-export default function* () {
+export const rootSaga = function* () {
 	yield all([fork(flowManagerSaga)]);
 	yield all([fork(cartSaga)]);
 	yield all([fork(catalogSaga)]);
 	yield all([fork(consoleSaga)]);
-}
+};

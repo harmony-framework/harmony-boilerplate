@@ -73,8 +73,6 @@ export class Request {
 
 			endSpinner(appId, subAppId, config.url, uuid);
 			dispatchErrorHandler(error);
-
-			throw new Error(e);
 		}
 	}
 }

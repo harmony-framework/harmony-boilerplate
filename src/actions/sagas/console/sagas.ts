@@ -68,16 +68,24 @@ export function* activeSubApp(action: ActiveSubAppAction) {
 export function* createApp(action: CreateAppAction) {
 	const { appId, title } = action;
 
-	yield put(ConsoleActions.addApp(appId, title));
+	if (!manager.isAppExist(appId)) {
+		yield put(ConsoleActions.addApp(appId, title));
+	}
 
 	yield call(activeApp, { type: ConsoleTypes.ACTIVE_APP, appId });
 }
 
 export function* createSubApp(action: CreateSubAppAction) {
-	const { subAppId, title, location } = action;
+	const {
+		subAppId,
+		title,
+		location
+	} = action;
 	const appId = consoleSelector.getCurrentAppId(Store.global.getState());
 
-	yield put(ConsoleActions.addSubApp(appId, subAppId, title, location));
+	if (!manager.isSubAppExist(appId, subAppId)) {
+		yield put(ConsoleActions.addSubApp(appId, subAppId, title, location));
+	}
 
 	yield call(activeSubApp, { type: ConsoleTypes.ACTIVE_SUB_APP, subAppId });
 }

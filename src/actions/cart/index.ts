@@ -6,13 +6,21 @@ import { CartTypes } from 'actions/cart/redux';
 export * from 'actions/cart/redux';
 
 /* ------------- Export Sagas ------------- */
-function* watchMySaga() {
-	yield takeLatest(CartTypes.MY_SAGA, Sagas.mySaga);
+function* watchAddSaga() {
+	yield takeLatest(CartTypes.ADD_TO_CART, Sagas.addSaga);
 }
 
-// TODO: Do Not Forget to Add your new saga to index file
+function* watchRemoveSaga() {
+	yield takeLatest(CartTypes.REMOVE_FROM_CART, Sagas.removeSaga);
+}
+
+function* watchClearCartSaga() {
+	yield takeLatest(CartTypes.CLEAR_CART, Sagas.clearSaga);
+}
 export function* cartSaga() {
 	yield all([
-		fork(watchMySaga)
+		fork(watchAddSaga),
+		fork(watchRemoveSaga),
+		fork(watchClearCartSaga)
 	]);
 }

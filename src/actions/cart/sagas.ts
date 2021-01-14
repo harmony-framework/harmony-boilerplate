@@ -1,13 +1,28 @@
-import { AxiosResponse } from 'axios';
-import { call, put } from 'redux-saga/effects';
-import { AppContextProps } from '@base/features/base-context';
-import { CartActions } from 'actions/cart';
-import { MySagaAction, ResponseExample } from 'actions/cart/interface';
+import { put, select } from 'redux-saga/effects';
+import { CartActions, cartSelector } from 'actions/cart';
+import { AddToCartAction, CartItem, RemoveFromCartAction } from 'actions/cart/interface';
+import { getInstances } from '@base/features/base-cart';
 
-export function* mySaga(action: MySagaAction & AppContextProps) {
-	const { someData, applicationDetails } = action;
-	const { api } = applicationDetails;
-	const response: AxiosResponse<ResponseExample> = yield call(api.someApi, someData);
+const [instance] = getInstances();
 
-	yield put(CartActions.setExample(response.data.name));
+export function* addSaga(action: AddToCartAction) {
+	const { item } = action;
+	const cartItems: CartItem[] = yield select(cartSelector.getCartItems);
+	const cartId: number = yield select(cartSelector.getCartId);
+
+	if (!cartId || !cartItems || !cartItems.length) {
+		yield put(CartActions.setCartId(Math.floor((Math.random() * 10000000) + 1).toString()));
+	}
+
+	yield put(instance.actions.add(item.id, item));
+}
+
+export function* removeSaga(action: RemoveFromCartAction) {
+	const { id } = action;
+
+	yield put(instance.actions.remove(id));
+}
+
+export function* clearSaga() {
+	yield put(instance.actions.clear());
 }

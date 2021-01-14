@@ -8,8 +8,9 @@ import { globalStoreListener, STORE_ACTION_LISTENERS } from '@base/features/base
 import { Request } from '@base/features/base-api';
 import { createApi } from 'requests';
 import { config } from 'config';
-import { CreateReducer, CreateMainReducer, ApplicationState } from 'actions';
-import rootSaga from 'actions/sagas';
+import {
+	rootSaga, CreateReducer, CreateMainReducer, ApplicationState
+} from 'actions';
 import { consoleSelector } from 'actions/redux/console';
 
 const stores = {};
