@@ -1,9 +1,9 @@
-import Immutable, { from, ImmutableObject } from 'seamless-immutable';
+import Immutable, { ImmutableObject, from } from 'seamless-immutable';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
 	SessionPersistDataState, TypesNames, ActionCreator, SetSessionDataExampleAction
-} from './interfaces';
+} from './interface';
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -11,8 +11,8 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 	setSessionDataExample: ['sessionDataExample']
 });
 
-export const SessionDataTypes = TypesNames;
-export default Creators;
+export const SessionPersistDataTypes = TypesNames;
+export const SessionPersistDataActions = Creators;
 
 /* ------------- Initial State ------------- */
 
@@ -42,5 +42,5 @@ const setSessionDataExampleReducer = (
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[SessionDataTypes.SET_SESSION_DATA_EXAMPLE]: setSessionDataExampleReducer
+	[TypesNames.SET_SESSION_DATA_EXAMPLE]: setSessionDataExampleReducer
 });

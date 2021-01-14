@@ -11,9 +11,9 @@ import globalSpinnerReducer, { GlobalSpinnerState } from '@base/features/base-gl
 import { RBAState } from '@base/features/base-rba/interfaces';
 import { ErrorHandlerRequest } from '@base/features/base-error-handler';
 import { reducer as localPersistDataReducer } from 'actions/localPersistData';
-import { reducer as sessionPersistDataReducer } from 'actions/redux/sessionPersistData';
+import { reducer as sessionPersistDataReducer } from 'actions/sessionPersistData';
 import { LocalPersistDataState } from 'actions/localPersistData/interface';
-import { SessionPersistDataState } from 'actions/redux/sessionPersistData/interfaces';
+import { SessionPersistDataState } from 'actions/sessionPersistData/interface';
 
 export interface BaseApplicationState {
 	localPersistData: LocalPersistDataState;
