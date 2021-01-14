@@ -1,6 +1,6 @@
 import { createBrowserHistory, History } from 'history';
 import Store from '@base/features/base-store';
-import ConsoleActions, { consoleSelector } from 'actions/redux/console';
+import { consoleSelector, ConsoleActions } from 'actions/console';
 
 const histories = {};
 

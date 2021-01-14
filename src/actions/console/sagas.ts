@@ -1,18 +1,17 @@
 import { call, put } from 'redux-saga/effects';
-import { removeHistory } from '@base/features/base-history';
-import Store, { getStores } from '@base/features/base-store';
-import { removeFlowManagerApi } from '@base/features/base-flow-manager';
-import * as manager from './manager';
+import { ConsoleActions, consoleSelector, ConsoleTypes } from 'actions/console';
 import {
-	SubApp,
 	ActiveAppAction,
 	ActiveSubAppAction,
-	CreateAppAction,
-	CreateSubAppAction,
+	CreateAppAction, CreateSubAppAction,
 	RemoveAppAction,
 	RemoveSubAppAction,
-} from 'actions/redux/console/interfaces';
-import ConsoleActions, { consoleSelector, ConsoleTypes } from 'actions/redux/console';
+	SubApp,
+} from 'actions/console/interface';
+import Store, { getStores } from '@base/features/base-store';
+import * as manager from 'actions/console/manager';
+import { removeHistory } from '@base/features/base-history';
+import { removeFlowManagerApi } from '@base/features/base-flow-manager';
 
 export function* activeApp(action: ActiveAppAction) {
 	const { appId } = action;

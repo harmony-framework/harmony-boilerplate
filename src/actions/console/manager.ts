@@ -1,5 +1,5 @@
 import { Location } from 'history';
-import { consoleSelector } from 'actions/redux/console';
+import { consoleSelector } from 'actions/console';
 import { Store } from '@base/features';
 
 export const pushLocationToUrl = (location?: Location) => {

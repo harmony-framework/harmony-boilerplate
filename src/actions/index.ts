@@ -4,14 +4,14 @@ import { fork, all } from 'redux-saga/effects';
 /* ------------- Import States ------------- */
 import { CreateBaseReducer, BaseApplicationState } from '@base/features/base-reducers';
 import { CatalogState } from 'actions/catalog/interface';
-import { ConsoleState } from 'actions/redux/console/interfaces';
+import { ConsoleState } from 'actions/console/interface';
 import { CartState } from 'actions/cart/interface';
 
 /* ------------- Import Sagas ------------- */
 import flowManagerSaga from './sagas/flowManager';
 import { cartSaga } from 'actions/cart';
 import { catalogSaga } from 'actions/catalog';
-import consoleSaga from './sagas/console';
+import { consoleSaga } from 'actions/console';
 
 /* ------------- Import Base Cart ------------- */
 import makeCart from '@base/features/base-cart';
@@ -44,7 +44,7 @@ export const CreateMainReducer = (id: string) => {
 	const rootReducer: Reducer<MainApplicationState> = combineReducers<MainApplicationState>({
 		...CreateBaseReducer(id),
 
-		console: require('./redux/console').reducer
+		console: require('./console').reducer
 	});
 
 	return rootReducer;

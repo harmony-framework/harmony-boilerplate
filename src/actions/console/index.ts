@@ -1,7 +1,11 @@
 import { all, fork, takeLatest } from 'redux-saga/effects';
-import { ConsoleTypes } from 'actions/redux/console';
 import * as Sagas from './sagas';
+import { ConsoleTypes } from 'actions/console/redux';
 
+/* ------------- Export Redux ------------- */
+export * from 'actions/console/redux';
+
+/* ------------- Export Sagas ------------- */
 function* watchCreateApp() {
 	yield takeLatest(ConsoleTypes.CREATE_APP, Sagas.createApp);
 }
@@ -26,7 +30,7 @@ function* watchActiveSubApp() {
 	yield takeLatest(ConsoleTypes.ACTIVE_SUB_APP, Sagas.activeSubApp);
 }
 
-function* consoleSaga() {
+export function* consoleSaga() {
 	yield all([
 		fork(watchCreateApp),
 		fork(watchCreateSubApp),
@@ -36,5 +40,3 @@ function* consoleSaga() {
 		fork(watchRemoveApp)
 	]);
 }
-
-export default consoleSaga;

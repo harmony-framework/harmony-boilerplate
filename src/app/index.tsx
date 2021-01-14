@@ -5,8 +5,8 @@ import {
 	Tab, Button, Col, Row
 } from 'react-bootstrap';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import ConsoleActions, { consoleSelector } from 'actions/redux/console';
-import { App as IApp, OptionalLocation, TabAppTitle } from 'actions/redux/console/interfaces';
+import { consoleSelector, ConsoleActions } from 'actions/console';
+import { App as IApp, OptionalLocation, TabAppTitle } from 'actions/console/interface';
 import { MainApplicationState } from 'actions';
 import { Apps, SubApps } from 'configurations/console.config';
 import App from './App';

@@ -1,16 +1,10 @@
 import Immutable, { ImmutableObject } from 'seamless-immutable';
 import { createReducer, createActions } from 'reduxsauce';
-import RoutesPath from 'routes/RoutesPath';
 import { MainApplicationState } from 'actions';
 import {
-	ConsoleState,
-	TypesNames,
-	ActionCreator,
-	AddAppAction,
-	AddSubAppAction,
-	UpdateAppsAction,
-	UpdateLocationAction
-} from './interfaces';
+	ConsoleState, TypesNames, ActionCreator, AddAppAction, AddSubAppAction, UpdateAppsAction, UpdateLocationAction
+} from './interface';
+import RoutesPath from 'routes/RoutesPath';
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -28,7 +22,7 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 });
 
 export const ConsoleTypes = TypesNames;
-export default Creators;
+export const ConsoleActions = Creators;
 
 /* ------------- Initial State ------------- */
 
@@ -128,8 +122,8 @@ const addSubAppReducer = (state: ImmutableObject<ConsoleState>, action: AddSubAp
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[ConsoleTypes.UPDATE_APPS]: updateAppsReducer,
-	[ConsoleTypes.UPDATE_LOCATION]: updateLocationReducer,
-	[ConsoleTypes.ADD_APP]: addAppReducer,
-	[ConsoleTypes.ADD_SUB_APP]: addSubAppReducer
+	[TypesNames.UPDATE_APPS]: updateAppsReducer,
+	[TypesNames.UPDATE_LOCATION]: updateLocationReducer,
+	[TypesNames.ADD_APP]: addAppReducer,
+	[TypesNames.ADD_SUB_APP]: addSubAppReducer
 });

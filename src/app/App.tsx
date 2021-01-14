@@ -5,9 +5,9 @@ import { Tabs, Tab } from 'react-bootstrap';
 import { CreateStore } from '@base/features/base-store';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import SubApp from './SubApp';
-import ConsoleActions, { consoleSelector } from 'actions/redux/console';
+import { consoleSelector, ConsoleActions } from 'actions/console';
 import { MainApplicationState } from 'actions';
-import { TabAppTitle } from 'actions/redux/console/interfaces';
+import { TabAppTitle } from 'actions/console/interface';
 
 export interface OwnProps {
 	storeName: string;

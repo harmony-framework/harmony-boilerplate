@@ -7,7 +7,7 @@ import Store, { getStore } from '@base/features/base-store';
 import { createFlowManager } from '@base/features/base-flow-manager';
 import { Request } from '@base/features/base-api';
 import { createApi, Api } from 'requests';
-import ConsoleActions from 'actions/redux/console';
+import { ConsoleActions } from 'actions/console';
 
 export interface AppContextProps {
 	applicationDetails: {

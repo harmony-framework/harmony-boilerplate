@@ -11,7 +11,7 @@ import { config } from 'config';
 import {
 	rootSaga, CreateReducer, CreateMainReducer, ApplicationState
 } from 'actions';
-import { consoleSelector } from 'actions/redux/console';
+import { consoleSelector } from 'actions/console';
 
 const stores = {};
 
