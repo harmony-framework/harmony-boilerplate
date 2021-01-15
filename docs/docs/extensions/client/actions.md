@@ -28,31 +28,13 @@ $ gulp createAction --name myAction
 ## `sagas.ts`
 
 ```JS
-import { AxiosResponse } from 'axios';
-import { call, put } from 'redux-saga/effects';
-import api from 'requests';
-import { CatalogActions } from 'actions/catalog';
-import { MySagaAction, ResponseExample } from 'actions/catalog/interface';
-
-export function* mySaga(action: MySagaAction) {
-	const { someData } = action;
-	const response: AxiosResponse<ResponseExample> = yield call(api.someApi, someData);
-
-	yield put(CatalogActions.setExample(response.data.name));
-}
-```
-
-## `redux.ts`
-
-```JS
-import Immutable, { ImmutableObject } from 'seamless-immutable';
+import { createDraft, Draft } from 'immer';
+import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
-	CatalogState, TypesNames, ActionCreator, SetExampleAction
+	TodoState, TypesNames, ActionCreator, SetExampleAction
 } from './interface';
-
-// TODO: Do not for get add your reducer to index file
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -61,32 +43,32 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 	setExample: ['exampleData']
 });
 
-export const CatalogTypes = TypesNames;
-export const CatalogActions = Creators;
+export const TodoTypes = TypesNames;
+export const TodoActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<CatalogState>({
+const INITIAL_STATE = createDraft<TodoState>({
 	exampleData: 'Initial Data Example'
 });
 
 /* ------------- Selectors ------------- */
 
-export const catalogSelector = {
-	getExampleData: (state: ApplicationState) => state.catalog?.exampleData
+export const todoSelector = {
+	getExampleData: (state: ApplicationState) => state.todo?.exampleData
 };
 
 /* ------------- Reducers ------------- */
 
-const setExampleReducer = (state: ImmutableObject<CatalogState>, action: SetExampleAction) => {
+const setExampleReducer = (draft: Draft<TodoState>, action: SetExampleAction) => {
 	const { exampleData } = action;
-	return state.merge({ exampleData });
+	draft.exampleData = exampleData;
 };
 
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[CatalogTypes.SET_EXAMPLE]: setExampleReducer
+	[TypesNames.SET_EXAMPLE]: createReducerCase(setExampleReducer)
 });
 ```
 
@@ -94,23 +76,24 @@ export const reducer = createReducer<any, any>(INITIAL_STATE, {
 
 ```JS
 import { all, fork, takeLatest } from 'redux-saga/effects';
-import * as Sagas from './sagas';
-import { CatalogTypes } from 'actions/catalog/redux';
+import { createSaga } from '@base/features/base-decorator';
+import * as Sagas from 'actions/todo/sagas';
+import { TodoTypes } from 'actions/todo';
 
 /* ------------- Export Redux ------------- */
-export * from 'actions/catalog/redux';
+export * from 'actions/todo/redux';
 
 /* ------------- Export Sagas ------------- */
 function* watchMySaga() {
-	yield takeLatest(CatalogTypes.MY_SAGA, Sagas.mySaga);
+	yield takeLatest(TodoTypes.MY_SAGA, createSaga(Sagas.mySaga));
 }
 
-// TODO: Do Not Forget to Add your new saga to index file
-export function* catalogSaga() {
+export function* todoSaga() {
 	yield all([
 		fork(watchMySaga)
 	]);
 }
+
 ```
 
 ## `interface.ts`
@@ -119,7 +102,7 @@ export function* catalogSaga() {
 import { Action } from 'redux';
 
 /* ------------- Define Actions and State ------------- */
-export interface CatalogState {
+export interface TodoState {
 	exampleData: string;
 }
 
@@ -128,8 +111,8 @@ export enum TypesNames {
 	MY_SAGA = 'MY_SAGA'
 }
 
-declare function SetExampleFunction(exampleData: string): SetExampleAction;
-declare function MySagaFunction(someData: string): MySagaAction;
+export declare function SetExampleFunction(exampleData: string): SetExampleAction;
+export declare function MySagaFunction(someData: string): MySagaAction;
 
 export interface ActionCreator {
 	setExample: typeof SetExampleFunction;

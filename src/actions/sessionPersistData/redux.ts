@@ -1,4 +1,4 @@
-import Immutable, { from } from 'seamless-immutable';
+import { createDraft, Draft } from 'immer';
 import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
@@ -17,7 +17,7 @@ export const SessionPersistDataActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<SessionPersistDataState>({
+const INITIAL_STATE = createDraft<SessionPersistDataState>({
 	sessionDataExample: 'Initial Data Example'
 });
 /* ------------- Selectors ------------- */
@@ -28,12 +28,10 @@ export const sessionDataSelector = {
 
 /* ------------- Reducers ------------- */
 
-const setSessionDataExampleReducer = (state: any, action: SetSessionDataExampleAction) => {
-	// persistence provide us state without Immutable functionality
-	// therefor we convert state to use Immutable in that case
-	const newState = from(state);
+const setSessionDataExampleReducer = (draft: Draft<SessionPersistDataState>, action: SetSessionDataExampleAction) => {
 	const { sessionDataExample } = action;
-	return newState.merge({ sessionDataExample });
+
+	draft.sessionDataExample = sessionDataExample;
 };
 
 /* ------------- Hookup Reducers To Types ------------- */

@@ -7,9 +7,9 @@ export const languageTypes: string[] | NamedLanguage[] = ['en', 'fr'];
 
 const mapTranslations = () => {
 	const translations = {};
-	_.keys(en).forEach((key) => {
+	_.keys(en).forEach((key: string) => {
 		translations[key] = {};
-		_.each(_.keys(en[key]), (innerKey) => {
+		_.each(_.keys(en[key]), (innerKey: string) => {
 			translations[key][innerKey] = [
 				en[key][innerKey],
 				fr[key][innerKey]

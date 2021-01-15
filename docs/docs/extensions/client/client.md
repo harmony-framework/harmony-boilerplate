@@ -62,7 +62,7 @@ Client based `reeact` and `redux`.
 
 #### Utils
 
-- <a href="https://facebook.github.io/immutable-js/" target="_blank">immutableJS</a>
+- <a href="https://immerjs.github.io/immer/docs/introduction/" target="_blank">immer</a>
 - <a href="https://github.com/mzabriskie/axios" target="_blank">axios</a>
 
 #### Builds

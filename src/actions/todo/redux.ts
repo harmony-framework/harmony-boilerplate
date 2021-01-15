@@ -3,10 +3,8 @@ import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
-	<%= actionNameUppercase %>State, TypesNames, ActionCreator, SetExampleAction
+	TodoState, TypesNames, ActionCreator, SetExampleAction
 } from './interface';
-
-// TODO: Do not for get add your reducer to index file
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -15,24 +13,24 @@ const { Creators } = createActions<TypesNames, ActionCreator>({
 	setExample: ['exampleData']
 });
 
-export const <%= actionNameUppercase %>Types = TypesNames;
-export const <%= actionNameUppercase %>Actions = Creators;
+export const TodoTypes = TypesNames;
+export const TodoActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = createDraft<<%= actionNameUppercase %>State>({
+const INITIAL_STATE = createDraft<TodoState>({
 	exampleData: 'Initial Data Example'
 });
 
 /* ------------- Selectors ------------- */
 
-export const <%= actionName %>Selector = {
-	getExampleData: (state: ApplicationState) => state.<%= actionName %>?.exampleData
+export const todoSelector = {
+	getExampleData: (state: ApplicationState) => state.todo?.exampleData
 };
 
 /* ------------- Reducers ------------- */
 
-const setExampleReducer = (draft: Draft<<%= actionNameUppercase %>State>, action: SetExampleAction) => {
+const setExampleReducer = (draft: Draft<TodoState>, action: SetExampleAction) => {
 	const { exampleData } = action;
 	draft.exampleData = exampleData;
 };

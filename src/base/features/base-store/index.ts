@@ -1,10 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import Immutable from 'seamless-immutable';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import { globalStoreListener, STORE_ACTION_LISTENERS } from '@base/features/base-services';
 import { config } from 'config';
-import { ApplicationState, rootReducer, rootSaga } from 'actions';
+import { rootReducer, rootSaga } from 'actions';
 
 /* --------- define middleware ---------- */
 
@@ -20,15 +19,7 @@ const sagaMiddleware = createSagaMiddleware();
 let customCompose;
 
 if (window.devToolsExtension) {
-	customCompose = compose(
-		applyMiddleware(sagaMiddleware, globalActionListener),
-		window.devToolsExtension && window.devToolsExtension({
-			name: config.appName,
-			deserializeState: (state: ApplicationState) => {
-				return Immutable(state);
-			},
-		})
-	);
+	customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener), window.devToolsExtension && window.devToolsExtension({ name: config.appName }));
 } else {
 	customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener));
 }

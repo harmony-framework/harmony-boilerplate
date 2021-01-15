@@ -1,4 +1,4 @@
-import Immutable, { from, ImmutableObject } from 'seamless-immutable';
+import { Draft } from 'immer';
 import { createReducerCase } from '@base/features/base-decorator';
 import reduceReducers from 'reduce-reducers';
 import { createReducer, createActions } from 'reduxsauce';
@@ -22,10 +22,10 @@ export const CartActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<CartState>({
+const INITIAL_STATE = {
 	cartId: undefined,
 	items: []
-});
+};
 
 /* ------------- Selectors ------------- */
 
@@ -36,10 +36,9 @@ export const cartSelector = {
 
 /* ------------- Reducers ------------- */
 
-const setCartIdReducer = (state: ImmutableObject<CartState>, action: SetCartIdAction) => {
-	const newState: ImmutableObject<CartState> = from(state);
+const setCartIdReducer = (draft: Draft<CartState>, action: SetCartIdAction) => {
 	const { cartId } = action;
-	return newState.merge({ cartId });
+	draft.cartId = cartId;
 };
 
 /* ------------- Hookup Reducers To Types ------------- */
