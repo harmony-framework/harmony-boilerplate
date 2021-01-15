@@ -18,8 +18,8 @@ const sagaMiddleware = createSagaMiddleware();
 /* -------- create the store with middleware ---------- */
 let customCompose;
 
-if (window.devToolsExtension) {
-	customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener), window.devToolsExtension && window.devToolsExtension({ name: config.appName }));
+if (window.__REDUX_DEVTOOLS_EXTENSION__) {
+	customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener), window.__REDUX_DEVTOOLS_EXTENSION__({ name: config.appName }));
 } else {
 	customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener));
 }
