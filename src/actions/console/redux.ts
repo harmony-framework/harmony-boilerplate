@@ -1,4 +1,4 @@
-import Immutable, { ImmutableObject } from 'seamless-immutable';
+import { createDraft, Draft } from 'immer';
 import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { MainApplicationState } from 'actions';
@@ -27,7 +27,7 @@ export const ConsoleActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<ConsoleState>({
+const INITIAL_STATE = createDraft<ConsoleState>({
 	apps: [],
 	currentAppId: '',
 	currentSubAppId: '',
@@ -51,54 +51,53 @@ export const consoleSelector = {
 
 /* ------------- Reducers ------------- */
 
-const updateAppsReducer = (state: ImmutableObject<ConsoleState>, action: UpdateAppsAction) => {
+const updateAppsReducer = (draft: Draft<ConsoleState>, action: UpdateAppsAction) => {
 	const {
 		apps, currentAppId = '', currentSubAppId = '', currentLocation
 	} = action;
 
-	return state.merge({
-		apps, currentAppId, currentSubAppId, currentLocation
-	}, { deep: true });
+	draft.apps = apps;
+	draft.currentAppId = currentAppId;
+	draft.currentSubAppId = currentSubAppId;
+	draft.currentLocation = currentLocation;
 };
 
-const updateLocationReducer = (state: ImmutableObject<ConsoleState>, action: UpdateLocationAction) => {
+const updateLocationReducer = (draft: Draft<ConsoleState>, action: UpdateLocationAction) => {
 	const { location, appId, subAppId } = action;
 
-	const updatedApps = state.apps.map((app) => {
+	draft.apps = draft.apps.map((app) => {
 		if (app.id === appId) {
 			const subApps = app.subApps.map((subApp) => {
 				if (subApp.id === subAppId) {
-					return subApp.merge({ location });
+					return { ...subApp, location };
 				}
 
 				return subApp;
 			});
 
-			return app.merge({ subApps });
+			return { ...app, subApps };
 		}
 
 		return app;
 	});
 
-	return state.merge({ apps: updatedApps, currentLocation: location });
+	draft.currentLocation = location;
 };
 
-const addAppReducer = (state: ImmutableObject<ConsoleState>, action: AddAppAction) => {
+const addAppReducer = (draft: Draft<ConsoleState>, action: AddAppAction) => {
 	const { appId, title } = action;
 
-	return state.merge({
-		apps: state.apps.concat([{
-			id: appId, title, subApps: [], isActive: true
-		}])
-	});
+	draft.apps = draft.apps.concat([{
+		id: appId, title, subApps: [], isActive: true
+	}]);
 };
 
-const addSubAppReducer = (state: ImmutableObject<ConsoleState>, action: AddSubAppAction) => {
+const addSubAppReducer = (draft: Draft<ConsoleState>, action: AddSubAppAction) => {
 	const {
 		appId, subAppId, title, location
 	} = action;
 
-	const updatedApps = state.apps.map((app) => {
+	draft.apps = draft.apps.map((app) => {
 		if (app.id === appId) {
 			const subApps = app.subApps.concat({
 				id: subAppId,
@@ -111,13 +110,12 @@ const addSubAppReducer = (state: ImmutableObject<ConsoleState>, action: AddSubAp
 					state: location?.state || ''
 				}
 			});
-			return app.merge({ subApps });
+
+			return { ...app, subApps };
 		}
 
 		return app;
 	});
-
-	return state.merge({ apps: updatedApps });
 };
 
 /* ------------- Hookup Reducers To Types ------------- */

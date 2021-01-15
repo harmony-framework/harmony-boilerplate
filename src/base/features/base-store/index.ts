@@ -1,16 +1,13 @@
 import {
 	createStore, applyMiddleware, Store, compose
 } from 'redux';
-import Immutable from 'seamless-immutable';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import { globalStoreListener, STORE_ACTION_LISTENERS } from '@base/features/base-services';
 import { Request } from '@base/features/base-api';
 import { createApi } from 'requests';
 import { config } from 'config';
-import {
-	rootSaga, CreateReducer, CreateMainReducer, ApplicationState
-} from 'actions';
+import { rootSaga, CreateReducer, CreateMainReducer } from 'actions';
 import { consoleSelector } from 'actions/console';
 
 const stores = {};
@@ -22,16 +19,8 @@ export const CreateStore = (name: string, id: string, isMainStore = false) => {
 	let store;
 	let customCompose;
 
-	if (window.devToolsExtension) {
-		customCompose = compose(
-			applyMiddleware(sagaMiddleware, globalActionListener),
-			window.devToolsExtension && window.devToolsExtension({
-				name: `${config.appName} ${name}`,
-				deserializeState: (state: ApplicationState) => {
-					return Immutable(state);
-				},
-			})
-		);
+	if (window.__REDUX_DEVTOOLS_EXTENSION__) {
+		customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener), window.__REDUX_DEVTOOLS_EXTENSION__({ name: `${config.appName} ${name}` }));
 	} else {
 		customCompose = compose(applyMiddleware(sagaMiddleware, globalActionListener));
 	}

@@ -1,4 +1,4 @@
-import Immutable, { ImmutableObject } from 'seamless-immutable';
+import { createDraft, Draft } from 'immer';
 import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
@@ -18,7 +18,7 @@ export const CatalogActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<CatalogState>({
+const INITIAL_STATE = createDraft<CatalogState>({
 	deviceList: []
 });
 /* ------------- Selectors ------------- */
@@ -28,9 +28,9 @@ export const catalogSelector = {
 };
 /* ------------- Reducers ------------- */
 
-const setDeviceListReducer = (state: ImmutableObject<CatalogState>, action: SetDeviceListAction) => {
+const setDeviceListReducer = (draft: Draft<CatalogState>, action: SetDeviceListAction) => {
 	const { deviceList } = action;
-	return state.merge({ deviceList });
+	draft.deviceList = deviceList;
 };
 
 /* ------------- Hookup Reducers To Types ------------- */

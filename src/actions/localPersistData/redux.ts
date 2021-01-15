@@ -1,4 +1,4 @@
-import Immutable, { from, ImmutableObject } from 'seamless-immutable';
+import { createDraft, Draft } from 'immer';
 import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
@@ -17,7 +17,7 @@ export const LocalPersistDataActions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<LocalPersistDataState>({
+const INITIAL_STATE = createDraft<LocalPersistDataState>({
 	localDataExample: 'Initial Data Example'
 });
 
@@ -28,15 +28,9 @@ export const localDataSelector = {
 };
 /* ------------- Reducers ------------- */
 
-const setLocalDataExampleReducer = (
-	state: ImmutableObject<LocalPersistDataState>,
-	action: SetLocalDataExampleAction
-) => {
-	// persistence provide us state without Immutable functionality
-	// therefor we convert state to use Immutable in that case
-	const newState = from(state);
+const setLocalDataExampleReducer = (draft: Draft<LocalPersistDataState>, action: SetLocalDataExampleAction) => {
 	const { localDataExample } = action;
-	return newState.merge({ localDataExample });
+	draft.localDataExample = localDataExample;
 };
 
 /* ------------- Hookup Reducers To Types ------------- */
