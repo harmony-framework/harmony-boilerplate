@@ -1,5 +1,6 @@
 import { all, fork, takeLatest } from 'redux-saga/effects';
-import * as Sagas from './sagas';
+import { createSaga } from '@base/features/base-decorator';
+import * as Sagas from 'actions/catalog/sagas';
 import { CatalogTypes } from 'actions/catalog/redux';
 
 /* ------------- Export Redux ------------- */
@@ -7,7 +8,7 @@ export * from 'actions/catalog/redux';
 
 /* ------------- Export Sagas ------------- */
 function* watchGetDevices() {
-	yield takeLatest(CatalogTypes.GET_DEVICE_LIST, Sagas.getDevices);
+	yield takeLatest(CatalogTypes.GET_DEVICE_LIST, createSaga(Sagas.getDevices));
 }
 
 export function* catalogSaga() {
