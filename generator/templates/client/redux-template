@@ -1,4 +1,5 @@
 import Immutable, { ImmutableObject } from 'seamless-immutable';
+import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
@@ -39,5 +40,5 @@ const setExampleReducer = (state: ImmutableObject<<%= actionNameUppercase %>Stat
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[TypesNames.SET_EXAMPLE]: setExampleReducer
+	[TypesNames.SET_EXAMPLE]: createReducerCase(setExampleReducer)
 });

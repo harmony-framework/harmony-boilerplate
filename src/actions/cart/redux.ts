@@ -1,4 +1,5 @@
 import Immutable, { from, ImmutableObject } from 'seamless-immutable';
+import { createReducerCase } from '@base/features/base-decorator';
 import reduceReducers from 'reduce-reducers';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
@@ -46,6 +47,6 @@ const setCartIdReducer = (state: ImmutableObject<CartState>, action: SetCartIdAc
 export const reducer = (baseCartReducer: any) => reduceReducers(
 	baseCartReducer,
 	createReducer(INITIAL_STATE, {
-		[CartTypes.SET_CART_ID]: setCartIdReducer
+		[CartTypes.SET_CART_ID]: createReducerCase(setCartIdReducer)
 	})
 );

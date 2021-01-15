@@ -1,4 +1,5 @@
 import Immutable, { ImmutableObject } from 'seamless-immutable';
+import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
@@ -35,5 +36,5 @@ const setDeviceListReducer = (state: ImmutableObject<CatalogState>, action: SetD
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[TypesNames.SET_DEVICE_LIST]: setDeviceListReducer
+	[TypesNames.SET_DEVICE_LIST]: createReducerCase(setDeviceListReducer)
 });

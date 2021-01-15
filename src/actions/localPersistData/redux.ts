@@ -1,4 +1,5 @@
 import Immutable, { from, ImmutableObject } from 'seamless-immutable';
+import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
 import {
@@ -41,5 +42,5 @@ const setLocalDataExampleReducer = (
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[TypesNames.SET_LOCAL_DATA_EXAMPLE]: setLocalDataExampleReducer
+	[TypesNames.SET_LOCAL_DATA_EXAMPLE]: createReducerCase(setLocalDataExampleReducer)
 });

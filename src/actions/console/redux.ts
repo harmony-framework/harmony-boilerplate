@@ -1,4 +1,5 @@
 import Immutable, { ImmutableObject } from 'seamless-immutable';
+import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { MainApplicationState } from 'actions';
 import {
@@ -122,8 +123,8 @@ const addSubAppReducer = (state: ImmutableObject<ConsoleState>, action: AddSubAp
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const reducer = createReducer<any, any>(INITIAL_STATE, {
-	[TypesNames.UPDATE_APPS]: updateAppsReducer,
-	[TypesNames.UPDATE_LOCATION]: updateLocationReducer,
-	[TypesNames.ADD_APP]: addAppReducer,
-	[TypesNames.ADD_SUB_APP]: addSubAppReducer
+	[TypesNames.UPDATE_APPS]: createReducerCase(updateAppsReducer),
+	[TypesNames.UPDATE_LOCATION]: createReducerCase(updateLocationReducer),
+	[TypesNames.ADD_APP]: createReducerCase(addAppReducer),
+	[TypesNames.ADD_SUB_APP]: createReducerCase(addSubAppReducer)
 });
