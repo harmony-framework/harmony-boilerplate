@@ -1,4 +1,4 @@
-import Immutable, { ImmutableObject } from 'seamless-immutable';
+import { createDraft, Draft } from 'immer';
 import { createReducerCase } from '@base/features/base-decorator';
 import { createReducer, createActions } from 'reduxsauce';
 import { ApplicationState } from 'actions';
@@ -20,7 +20,7 @@ export const <%= actionNameUppercase %>Actions = Creators;
 
 /* ------------- Initial State ------------- */
 
-const INITIAL_STATE = Immutable<<%= actionNameUppercase %>State>({
+const INITIAL_STATE = createDraft<<%= actionNameUppercase %>State>({
 	exampleData: 'Initial Data Example'
 });
 
@@ -32,9 +32,9 @@ export const <%= actionName %>Selector = {
 
 /* ------------- Reducers ------------- */
 
-const setExampleReducer = (state: ImmutableObject<<%= actionNameUppercase %>State>, action: SetExampleAction) => {
+const setExampleReducer = (draft: Draft<<%= actionNameUppercase %>State>, action: SetExampleAction) => {
 	const { exampleData } = action;
-	return state.merge({ exampleData });
+	draft.exampleData = exampleData;
 };
 
 /* ------------- Hookup Reducers To Types ------------- */

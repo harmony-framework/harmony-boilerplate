@@ -5,7 +5,7 @@ import * as spinnerConfig from 'configurations/spinner.config.json';
 import { TypesNames } from './reducer';
 
 export const startSpinner = (appId: string, subAppId: string, url = '', uuid: string) => {
-	const matchItem = _.filter(spinnerConfig.ignoreList, (regx) => url.match(regx));
+	const matchItem = _.filter(spinnerConfig.ignoreList, (regx: RegExp) => url.match(regx));
 
 	const store = getStore(appId);
 	if (store && (!matchItem || !matchItem.length)) {
@@ -23,7 +23,7 @@ export const startSpinner = (appId: string, subAppId: string, url = '', uuid: st
 };
 
 export const endSpinner = (appId: string, subAppId: string, url = '', uuid: string) => {
-	const matchItem = _.filter(spinnerConfig.ignoreList, (regx) => url.match(regx));
+	const matchItem = _.filter(spinnerConfig.ignoreList, (regx: RegExp) => url.match(regx));
 
 	const store = getStore(appId);
 	if (store && (!matchItem || !matchItem.length)) {

@@ -24,6 +24,7 @@
     }
   },
   "rules": {
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["draft"] }],
     "max-lines-per-function": ["error", 150],
     "max-lines": ["error", { "max": 350 }],
     "max-depth": "error",
