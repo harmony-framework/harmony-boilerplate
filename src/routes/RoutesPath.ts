@@ -1,5 +1,6 @@
 enum RoutesPath {
 	ROOT = '/',
+	FLOW_MANAGER = '/flowmanager',
 	CHECKOUT = '/checkout',
 	FORM_EXAMPLE = '/form-example',
 	CHECKOUT_SAMSUNG = '/checkout-samsung',

@@ -1,5 +1,6 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const devServer = require('./devServer');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -44,4 +45,7 @@ module.exports = {
 			})
 		]
 	},
+	devServer: {
+		before: devServer
+	}
 };

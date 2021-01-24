@@ -5,6 +5,7 @@ import Route from './PageContainer';
 
 /* -------------- Pages --------------- */
 import App from '../App';
+import FlowManager from '@base/features/base-flow-manager/managerPage';
 import DeviceGalleryPage from 'pages/DevicesGallery';
 import Checkout from 'pages/Checkout';
 import FormExample from 'pages/FormExample';
@@ -16,6 +17,7 @@ export default (
 	<App>
 		<Switch>
 			<Route exact path={RoutesPath.ROOT} step={StepTypes.DEVICE_GALLERY.name} component={DeviceGalleryPage} />
+			<Route exact path={RoutesPath.FLOW_MANAGER} component={FlowManager} />
 			<Route exact path={RoutesPath.CHECKOUT} step={StepTypes.CHECKOUT.name} component={Checkout} />
 			<Route exact path={RoutesPath.FORM_EXAMPLE} component={FormExample} />
 			<Route
