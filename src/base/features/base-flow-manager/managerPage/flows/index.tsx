@@ -56,7 +56,7 @@ export default function SimpleAccordion(props: Props) {
 											Object.keys(subFlows)?.map((subFlow) => {
 												return (
 													<li key={`${flow}_${subFlow}`}>
-														{subFlow}
+														{subFlow.replace(',', ' and ')}
 														<ol>
 															{
 																subFlows[subFlow]?.steps.map((step) => {
