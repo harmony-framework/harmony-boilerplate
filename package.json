@@ -79,8 +79,6 @@
     "typescript": "3.8.3"
   },
   "dependencies": {
-    "@material-ui/core": "4.11.3",
-    "@material-ui/icons": "4.11.2",
     "@types/history": "4.7.6",
     "@types/lodash": "^4.14.161",
     "@types/moment": "2.13.0",
