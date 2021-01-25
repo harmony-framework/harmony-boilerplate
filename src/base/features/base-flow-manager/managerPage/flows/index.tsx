@@ -20,7 +20,6 @@ interface Props {
 const useStyles = makeStyles((theme) => ({
 	root: {
 		width: '100%',
-		paddingTop: '50px',
 		paddingLeft: '0px'
 	},
 	heading: {
@@ -38,7 +37,6 @@ export default function SimpleAccordion(props: Props) {
 
 	return (
 		<Container className={classes.root}>
-			<h5>Flows</h5>
 			{
 				Object.keys(flowsConfig)?.map((flow) => {
 					const subFlows = flowsConfig[flow];
