@@ -51,24 +51,29 @@ export default function SimpleAccordion(props: Props) {
 							<AccordionDetails>
 								<Typography>
 									<span><u>sub flows:</u></span>
-									<ul>
-										{
-											Object.keys(subFlows)?.map((subFlow) => {
-												return (
-													<li key={`${flow}_${subFlow}`}>
-														{subFlow.replace(',', ' and ')}
-														<ol>
-															{
-																subFlows[subFlow]?.steps.map((step) => {
-																	return <li key={`${flow}_${subFlow}_${step}`}>{step}</li>;
-																})
-															}
-														</ol>
-													</li>
-												);
-											})
-										}
-									</ul>
+									{
+										Object.keys(subFlows)?.map((subFlow) => {
+											return (
+												<Accordion key={`${flow}_${subFlow}`} className={classes.accordionItem}>
+													<AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+														<Typography className={classes.heading}>{subFlow.replace(',', ' and ')}</Typography>
+													</AccordionSummary>
+
+													<AccordionDetails>
+														<Typography>
+															<ol>
+																{
+																	subFlows[subFlow]?.steps.map((step) => {
+																		return <li key={`${flow}_${subFlow}_${step}`}>{step}</li>;
+																	})
+																}
+															</ol>
+														</Typography>
+													</AccordionDetails>
+												</Accordion>
+											);
+										})
+									}
 								</Typography>
 							</AccordionDetails>
 						</Accordion>
