@@ -1,0 +1,48 @@
+[
+  {
+    "flowName": "onlyRunInCHQExqmple",
+    "runInFlowTypes": ["CHQ"],
+    "conditions": [
+      {
+        "conditionName": "someFailedCondition",
+        "onCheck": "someFailedCondition",
+        "mandatory": false
+      }
+    ]
+  },
+  {
+    "flowName": "onlyDeviceFlow",
+    "runInFlowTypes": ["COP", "CHQ"],
+    "conditions": [
+      {
+        "conditionName": "someSuccessCondition",
+        "onCheck": "someSuccessCondition"
+      }
+    ]
+  },
+  {
+    "flowName": "towSamsungFlow",
+    "runInFlowTypes": ["COP"],
+    "conditions": [
+      {
+        "conditionName": "isTowSamsungInCart",
+        "onCheck": "isTowSamsungInCart"
+      },
+      {
+        "conditionName": "someFailedCondition",
+        "onCheck": "someFailedCondition",
+        "mandatory": false
+      }
+    ]
+  },
+  {
+    "flowName": "towXiaomiFlow",
+    "runInFlowTypes": ["COP"],
+    "conditions": [
+      {
+        "conditionName": "isTowXiaomiInCart",
+        "onCheck": "isTowXiaomiInCart"
+      }
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "CHQ": {
+    "onlyDeviceFlow": {
+      "steps": [
+        "DEVICE_GALLERY",
+        "CHECKOUT"
+      ]
+    }
+  },
+  "COP": {
+    "towXiaomiFlow,towSamsungFlow": {
+      "steps": [
+        "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_A",
+        "DEVICE_GALLERY",
+        "CHECKOUT",
+        "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_B"
+      ]
+    },
+    "towXiaomiFlow": {
+      "steps": [
+        "EXAMPLE_ROUTE_Xiaomi_A",
+        "EXAMPLE_ROUTE_Xiaomi_B",
+        "DEVICE_GALLERY",
+        "CHECKOUT_XIAOMI",
+        "EXAMPLE_ROUTE_Xiaomi_C"
+      ]
+    },
+    "towSamsungFlow": {
+      "steps": [
+        "DEVICE_GALLERY",
+        "CHECKOUT_SAMSUNG",
+        "EXAMPLE_ROUTE_SAMSUNG_C"
+      ]
+    },
+    "onlyDeviceFlow": {
+      "steps": [
+        "DEVICE_GALLERY",
+        "CHECKOUT"
+      ]
+    }
+  }
+}
