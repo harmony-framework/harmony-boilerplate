@@ -4,15 +4,15 @@ import { AppContextProps } from '@base/features/base-context';
 import { CatalogActions } from 'actions/catalog';
 import { startFlow } from 'actions/flowManager/sagas';
 import { TypesNames } from 'actions/flowManager/interface';
-import { FlowTypes, StepTypes } from 'configurations/flows.steps.types';
+import { flowTypes, stepTypes } from 'configurations/flow-manager/types.json';
 
 export function* getDevices(action: any & AppContextProps) {
 	try {
 		yield call(startFlow, {
 			type: TypesNames.START_FLOW,
 			applicationDetails: action.applicationDetails,
-			flowType: FlowTypes.COP,
-			currentStep: StepTypes.DEVICE_GALLERY.name,
+			flowType: flowTypes.COP,
+			currentStep: stepTypes.DEVICE_GALLERY.name,
 		});
 
 		const { api } = action.applicationDetails;

@@ -1,0 +1,30 @@
+{
+  "flowTypes": {
+    "COP": "COP",
+    "CHQ": "CHQ"
+  },
+  "subFlowTypes": {
+    "onlyRunInCHQExqmple": "onlyRunInCHQExqmple",
+    "onlyDeviceFlow": "onlyDeviceFlow",
+    "towXiaomiFlow": "towXiaomiFlow",
+    "towSamsungFlow": "towSamsungFlow"
+  },
+  "stepTypes": {
+    "DEVICE_GALLERY": {
+      "name": "DEVICE_GALLERY",
+      "path": "/"
+    },
+    "CHECKOUT": {
+      "name": "CHECKOUT",
+      "path": "/checkout"
+    },
+    "CHECKOUT_SAMSUNG": {
+      "name": "CHECKOUT_SAMSUNG",
+      "path": "/checkout-samsung"
+    },
+    "CHECKOUT_XIAOMI": {
+      "name": "CHECKOUT_XIAOMI",
+      "path": "/checkout-xiaomi"
+    }
+  }
+}

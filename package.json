@@ -121,7 +121,7 @@
     "reduce-reducers": "1.0.4",
     "redux": "4.0.5",
     "redux-devtools-extension": "2.13.5",
-    "redux-flow-manager": "1.0.40",
+    "redux-flow-manager": "1.0.42",
     "redux-form": "8.3.5",
     "redux-persist": "6.0.0",
     "redux-saga": "1.1.3",
