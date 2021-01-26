@@ -1,7 +1,7 @@
 import { MoveToNextStepAction, StartFlowAction } from 'actions/flowManager/interface';
 import { flowManager, history } from '@base/features';
 import * as flowManagerManager from 'actions/flowManager/manager';
-import { StepTypes } from '../../configurations/flows.steps.types';
+import { stepTypes } from 'configurations/flow-manager/types.json';
 
 export function* startFlow(action: StartFlowAction) {
 	const { flowType, currentStep } = action;
@@ -17,7 +17,7 @@ export function* moveToNextStep(action: MoveToNextStepAction) {
 	yield flowManager.updateInformation();
 	const isLastStep = flowManagerManager.isLastStep();
 	const nextStep = flowManager.nextStep(step);
-	const pathToMove = StepTypes[nextStep]?.path;
+	const pathToMove = stepTypes[nextStep]?.path;
 
 	if (pathToMove && !isLastStep) {
 		history.push(pathToMove);
