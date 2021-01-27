@@ -21,7 +21,7 @@
     
     
       
-        <title>Actions - Harmony Boilerplate</title>
+        <title>Generate Action - Harmony Boilerplate</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#actions" class="md-skip">
+        <a href="#generate-action" class="md-skip">
           Skip to content
         </a>
       
@@ -89,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Actions
+              Generate Action
             
           </span>
         </div>
@@ -223,10 +223,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Features & Guidelines
@@ -422,10 +424,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6" checked>
     
     <label class="md-nav__link" for="nav-4-6">
       Generators
@@ -483,23 +487,91 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../sagas/" title="Generate Saga" class="md-nav__link">
-      Generate Saga
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Generate Action
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Generate Action" class="md-nav__link md-nav__link--active">
+      Generate Action
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../reducers/" title="Generate Redux" class="md-nav__link">
-      Generate Redux
-    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generate-action" class="md-nav__link">
+    Generate Action
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-created" class="md-nav__link">
+    Files Created
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-action-by-cli" class="md-nav__link">
+    Create Action by cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sagasts" class="md-nav__link">
+    sagas.ts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexts" class="md-nav__link">
+    index.ts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfacets" class="md-nav__link">
+    interface.ts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managerts" class="md-nav__link">
+    manager.ts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -575,8 +647,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -587,15 +657,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-actions-files-by-cli" class="md-nav__link">
-    Create Actions files by cli
+  <a href="#generate-action" class="md-nav__link">
+    Generate Action
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-actions-files-manually" class="md-nav__link">
-    Create Actions files manually
+  <a href="#files-created" class="md-nav__link">
+    Files Created
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-action-by-cli" class="md-nav__link">
+    Create Action by cli
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sagasts" class="md-nav__link">
+    sagas.ts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexts" class="md-nav__link">
+    index.ts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfacets" class="md-nav__link">
+    interface.ts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managerts" class="md-nav__link">
+    manager.ts
   </a>
   
 </li>
@@ -620,43 +725,144 @@
                   
                 
                 
-                <h1 id="actions">Actions</h1>
-<p><b>Location</b>: <code>client/actions</code></p>
-<p>Actions are the place to create the calls to api or just change some state.
-In the following files you declare about the actions types and export them.</p>
-<p>Create Actions files for each container is the best practice.</p>
-<p>Declare <code>actions types</code> under <code>( actions/index.js )</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">UPDATE_MYSTATE</span> <span class="o">=</span> <span class="nx">exports</span><span class="p">.</span><span class="nx">UPDATE_MYSTATE</span> <span class="o">=</span> <span class="s1">&#39;UPDATE_MYSTATE&#39;</span><span class="p">;</span>
+                  <h1>Generate Action</h1>
+                
+                <h2 id="generate-action">Generate Action</h2>
+<p><b>Location</b>: <code>client/actions/</code></p>
+<p>Actions are the place to coding <code>sagas</code> and <code>reduxsuaces</code>.<br/></p>
+<h2 id="files-created">Files Created</h2>
+<p>The Generator of Action will the following files:
+<br /></p>
+<ul>
+<li><code>index.ts</code> - this export all reducers, selectors, and sagas. and also create all the watchers.</li>
+<li><code>sagas.ts</code> - here all the sagas functions.</li>
+<li><code>redux.ts</code> - here all the reducers/selectors functions.</li>
+<li><code>interface.ts</code> - here all the interfaces define.</li>
+<li><code>manager.ts</code> - utils functions to help mapping, configurations etc ... that needed for sagas and reducers.</li>
+</ul>
+<h2 id="create-action-by-cli">Create Action by cli</h2>
+<div class="highlight"><pre><span></span><code>$ gulp createAction --name myAction
 </code></pre></div>
 
-<div class="admonition warning">
-<p class="admonition-title">Actions type declaration </p>
-<p>actions type declaration - Declaration for actions type must to be with es5.<br/>
-The reason is that the action types is shared with server for websocket actions system.</p>
-</div>
-<p>Declare <code>actions types</code> under <code>( /actions_myActions.js )</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kr">export</span> <span class="kd">function</span> <span class="nx">updateSomeState</span> <span class="p">(</span><span class="nx">newData</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">UPDATE_MYSTATE</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="nx">newData</span>
-    <span class="p">};</span>
+<h2 id="sagasts"><code>sagas.ts</code></h2>
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">createDraft</span><span class="p">,</span> <span class="nx">Draft</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;immer&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">createReducerCase</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-decorator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">createReducer</span><span class="p">,</span> <span class="nx">createActions</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;reduxsauce&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ApplicationState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;actions&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span>
+    <span class="nx">TodoState</span><span class="p">,</span> <span class="nx">TypesNames</span><span class="p">,</span> <span class="nx">ActionCreator</span><span class="p">,</span> <span class="nx">SetExampleAction</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./interface&#39;</span><span class="p">;</span>
+
+<span class="cm">/* ------------- Types and Action Creators ------------- */</span>
+
+<span class="kr">const</span> <span class="p">{</span> <span class="nx">Creators</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">createActions</span><span class="o">&lt;</span><span class="nx">TypesNames</span><span class="p">,</span> <span class="nx">ActionCreator</span><span class="o">&gt;</span><span class="p">({</span>
+    <span class="nx">mySaga</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;someData&#39;</span><span class="p">],</span> <span class="c1">// handle by saga</span>
+    <span class="nx">setExample</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;exampleData&#39;</span><span class="p">]</span>
+<span class="p">});</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">TodoTypes</span> <span class="o">=</span> <span class="nx">TypesNames</span><span class="p">;</span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">TodoActions</span> <span class="o">=</span> <span class="nx">Creators</span><span class="p">;</span>
+
+<span class="cm">/* ------------- Initial State ------------- */</span>
+
+<span class="kr">const</span> <span class="nx">INITIAL_STATE</span> <span class="o">=</span> <span class="nx">createDraft</span><span class="o">&lt;</span><span class="nx">TodoState</span><span class="o">&gt;</span><span class="p">({</span>
+    <span class="nx">exampleData</span><span class="o">:</span> <span class="s1">&#39;Initial Data Example&#39;</span>
+<span class="p">});</span>
+
+<span class="cm">/* ------------- Selectors ------------- */</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">todoSelector</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">getExampleData</span><span class="o">:</span> <span class="p">(</span><span class="nx">state</span><span class="o">:</span> <span class="nx">ApplicationState</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">todo</span><span class="o">?</span><span class="p">.</span><span class="nx">exampleData</span>
+<span class="p">};</span>
+
+<span class="cm">/* ------------- Reducers ------------- */</span>
+
+<span class="kr">const</span> <span class="nx">setExampleReducer</span> <span class="o">=</span> <span class="p">(</span><span class="nx">draft</span><span class="o">:</span> <span class="nx">Draft</span><span class="o">&lt;</span><span class="nx">TodoState</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">action</span><span class="o">:</span> <span class="nx">SetExampleAction</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">exampleData</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">action</span><span class="p">;</span>
+    <span class="nx">draft</span><span class="p">.</span><span class="nx">exampleData</span> <span class="o">=</span> <span class="nx">exampleData</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cm">/* ------------- Hookup Reducers To Types ------------- */</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">reducer</span> <span class="o">=</span> <span class="nx">createReducer</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">,</span> <span class="nx">any</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">INITIAL_STATE</span><span class="p">,</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">TypesNames</span><span class="p">.</span><span class="nx">SET_EXAMPLE</span><span class="p">]</span><span class="o">:</span> <span class="nx">createReducerCase</span><span class="p">(</span><span class="nx">setExampleReducer</span><span class="p">)</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<h2 id="indexts"><code>index.ts</code></h2>
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">all</span><span class="p">,</span> <span class="nx">fork</span><span class="p">,</span> <span class="nx">takeLatest</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux-saga/effects&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">createSaga</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-decorator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">Sagas</span> <span class="nx">from</span> <span class="s1">&#39;actions/todo/sagas&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">TodoTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;actions/todo&#39;</span><span class="p">;</span>
+
+<span class="cm">/* ------------- Export Redux ------------- */</span>
+<span class="kr">export</span> <span class="o">*</span> <span class="nx">from</span> <span class="s1">&#39;actions/todo/redux&#39;</span><span class="p">;</span>
+
+<span class="cm">/* ------------- Export Sagas ------------- */</span>
+<span class="kd">function</span><span class="o">*</span> <span class="nx">watchMySaga</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">yield</span> <span class="nx">takeLatest</span><span class="p">(</span><span class="nx">TodoTypes</span><span class="p">.</span><span class="nx">MY_SAGA</span><span class="p">,</span> <span class="nx">createSaga</span><span class="p">(</span><span class="nx">Sagas</span><span class="p">.</span><span class="nx">mySaga</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kd">function</span><span class="o">*</span> <span class="nx">todoSaga</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">yield</span> <span class="nx">all</span><span class="p">([</span>
+        <span class="nx">fork</span><span class="p">(</span><span class="nx">watchMySaga</span><span class="p">)</span>
+    <span class="p">]);</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<div class="admonition tip">
-<p class="admonition-title">Actions file names</p>
-<p>cli automatically add your actions file to /actions/myActionsName/.<br/>
-It added 1 file called actions_myActionsName. actions_ prefix added automatically</p>
-</div>
-<h2 id="create-actions-files-by-cli">Create Actions files by cli</h2>
-<div class="highlight"><pre><span></span><code><span class="nx">$</span> <span class="nx">gulp</span> <span class="nx">createActionFile</span> <span class="o">--</span><span class="nx">name</span> <span class="nx">myActionsName</span>
+<h2 id="interfacets"><code>interface.ts</code></h2>
+<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">Action</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+
+<span class="cm">/* ------------- Define Actions and State ------------- */</span>
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">TodoState</span> <span class="p">{</span>
+    <span class="nx">exampleData</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">enum</span> <span class="nx">TypesNames</span> <span class="p">{</span>
+    <span class="nx">SET_EXAMPLE</span> <span class="o">=</span> <span class="s1">&#39;SET_EXAMPLE&#39;</span><span class="p">,</span>
+    <span class="nx">MY_SAGA</span> <span class="o">=</span> <span class="s1">&#39;MY_SAGA&#39;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">declare</span> <span class="kd">function</span> <span class="nx">SetExampleFunction</span><span class="p">(</span><span class="nx">exampleData</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">SetExampleAction</span><span class="p">;</span>
+<span class="kr">export</span> <span class="kr">declare</span> <span class="kd">function</span> <span class="nx">MySagaFunction</span><span class="p">(</span><span class="nx">someData</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">MySagaAction</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">ActionCreator</span> <span class="p">{</span>
+    <span class="nx">setExample</span>: <span class="kt">typeof</span> <span class="nx">SetExampleFunction</span><span class="p">;</span>
+    <span class="nx">mySaga</span>: <span class="kt">typeof</span> <span class="nx">MySagaFunction</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">SetExampleAction</span> <span class="kr">extends</span> <span class="nx">Action</span><span class="o">&lt;</span><span class="nx">TypesNames</span><span class="p">.</span><span class="nx">SET_EXAMPLE</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="nx">exampleData</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">MySagaAction</span> <span class="kr">extends</span> <span class="nx">Action</span><span class="o">&lt;</span><span class="nx">TypesNames</span><span class="p">.</span><span class="nx">MY_SAGA</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="nx">someData</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* ------------- Define Any Interfaces ------------- */</span>
+<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">ResponseExample</span> <span class="p">{</span>
+    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<h2 id="create-actions-files-manually">Create Actions files manually</h2>
-<div class="highlight"><pre><span></span><code>1) Go to <span class="sb">`actions/`</span> folder and add your own folder with given name (lowercase first).
-2) Add new js file <span class="sb">`actions_myActionsName.js`</span>.
-3) Go to <span class="sb">`actions/index.js`</span> and export there the action type.
+<h2 id="managerts"><code>manager.ts</code></h2>
+<div class="highlight"><pre><span></span><code><span class="c1">// Here you right all the &quot;sdk&quot; ( managers, utils etc .. )</span>
+<span class="c1">// actually here is a function that are not saga and should return simple values without dispatch</span>
+<span class="c1">// for example function that get a and b and return a + b</span>
 </code></pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">Redux Sagas</p>
+<p>For more information, read on <a href="https://github.com/redux-saga/redux-saga">https://github.com/redux-saga/redux-saga</a> <br/>
+What is takeLatest?
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nx">alias</span><span class="p">)</span> <span class="nx">takeLatest</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">,</span> <span class="nx">any</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">pattern</span><span class="o">:</span> <span class="nx">Pattern</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">worker</span><span class="o">:</span> <span class="nx">HelperFunc1</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">,</span> <span class="nx">any</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">arg1</span><span class="o">:</span> <span class="nx">any</span><span class="p">)</span><span class="o">:</span> <span class="nx">ForkEffect</span> <span class="p">(</span><span class="o">+</span><span class="mi">5</span> <span class="nx">overloads</span><span class="p">)</span>
+<span class="kr">import</span> <span class="nx">takeLatest</span>
+</code></pre></div></p>
+<p>Alternatively you may use takeLatest.</p>
+<p>Does not allow concurrent fetches of user. If "SOME_ACTION" gets
+dispatched while a fetch is already pending, that pending fetch is cancelled
+and only the latest one will be run.</p>
+</div>
                 
               
               
@@ -671,6 +877,41 @@ It added 1 file called actions_myActionsName. actions_ prefix added automaticall
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../form_containers/" title="Generate Form Container" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Generate Form Container
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../../../release-notes/" title="Release notes" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Release notes
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
