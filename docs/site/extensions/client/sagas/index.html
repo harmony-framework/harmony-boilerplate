@@ -21,7 +21,7 @@
     
     
       
-        <title>Generate Saga - Harmony Boilerplate</title>
+        <title>Sagas - Harmony Boilerplate</title>
       
     
     
@@ -89,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Generate Saga
+              Sagas
             
           </span>
         </div>
@@ -223,12 +223,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Features & Guidelines
@@ -424,12 +422,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
     
     <label class="md-nav__link" for="nav-4-6">
       Generators
@@ -487,88 +483,10 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Generate Saga
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Generate Saga" class="md-nav__link md-nav__link--active">
-      Generate Saga
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#generate-sagas" class="md-nav__link">
-    Generate Sagas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#files-created" class="md-nav__link">
-    Files Created
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-saga-by-cli" class="md-nav__link">
-    Create Saga by cli
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-code-indexjs" class="md-nav__link">
-    Example Code index.js
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-code-sagasjs" class="md-nav__link">
-    Example Code sagas.js
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
 
   <li class="md-nav__item">
-    <a href="../reducers/" title="Generate Redux" class="md-nav__link">
-      Generate Redux
+    <a href="../actions/" title="Generate Action" class="md-nav__link">
+      Generate Action
     </a>
   </li>
 
@@ -676,15 +594,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-code-indexjs" class="md-nav__link">
-    Example Code index.js
+  <a href="#example-code-indexts" class="md-nav__link">
+    Example Code index.ts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-code-sagasjs" class="md-nav__link">
-    Example Code sagas.js
+  <a href="#example-code-sagasts" class="md-nav__link">
+    Example Code sagas.ts
   </a>
   
 </li>
@@ -709,7 +627,7 @@
                   
                 
                 
-                  <h1>Generate Saga</h1>
+                  <h1>Sagas</h1>
                 
                 <h2 id="generate-sagas">Generate Sagas</h2>
 <p><b>Location</b>: <code>client/sagas/</code></p>
@@ -728,7 +646,7 @@ In our project we apply the sagas middleware only with 1 root index file.<br/>
 <div class="highlight"><pre><span></span><code>$ gulp createSaga --name mySaga
 </code></pre></div>
 
-<h2 id="example-code-indexjs">Example Code <code>index.js</code></h2>
+<h2 id="example-code-indexts">Example Code <code>index.ts</code></h2>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="o">*</span> <span class="nx">watchGetDevices</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">yield</span> <span class="nx">takeLatest</span><span class="p">(</span><span class="nx">CatalogTypes</span><span class="p">.</span><span class="nx">GET_DEVICE_LIST</span><span class="p">,</span> <span class="nx">getDevices</span><span class="p">);</span>
 <span class="p">}</span>
@@ -742,7 +660,7 @@ In our project we apply the sagas middleware only with 1 root index file.<br/>
 <span class="kr">export</span> <span class="k">default</span> <span class="nx">catalogSaga</span><span class="p">;</span>
 </code></pre></div>
 
-<h2 id="example-code-sagasjs">Example Code <code>sagas.js</code></h2>
+<h2 id="example-code-sagasts">Example Code <code>sagas.ts</code></h2>
 <div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span><span class="nx">all</span><span class="p">,</span> <span class="nx">call</span><span class="p">,</span> <span class="nx">fork</span><span class="p">,</span> <span class="nx">put</span><span class="p">,</span> <span class="nx">takeLatest</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux-saga/effects&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span><span class="nx">AxiosResponse</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">api</span> <span class="nx">from</span> <span class="s1">&#39;requests&#39;</span><span class="p">;</span>
@@ -787,41 +705,6 @@ and only the latest one will be run.</p>
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../form_containers/" title="Generate Form Container" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Generate Form Container
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../reducers/" title="Generate Redux" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Generate Redux
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
