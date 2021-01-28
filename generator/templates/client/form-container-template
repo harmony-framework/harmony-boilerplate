@@ -2,7 +2,7 @@ import * as React from 'react';
 import { LocalizeContextProps } from 'react-localize-redux';
 import { InjectedFormProps, Form } from 'redux-form';
 import { baseConnectForm } from '@base/features/base-redux-react-connect';
-import { ApplicationState } from 'actions/redux';
+import { ApplicationState } from 'actions';
 // import { <%= className %>Actions, <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
 
 interface Props {
