@@ -31,3 +31,10 @@ ReactDOM.render(
 	</Provider>,
 	document.getElementById('app')
 );
+
+if (module.hot) {
+	module.hot.accept((err) => {
+		// eslint-disable-next-line no-console
+		console.error('An error occurred while accepting new version', err);
+	});
+}

@@ -34,6 +34,7 @@
     "@types/jest-environment-puppeteer": "2.2.0",
     "@types/node": "13.13.5",
     "@types/puppeteer": "1.2.3",
+    "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
     "babel-loader": "8.0.4",
