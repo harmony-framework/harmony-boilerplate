@@ -20,7 +20,7 @@ function connectWithReduxForm<S, D, O>(component: any, reduxFormConfig: any) {
 	const defaultValidateFunction = () => undefined;
 
 	// eslint-disable-next-line no-param-reassign
-	reduxFormConfig.validate = component.prototype.validate || defaultValidateFunction;
+	reduxFormConfig.validate = component?.prototype?.validate || defaultValidateFunction;
 
 	return reduxForm<S, O>(reduxFormConfig)(component);
 }
