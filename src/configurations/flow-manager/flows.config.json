@@ -1,6 +1,14 @@
 {
   "CHQ": {
     "onlyDeviceFlow": {
+      "description": "Only Device Flow",
+      "steps": [
+        "DEVICE_GALLERY",
+        "CHECKOUT"
+      ]
+    },
+    "onlyDeviceFlow,onlyRunInCHQExqmple": {
+      "description": "Only CHQ Example subFlow",
       "steps": [
         "DEVICE_GALLERY",
         "CHECKOUT"
@@ -9,6 +17,7 @@
   },
   "COP": {
     "towXiaomiFlow,towSamsungFlow": {
+      "description": "Hybrid Flow",
       "steps": [
         "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_A",
         "DEVICE_GALLERY",
@@ -17,6 +26,7 @@
       ]
     },
     "towXiaomiFlow": {
+      "description": "Only Xiaomi Flow",
       "steps": [
         "EXAMPLE_ROUTE_Xiaomi_A",
         "EXAMPLE_ROUTE_Xiaomi_B",
@@ -26,6 +36,7 @@
       ]
     },
     "towSamsungFlow": {
+      "description": "Only Samsung Flow",
       "steps": [
         "DEVICE_GALLERY",
         "CHECKOUT_SAMSUNG",
@@ -33,6 +44,7 @@
       ]
     },
     "onlyDeviceFlow": {
+      "description": "Only Device Flow",
       "steps": [
         "DEVICE_GALLERY",
         "CHECKOUT"
