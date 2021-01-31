@@ -13,6 +13,7 @@
   {
     "flowName": "onlyDeviceFlow",
     "runInFlowTypes": ["COP", "CHQ"],
+    "color": "#416071",
     "conditions": [
       {
         "conditionName": "someSuccessCondition",
@@ -23,6 +24,7 @@
   {
     "flowName": "towSamsungFlow",
     "runInFlowTypes": ["COP"],
+    "color": "#01bf6e",
     "conditions": [
       {
         "conditionName": "isTowSamsungInCart",
@@ -38,6 +40,7 @@
   {
     "flowName": "towXiaomiFlow",
     "runInFlowTypes": ["COP"],
+    "color": "#FF5546",
     "conditions": [
       {
         "conditionName": "isTowXiaomiInCart",
