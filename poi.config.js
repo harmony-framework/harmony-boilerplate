@@ -40,6 +40,7 @@ module.exports = {
 			new CopyWebpackPlugin({
 				patterns: [
 					{ from: './src/public/assets', to: 'assets' },
+					{ from: './src/public/config', to: 'config' }
 				]
 			})
 		]

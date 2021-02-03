@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch } from 'react-router-dom';
-import { stepTypes } from 'configurations/flow-manager/types.json';
+import { stepTypes } from 'public/config/flow-manager/types.json';
 import Route from './PageContainer';
 
 /* -------------- Pages --------------- */
