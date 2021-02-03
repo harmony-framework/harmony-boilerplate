@@ -1,7 +1,7 @@
 import { AppContextProps } from '@base/features/base-context';
 import { MoveToNextStepAction, StartFlowAction } from 'actions/flowManager/interface';
 import * as flowManagerManager from 'actions/flowManager/manager';
-import { stepTypes } from 'configurations/flow-manager/types.json';
+import { stepTypes } from 'public/config/flow-manager/types.json';
 
 export function* startFlow(action: StartFlowAction & AppContextProps) {
 	const { flowType, currentStep, applicationDetails } = action;

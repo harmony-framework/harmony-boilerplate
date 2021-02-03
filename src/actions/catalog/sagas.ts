@@ -4,7 +4,7 @@ import { AppContextProps } from '@base/features/base-context';
 import { CatalogActions } from 'actions/catalog';
 import { startFlow } from 'actions/flowManager/sagas';
 import { TypesNames } from 'actions/flowManager/interface';
-import { flowTypes, stepTypes } from 'configurations/flow-manager/types.json';
+import { flowTypes, stepTypes } from 'public/config/flow-manager/types.json';
 
 export function* getDevices(action: any & AppContextProps) {
 	try {
