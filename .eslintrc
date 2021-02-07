@@ -43,7 +43,7 @@
     "import/no-default-export": "off",
     "react/jsx-one-expression-per-line": ["off"],
     "class-methods-use-this": ["off"],
-    "max-len": ["error", { "code": 180 }],
+    "max-len": ["error", { "code": 220 }],
     "@typescript-eslint/explicit-function-return-type": ["off"],
     "@typescript-eslint/no-use-before-define": ["off"],
     "@typescript-eslint/no-explicit-any": ["off"],
