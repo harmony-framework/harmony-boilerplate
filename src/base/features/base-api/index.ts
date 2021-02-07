@@ -28,7 +28,7 @@ class Request {
 	broadcastAction(action: any): any {
 		if (!action) return null;
 
-		const callConfig = {
+		return this.call({
 			method: 'post',
 			baseURL: appConfig.ROOT_SERVER_URL,
 			url: '/users/broadcastAction',
@@ -36,9 +36,7 @@ class Request {
 				action,
 				token: typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('wsa_token') : {}
 			}
-		};
-
-		return this.call(callConfig);
+		});
 	}
 
 	async call(config: AxiosRequestConfig) {

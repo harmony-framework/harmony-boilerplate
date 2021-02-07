@@ -90,7 +90,7 @@
     "@types/react-router-dom": "5.1.5",
     "@types/react-toast-notifications": "2.4.0",
     "@types/redux-form": "8.2.5",
-    "axios": "0.18.1",
+    "axios": "0.21.1",
     "bcryptjs": "2.4.3",
     "bootstrap": "4.4.1",
     "guid": "0.0.12",
