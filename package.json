@@ -95,7 +95,7 @@
     "@types/react-toast-notifications": "2.4.0",
     "@types/redux-form": "8.2.5",
     "@types/seamless-immutable": "7.1.12",
-    "axios": "0.18.1",
+    "axios": "0.21.1",
     "bcryptjs": "2.4.3",
     "bootstrap": "4.4.1",
     "date-fns": "2.15.0",
