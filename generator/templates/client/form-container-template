@@ -5,9 +5,9 @@ import { baseConnectForm } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
 // import { <%= className %>Actions, <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
 
-interface Props {
+type Props = {
 
-}
+};
 
 interface OwnProps extends Props, LocalizeContextProps {
 
@@ -17,7 +17,7 @@ class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
 	render() {
 		const { handleSubmit } = this.props;
 		return (
-			<Form onSubmit={handleSubmit(this.handleSubmit.bind(this))} >
+			<Form onSubmit={handleSubmit(this.handleSubmit.bind(this))}>
 
 			</Form>
 		);
@@ -29,7 +29,7 @@ class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
 }
 
 export default baseConnectForm<any, any, Props>(
-    <%= className %>,
+	<%= className %>,
 	(state: ApplicationState) => {
 		return {
 
