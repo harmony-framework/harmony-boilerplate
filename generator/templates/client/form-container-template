@@ -15,7 +15,7 @@ interface OwnProps extends Props, LocalizeContextProps {
 
 class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
 	render() {
-	    const { handleSubmit } = this.props;
+		const { handleSubmit } = this.props;
 		return (
 			<Form onSubmit={handleSubmit(this.handleSubmit.bind(this))} >
 
@@ -28,7 +28,7 @@ class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
 	}
 }
 
-export default baseConnectFormt<any, any, Props>(
+export default baseConnectForm<any, any, Props>(
     <%= className %>,
 	(state: ApplicationState) => {
 		return {
