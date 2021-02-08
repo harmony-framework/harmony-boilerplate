@@ -9,8 +9,12 @@ type Props = {
 
 };
 
-interface OwnProps extends Props, LocalizeContextProps {
+type FormValues = {
 
+};
+
+interface OwnProps extends Props, LocalizeContextProps {
+	formValues: (formName: string) => FormValues;
 }
 
 class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
@@ -23,7 +27,7 @@ class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
 		);
 	}
 
-	handleSubmit(props: Props) {
+	handleSubmit(formValues: FormValues) {
 		// handle submit here
 	}
 }
@@ -32,7 +36,7 @@ export default baseConnectForm<any, any, Props>(
 	<%= className %>,
 	(state: ApplicationState) => {
 		return {
-
+			formValues: (formName: string) => getFormValues(formName)(state)
 		}
 	},
 	{
