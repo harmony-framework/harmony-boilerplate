@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch } from 'react-router-dom';
-import { stepTypes } from 'public/config/flow-manager/types.json';
+import FlowManagerConfig from 'public/config/flow-manager/types.json';
 import Route from './PageContainer';
 
 /* -------------- Pages --------------- */
@@ -11,6 +11,8 @@ import FormExample from 'pages/FormExample';
 
 /* -------------- Routes Paths --------------- */
 import RoutesPath from './RoutesPath';
+
+const { stepTypes } = FlowManagerConfig;
 
 export default (
 	<App>

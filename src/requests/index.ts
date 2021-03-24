@@ -16,7 +16,7 @@ export interface Api {
 
 export const createApi = (baseURL = config.ROOT_SERVER_URL): Api => ({
 	getDevices: () => request.call({
-		baseURL: 'http://6ew7g.mocklab.io/',
+		baseURL: 'http://6ew7g.mocklab.io/' || baseURL,
 		method: 'get',
 		url: '/getlatestWithCustomResponseCode'
 	}),

@@ -5,7 +5,9 @@ import { CatalogActions } from 'actions/catalog';
 import { Device } from 'actions/catalog/interface';
 import { startFlow } from 'actions/flowManager/sagas';
 import { TypesNames } from 'actions/flowManager/interface';
-import { flowTypes, stepTypes } from 'public/config/flow-manager/types.json';
+import FlowManagerConfig from 'public/config/flow-manager/types.json';
+
+const { flowTypes, stepTypes } = FlowManagerConfig;
 
 export function* getDevices() {
 	try {

@@ -1,8 +1,10 @@
 import { AxiosResponse } from 'axios';
 import _ from 'lodash';
 import Store from '@base/features/base-store';
-import * as errorHandlerConfig from 'configurations/error.config.json';
+import ErrorHandlerConfig from 'configurations/error.config.json';
 import { TypesNames } from './reducer';
+
+const { pathToErrorCode, handlers } = ErrorHandlerConfig;
 
 export interface ErrorHandlerRequest<T> {
 	component: string;
@@ -25,7 +27,6 @@ export const clearErrorHandler = () => {
 
 export const dispatchErrorHandler = (response: AxiosResponse) => {
 	try {
-		const { pathToErrorCode, handlers } = errorHandlerConfig;
 		const { status } = response;
 		const errorCode = _.get(response, pathToErrorCode);
 
