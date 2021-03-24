@@ -5,15 +5,11 @@
   "main": "index.js",
   "repository": "",
   "scripts": {
-    "clean:dist": "rimraf dist",
-    "lint": "esw ./src --ext .ts,.tsx --color",
-    "lint:watch": "esw ./src --ext .ts,.tsx -w --color",
-    "lint:test": "esw ./test --ext .ts,.tsx --color",
-    "lint-and-fix": "eslint ./src --ext .ts,.tsx --fix",
-    "lite": "npm run clean:dist && npm run build && lite-server",
-    "build": "cross-env NODE_ENV=production webpack --mode=production",
     "start": "cross-env NODE_ENV=development webpack serve --open chrome",
-    "test": "npm run lint:test && tsc:watch --noEmit && jest"
+    "build": "npm run clean:dist && cross-env NODE_ENV=production webpack --mode=production",
+    "lite": "npm run build && lite-server",
+    "test": "npm run build && jest",
+    "clean:dist": "rimraf dist"
   },
   "author": "",
   "license": "ISC",
@@ -52,7 +48,6 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.20.0",
     "eslint-plugin-react-hooks": "4.0.2",
-    "eslint-watch": "6.0.1",
     "eslint-webpack-plugin": "2.4.1",
     "fork-ts-checker-webpack-plugin": "6.2.0",
     "gulp": "4.0.2",
