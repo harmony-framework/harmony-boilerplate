@@ -4,7 +4,7 @@ import { Switch, Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { WithAppContext, AppContextProps, BindContextToApp } from '@base/features/base-context';
-import { stepTypes } from 'public/config/flow-manager/types.json';
+import FlowManagerConfig from 'public/config/flow-manager/types.json';
 import Route from './PageContainer';
 
 /* -------------- Pages --------------- */
@@ -15,6 +15,8 @@ import StyleGuide from 'pages/StyleGuide';
 /* -------------- Routes Paths --------------- */
 import RoutesPath from './RoutesPath';
 import Layout from './Layout';
+
+const { stepTypes } = FlowManagerConfig;
 
 interface Props {
 	persistor: any;
