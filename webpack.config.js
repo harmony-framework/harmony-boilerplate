@@ -47,7 +47,7 @@ module.exports = {
 	mode: process.env.NODE_ENV === "production" ? "production" : "development",
 	entry: { index: path.resolve(__dirname, "src", "index.tsx") },
 	output: {
-		publicPath: "http://localhost:8082/",
+		publicPath: process.env.NODE_ENV === "production" ? "/" : "http://localhost:8082/",
 	},
 	module: {
 		rules: [
