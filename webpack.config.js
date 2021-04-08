@@ -46,13 +46,14 @@ let plugins = [
 module.exports = {
 	mode: process.env.NODE_ENV === "production" ? "production" : "development",
 	entry: { index: path.resolve(__dirname, "src", "index.tsx") },
+	devtool: isProduction ? undefined : "cheap-module-source-map",
 	output: {
 		publicPath: process.env.NODE_ENV === "production" ? "/" : "http://localhost:8082/",
 	},
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
+				test: /\.(tsx|ts)?$/,
 				loader: 'ts-loader',
 				exclude: /node_modules/,
 				options: {
@@ -60,15 +61,15 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.(s[ac]|c)ss$/i,
-				use: ["style-loader", "css-loader?url=false", "postcss-loader", "sass-loader"]
-			},
-			{
-				test: /\.(ts|js)x?$/,
+				test: /\.(js|jsx)?$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader'
 				}
+			},
+			{
+				test: /\.(s[ac]|c)ss$/i,
+				use: ["style-loader", "css-loader?url=false", "postcss-loader", "sass-loader"]
 			},
 			{
 				test: /\.(png|jpe?g|gif|svg)$/i,
