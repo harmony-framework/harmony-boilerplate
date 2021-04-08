@@ -102,7 +102,6 @@ module.exports = {
 			colors: true,
 			hash: false,
 			version: false,
-			timings: false,
 			assets: false,
 			chunks: false,
 			modules: false,
