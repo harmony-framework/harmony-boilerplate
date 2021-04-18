@@ -84,16 +84,16 @@ module.exports = {
 		],
 	},
 	plugins,
-	optimization: {
+	optimization: isProduction ? {
 		splitChunks: {
 			minSize: 700000,
 			maxSize: 1000000
 		}
-	},
+	} : undefined,
 	performance: {
 		hints: 'error',
-		maxAssetSize: isProduction ? 1001000 : 10010000,
-		maxEntrypointSize: isProduction ? 1001000 : 10010000
+		maxAssetSize: isProduction ? 1001000 : Infinity,
+		maxEntrypointSize: isProduction ? 1001000 : Infinity
 	},
 	devServer: {
 		port: 8082,
