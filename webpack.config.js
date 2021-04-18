@@ -98,6 +98,7 @@ module.exports = {
 	devServer: {
 		port: 8082,
 		historyApiFallback: true,
+		hot: true,
 		stats: {
 			colors: true,
 			hash: false,
