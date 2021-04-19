@@ -38,10 +38,14 @@ let plugins = [
 	new HtmlWebpackPlugin({
 		template: path.resolve(__dirname, "src/public", "index.ejs")
 	}),
-	new ForkTsCheckerWebpackPlugin(),
-	new WarningsToErrorsPlugin()
+	new ForkTsCheckerWebpackPlugin()
 ];
 
+if (isProduction) {
+	plugins = plugins.concat([
+		new WarningsToErrorsPlugin()
+	]);
+}
 
 module.exports = {
 	mode: process.env.NODE_ENV === "production" ? "production" : "development",
