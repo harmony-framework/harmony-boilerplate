@@ -8,8 +8,11 @@ const { pathToErrorCode, handlers } = ErrorHandlerConfig;
 
 export interface ErrorHandlerRequest<T> {
 	component: string;
-	level?: string;
 	payload: T;
+	level?: string;
+	errorCode?: string;
+	status?: string;
+	additionalParams?: any;
 }
 
 export enum ComponentLevels {
