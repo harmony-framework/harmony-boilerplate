@@ -9,7 +9,9 @@
     "build": "npm run clean:dist && cross-env NODE_ENV=production webpack --mode=production",
     "lite": "npm run build && lite-server",
     "test": "npm run build && jest",
-    "clean:dist": "rimraf dist"
+    "clean:dist": "rimraf dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +26,9 @@
     "@babel/preset-typescript": "7.13.0",
     "@babel/register": "7.0.0",
     "@module-federation/dashboard-plugin": "2.1.1",
+    "@storybook/addon-actions": "6.3.0",
+    "@storybook/addon-essentials": "6.3.0",
+    "@storybook/addon-links": "6.3.0",
     "@types/expect-puppeteer": "2.2.1",
     "@types/jest": "22.2.3",
     "@types/jest-environment-puppeteer": "2.2.0",
@@ -67,8 +72,8 @@
     "lite-server": "2.6.1",
     "mocha": "7.1.2",
     "npm-run-all": "latest",
-    "postcss": "8.2.8",
-    "postcss-loader": "5.2.0",
+    "postcss": "^8.2.8",
+    "postcss-loader": "^5.2.0",
     "postcss-preset-env": "6.7.0",
     "react-hot-loader": "4.12.21",
     "rimraf": "2.6.2",
@@ -86,6 +91,8 @@
     "webpack-dev-server": "3.11.2"
   },
   "dependencies": {
+    "@storybook/addon-postcss": "2.0.0",
+    "@storybook/react": "6.3.0",
     "@types/history": "4.7.6",
     "@types/lodash": "4.14.168",
     "@types/moment": "2.13.0",

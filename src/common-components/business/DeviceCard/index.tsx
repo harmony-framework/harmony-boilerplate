@@ -3,9 +3,8 @@ import { LocalizedElement, LocalizedElementMap } from 'react-localize-redux';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Device } from 'actions/catalog/interface';
 import './style.scss';
-import RBAC from '@base/features/base-rba/components/RBAC';
 
-interface Props {
+export interface Props {
 	device: Device;
 	quantity: number;
 	buttonTitle: LocalizedElementMap | LocalizedElement;
@@ -31,16 +30,13 @@ const DeviceCard: React.FC<Props> = (props: Props) => {
 					<Card.Text />
 					<Card.Text>{priceTitle}: <b>${device.price}</b>
 					</Card.Text>
-					<RBAC id="addToCart">
-						<Button
-							automation-id="add-to-cart"
-							onClick={() => { return quantity ? onRemoveClick(device.id) : onBuyClick(device); }}
-							variant={quantity ? 'secondary' : 'primary'}
-						>
-							{ quantity ? removeButtonTitle : buttonTitle }
-						</Button>
-					</RBAC>
-
+					<Button
+						automation-id="add-to-cart"
+						onClick={() => { return quantity ? onRemoveClick(device.id) : onBuyClick(device); }}
+						variant={quantity ? 'secondary' : 'primary'}
+					>
+						{ quantity ? removeButtonTitle : buttonTitle }
+					</Button>
 				</Card.Body>
 			</Card>
 		</Col>
