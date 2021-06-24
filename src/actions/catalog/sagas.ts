@@ -10,19 +10,14 @@ import FlowManagerConfig from 'public/config/flow-manager/types.json';
 const { flowTypes, stepTypes } = FlowManagerConfig;
 
 export function* getDevices() {
-	try {
-		yield call(startFlow, {
-			type: TypesNames.START_FLOW,
-			flowType: flowTypes.COP,
-			currentStep: stepTypes.DEVICE_GALLERY.name,
-		});
+	yield call(startFlow, {
+		type: TypesNames.START_FLOW,
+		flowType: flowTypes.COP,
+		currentStep: stepTypes.DEVICE_GALLERY.name,
+	});
 
-		// replace api with api.getDevices to point to server
-		const response: AxiosResponse<Array<Device>> = yield call(api.getDevicesMock);
+	// replace api with api.getDevices to point to server
+	const response: AxiosResponse<Array<Device>> = yield call(api.getDevicesMock);
 
-		yield put(CatalogActions.setDeviceList(response.data));
-	} catch (e) {
-		// eslint-disable-next-line no-console
-		console.log(e, 'ref');
-	}
+	yield put(CatalogActions.setDeviceList(response.data));
 }

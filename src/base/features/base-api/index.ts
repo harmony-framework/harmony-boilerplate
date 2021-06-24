@@ -69,7 +69,7 @@ class Request {
 			endSpinner(config.url, uuid);
 			dispatchErrorHandler(error);
 
-			throw new Error(e);
+			return error;
 		}
 	}
 }
