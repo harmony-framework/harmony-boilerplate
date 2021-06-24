@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Alert } from 'react-bootstrap';
 import { TranslateFunction } from 'react-localize-redux/es';
-import Store from '@base/features/base-store';
+import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
 import { clearErrorHandler, ComponentLevels } from '@base/features/base-error-handler';
 import { ComponentTypes } from './index';
@@ -36,9 +36,8 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 			});
 		}
 
-		static shouldHandleError(): ErrorHandlerData {
-			const storeState: ApplicationState = Store.getState();
-			const errorHandler = storeState?.errorHandler;
+		static shouldHandleError(props: Props): ErrorHandlerData {
+			const { errorHandler } = props;
 			const { errorCodes } = config;
 
 			if (errorHandler && Object.keys(errorHandler).length) {
@@ -62,8 +61,8 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 			return null;
 		}
 
-		static getDerivedStateFromProps() {
-			const handleErrorData = Container.shouldHandleError();
+		static getDerivedStateFromProps(props: Props) {
+			const handleErrorData = Container.shouldHandleError(props);
 
 			if (handleErrorData) {
 				return {
@@ -118,7 +117,14 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 		}
 	}
 
-	return Container;
+	return baseConnect(
+		Container,
+		(state: ApplicationState) => ({
+			errorHandler: state.errorHandler,
+			state
+		}),
+		{}
+	);
 };
 
 export default WithErrorHandler;
