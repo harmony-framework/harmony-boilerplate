@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-export interface Props {
+export type Props = {
 
-}
+};
 
 const <%= name %>: React.FC<Props> = (props: Props) => {
 	return (

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 
-interface Props {
+export interface Props {
 	languages: any;
 	setActiveLanguage: (languageCode: string) => void;
 }

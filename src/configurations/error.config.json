@@ -9,7 +9,7 @@
         "body": "errors.errorBodyExample"
       }
     },
-    "devicesListFailed_400": {
+    "devicesListFailed_403": {
       "component": "modal",
       "payload": {
         "header": "errors.errorHeaderExample",
@@ -25,7 +25,7 @@
         "body": "errors.specificErrorHandlerToComponentBody"
       }
     },
-    "devicesListFailed_500": {
+    "devicesListFailed_400": {
       "component": "ignore"
     }
   }

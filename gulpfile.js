@@ -46,6 +46,7 @@ gulp.task('createFormContainer', () => {
 
 });
 
+
 gulp.task('createComponent', () => {
 	let componentName = lowerCaseFirstLater(getArg('name'));
 	let storyTitle = getArg('storyTitle');
@@ -69,6 +70,25 @@ gulp.task('createComponent', () => {
 		}
 	);
 
+});
+
+
+gulp.task('createStoryContainer', () => {
+	let componentName = lowerCaseFirstLater(getArg('name'));
+	let storyTitle = getArg('storyTitle');
+	let nameUppercase = capitalizeFirstLate(componentName);
+
+	if (!validateName(componentName, '--name') || !validateName(componentName, '--storyTitle')) return;
+
+	createTemplate(
+		'./generator/templates/client/story-container',
+		`${process.env.INIT_CWD}/${nameUppercase}.stories.tsx`,
+		{
+			name: componentName,
+			nameUppercase,
+			storyTitle
+		}
+	);
 });
 
 gulp.task('createAction', () => {

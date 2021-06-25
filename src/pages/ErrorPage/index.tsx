@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { LocalizeContextProps } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ApplicationState } from 'actions';
-// import { <%= className %>Actions, <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
 
 export type Props = {
 
@@ -12,19 +10,19 @@ interface OwnProps extends Props, LocalizeContextProps {
 
 }
 
-export class <%= className %> extends React.Component<OwnProps> {
+export class ErrorPage extends React.Component<OwnProps> {
 	render() {
 		return (
 			<div>
-				<%= className %> New Container
+				Design Your Error Page Here
 			</div>
 		);
 	}
 }
 
 export default baseConnect<any, any, Props>(
-    <%= className %>,
-	(state: ApplicationState) => {
+	ErrorPage,
+	() => {
 		return {
 
 		};

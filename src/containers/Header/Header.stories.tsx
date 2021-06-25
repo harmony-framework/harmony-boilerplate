@@ -1,15 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { BaseStorybookDecorator } from '@base/features/base-decorator';
+import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Header, Props as HeaderProps } from './index';
-import { baseConnect } from '@base/features/base-redux-react-connect';
 
 export default {
 	title: 'Design System/Containers/Header',
-	component: (props: HeaderProps) => {
-		return (<Header {...props as any} />);
-	},
+	component: (props: HeaderProps) => (<Header {...props as any} />),
 	argTypes: {
 
 	},

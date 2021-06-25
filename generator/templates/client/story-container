@@ -1,0 +1,32 @@
+/* eslint-disable react/jsx-props-no-spreading */
+import React from 'react';
+import { BaseStorybookDecorator } from '@base/features/base-decorator';
+import { baseConnect } from '@base/features/base-redux-react-connect';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { <%= nameUppercase %>, Props as <%= nameUppercase %>Props } from './index';
+
+export default {
+	title: 'Design System/<%= storyTitle %>',
+	component: (props: <%= nameUppercase %>Props) => (<<%= nameUppercase %> {...props as any} />),
+	argTypes: {
+
+	},
+	decorators: [BaseStorybookDecorator],
+	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
+} as ComponentMeta<typeof <%= nameUppercase %>>;
+
+const Template: ComponentStory<typeof <%= nameUppercase %>> = (args) => {
+	const <%= nameUppercase %>Container = baseConnect<any, any, <%= nameUppercase %>Props>(
+		<%= nameUppercase %>,
+		() => ({
+			...args
+		})
+	);
+
+	return <<%= nameUppercase %>Container {...args} />;
+};
+
+export const Default = Template.bind({});
+Default.args = {
+
+} as <%= nameUppercase %>Props;

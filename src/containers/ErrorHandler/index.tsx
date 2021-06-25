@@ -8,7 +8,11 @@ import { ApplicationState } from 'actions';
 import RoutesPath from 'routes/RoutesPath';
 import { withToast, ToasterManager } from '@base/features/base-decorator';
 
-interface Props extends ToasterManager {
+export type Props = {
+
+};
+
+interface OwnProps extends ToasterManager, Props {
 	errorHandler: ErrorHandlerRequest<any>;
 	history: any;
 	translate: TranslateFunction;
@@ -22,10 +26,10 @@ export enum ComponentTypes {
 }
 
 @withToast
-class ErrorHandler extends React.Component<Props> {
+export class ErrorHandler extends React.Component<OwnProps> {
 	readonly appElement: HTMLElement | null;
 
-	constructor(props: Props) {
+	constructor(props: OwnProps) {
 		super(props);
 
 		this.appElement = document.getElementById('app');
