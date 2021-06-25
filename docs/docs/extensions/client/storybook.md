@@ -3,7 +3,8 @@
 ## Storybook
 
 
-Harmony include Storybook built-in, althgo most of the usage is related to the official documentation, 
+Harmony include Storybook built-in, althgo most of the usage is related to the official documentation 
+<a href="https://storybook.js.org/" target="_blank">Storybook</a>, 
 There is few things you may need to know with Storybook inside Harmony to make your life easier<br/>
 
 ## Generate Story
