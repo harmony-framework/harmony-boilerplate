@@ -86,6 +86,7 @@ nav:
       - Global Spinner: 'extensions/client/global_spinner.md'
       - Translator: 'extensions/client/multilingual.md'
       - Mobile Ready: 'extensions/client/render_mobile.md'
+      - Storybook: 'extensions/client/storybook.md'
     - Generators:
       - Generate Component: 'extensions/client/components.md'
       - Generate Container: 'extensions/client/containers.md'

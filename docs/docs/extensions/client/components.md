@@ -11,5 +11,5 @@ We recommended to use arrow function for better performance, But you can also us
 ## Create Component by cli
 
 ``` sh
-$ gulp createComponent --name MyComponent
+$ gulp createComponent --name MyComponent --storyTitle Business Components/MyComponent
 ```
