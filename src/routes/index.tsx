@@ -5,6 +5,7 @@ import Route from './PageContainer';
 
 /* -------------- Pages --------------- */
 import App from '../App';
+import ErrorPage from 'pages/ErrorPage';
 import DeviceGalleryPage from 'pages/DevicesGallery';
 import Checkout from 'pages/Checkout';
 import FormExample from 'pages/FormExample';
@@ -32,7 +33,7 @@ export default (
 				step={stepTypes.CHECKOUT_XIAOMI.name}
 				component={() => <h1>Checkout for Xiaomi</h1>}
 			/>
-			<Route exact path={RoutesPath.ERROR_PAGE} component={() => <div>error page</div>} />
+			<Route exact path={RoutesPath.ERROR_PAGE} component={() => <ErrorPage />} />
 		</Switch>
 	</App>
 );
