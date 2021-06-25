@@ -15,17 +15,23 @@ import { CartItem, ClearCartFunction } from 'actions/cart/interface';
 import RoutesPath from 'routes/RoutesPath';
 import { MoveToNextStepFunction } from 'actions/flowManager/interface';
 
-interface Props {
+export type Props = {
+
+};
+
+export interface OwnProps extends Props {
 	cartItems: CartItem[];
 	clearCart: typeof ClearCartFunction;
 	translate: TranslateFunction;
 	moveToNextStep: typeof MoveToNextStepFunction;
 }
+
 interface HeaderState {
 	cartToggle: boolean;
 }
-class Header extends React.Component<Props, HeaderState> {
-	constructor(props: Props) {
+
+export class Header extends React.Component<OwnProps, HeaderState> {
+	constructor(props: OwnProps) {
 		super(props);
 		this.state = {
 			cartToggle: false
@@ -141,7 +147,7 @@ class Header extends React.Component<Props, HeaderState> {
 	}
 }
 
-export default baseConnect(
+export default baseConnect<any, any, Props>(
 	Header,
 	(state: ApplicationState) => ({
 		cartItems: cartSelector.getCartItems(state)

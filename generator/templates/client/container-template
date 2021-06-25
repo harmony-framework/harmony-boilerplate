@@ -4,7 +4,7 @@ import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
 // import { <%= className %>Actions, <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
 
-interface Props {
+export interface Props {
 
 }
 
@@ -12,7 +12,7 @@ interface OwnProps extends Props, LocalizeContextProps {
 
 }
 
-class <%= className %> extends React.Component<OwnProps> {
+export class <%= className %> extends React.Component<OwnProps> {
 	render() {
 		return (
 			<div>

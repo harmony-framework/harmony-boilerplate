@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { withLocalize } from 'react-localize-redux';
 import { reduxForm } from 'redux-form';
 
-export function baseConnect<S, D, O>(component: any, mapStateToProps: any, propsToDispatch: any) {
+export function baseConnect<S, D, O>(component: any, mapStateToProps: any, propsToDispatch?: any) {
 	const componentWithRouter = withRouter(component);
 	return (
 		connect<S, D, O>(

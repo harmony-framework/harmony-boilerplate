@@ -1,11 +1,12 @@
 import React from 'react';
 import { PersistGate } from 'redux-persist/lib/integration/react';
+import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { LocalizeProvider } from 'react-localize-redux';
 import { ToastProvider } from 'react-toast-notifications';
 
 /* -------- Harmony Features Bootstrap --------- */
-import { Store, persistor } from 'base/features';
+import { Store, persistor, history } from 'base/features';
 
 export default (Story: any) => {
 	return (
@@ -13,7 +14,9 @@ export default (Story: any) => {
 			<PersistGate persistor={persistor}>
 				<LocalizeProvider store={Store}>
 					<ToastProvider>
-						{Story()}
+						<Router history={history}>
+							{Story()}
+						</Router>
 					</ToastProvider>
 				</LocalizeProvider>
 			</PersistGate>

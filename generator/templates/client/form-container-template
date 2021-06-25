@@ -5,7 +5,7 @@ import { baseConnectForm } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
 // import { <%= className %>Actions, <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
 
-type Props = {
+export type Props = {
 
 };
 
@@ -17,7 +17,7 @@ interface OwnProps extends Props, LocalizeContextProps {
 	formValues: (formName: string) => FormValues;
 }
 
-class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
+export class <%= className %> extends React.Component<OwnProps & InjectedFormProps> {
 	render() {
 		const { handleSubmit } = this.props;
 		return (
