@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-props-no-spreading */
-/* tslint:disable */
 import React from 'react';
 import { BaseStorybookDecorator } from '@base/features/base-decorator';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
