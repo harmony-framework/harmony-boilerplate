@@ -1,22 +1,22 @@
 import React from 'react';
 import { BaseStorybookDecorator } from '@base/features/base-decorator';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Spinner from './index';
+import <%= nameUppercase %>, { Props as <%= nameUppercase %>Props } from './index';
 
 export default {
-	title: 'Design System/Business Components/Spinner',
-	component: Spinner,
+	title: 'Design System/<%= storyTitle %>',
+	component: <%= nameUppercase %>,
 	argTypes: {
 
 	},
 	decorators: [BaseStorybookDecorator],
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
-} as ComponentMeta<typeof Spinner>;
+} as ComponentMeta<typeof <%= nameUppercase %>>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof Spinner> = (args) => <Spinner {...args} />;
+const Template: ComponentStory<typeof <%= nameUppercase %>> = (args) => <<%= nameUppercase %> {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
 
-};
+} as <%= nameUppercase %>Props;

@@ -10,7 +10,7 @@
     "lite": "npm run build && lite-server",
     "test": "npm run build && jest",
     "clean:dist": "rimraf dist",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./src/public -p 6006",
     "build-storybook": "build-storybook"
   },
   "author": "",

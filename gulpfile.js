@@ -48,13 +48,25 @@ gulp.task('createFormContainer', () => {
 
 gulp.task('createComponent', () => {
 	let componentName = lowerCaseFirstLater(getArg('name'));
+	let storyTitle = getArg('storyTitle');
+	let nameUppercase = capitalizeFirstLate(componentName);
 
-	if (!validateName(componentName, '--name')) return;
+	if (!validateName(componentName, '--name') || !validateName(componentName, '--storyTitle')) return;
 
 	createTemplate(
 		'./generator/templates/client/component-template',
-		`${process.env.INIT_CWD}/${componentName}/index.tsx`,
-		{name: componentName}
+		`${process.env.INIT_CWD}/${nameUppercase}/index.tsx`,
+		{ name: componentName }
+	);
+
+	createTemplate(
+		'./generator/templates/client/story',
+		`${process.env.INIT_CWD}/${nameUppercase}/${nameUppercase}.stories.tsx`,
+		{
+			name: componentName,
+			nameUppercase,
+			storyTitle
+		}
 	);
 
 });

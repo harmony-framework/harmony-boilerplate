@@ -19,23 +19,14 @@ module.exports = {
 					...config.module.rules,
 					{
 						test: /\.s[ac]ss$/i,
-						use: ["style-loader", "css-loader", "sass-loader"]
+						use: ["style-loader", "css-loader?url=false", "sass-loader"]
 					}
 				],
 			},
 			resolve: {
 				...config.resolve,
 				...custom.resolve,
-			},
-			plugins: [
-				...config.plugins,
-				new CopyWebpackPlugin({
-					patterns: [
-						{ from: './src/public/assets', to: 'assets' },
-						{ from: './src/public/config', to: 'config' }
-					]
-				})
-			]
+			}
 		};
 	},
 };
