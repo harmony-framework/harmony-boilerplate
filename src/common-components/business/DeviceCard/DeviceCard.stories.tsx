@@ -7,7 +7,9 @@ export default {
 	title: 'Design System/Business Components/Device Card',
 	component: DeviceCard,
 	argTypes: {
-
+		quantity: {
+			description: 'The numbers of this Item in Cart. Once bigger then one button become to disable and title become remove.'
+		}
 	},
 	decorators: [BaseStorybookDecorator],
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
