@@ -32,20 +32,21 @@ export const dispatchErrorHandler = (response: AxiosResponse) => {
 	try {
 		const { status } = response;
 		const errorCode = _.get(response, pathToErrorCode);
+		const errorData = handlers[`${errorCode}_${status}`];
 
-		if (errorCode) {
-			const errorData = handlers[`${errorCode}_${status}`];
+		if (errorData?.component?.toLocaleLowerCase() === BaseComponentTypes.IGNORE) {
+			return;
+		}
 
-			if (errorData && errorData.component.toLocaleLowerCase() !== BaseComponentTypes.IGNORE) {
-				Store.dispatch({
-					payload: {
-						...errorData,
-						status,
-						errorCode
-					},
-					type: TypesNames.ERROR_HANDLER_INVOKE
-				});
-			}
+		if (errorData) {
+			Store.dispatch({
+				payload: {
+					...errorData,
+					status,
+					errorCode
+				},
+				type: TypesNames.ERROR_HANDLER_INVOKE
+			});
 		} else {
 			Store.dispatch({
 				payload: {
