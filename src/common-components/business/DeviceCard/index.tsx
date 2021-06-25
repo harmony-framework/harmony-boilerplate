@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { LocalizedElement, LocalizedElementMap } from 'react-localize-redux';
+import {
+	LocalizedElement, LocalizedElementMap, LocalizeContextProps
+} from 'react-localize-redux';
 import { Button, Card, Col } from 'react-bootstrap';
 import { Device } from 'actions/catalog/interface';
 import './style.scss';
 
-export interface Props {
+export interface Props extends LocalizeContextProps {
 	device: Device;
 	quantity: number;
 	buttonTitle: LocalizedElementMap | LocalizedElement;
