@@ -11,7 +11,7 @@
     "test": "npm run build && jest",
     "clean:dist": "rimraf dist",
     "storybook": "start-storybook -s ./src/public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -s ./src/public"
   },
   "author": "",
   "license": "ISC",

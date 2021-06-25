@@ -7,3 +7,5 @@ package-lock.json
 /.idea
 /.vscode/launch.json
 dist
+storybook-static
+/storybook-static
