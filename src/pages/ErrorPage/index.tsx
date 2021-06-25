@@ -14,7 +14,7 @@ export class ErrorPage extends React.Component<OwnProps> {
 	render() {
 		return (
 			<div>
-				Design Your Error Page Here
+				<h1>Design Your Error Page Here</h1>
 			</div>
 		);
 	}

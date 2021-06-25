@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseStorybookDecorator } from '@base/features/base-decorator';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import Spinner from './index';
 
 export default {
@@ -11,7 +11,7 @@ export default {
 	},
 	decorators: [BaseStorybookDecorator],
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
-} as ComponentMeta<typeof Spinner>;
+} as Meta;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof Spinner> = (args) => <Spinner {...args} />;

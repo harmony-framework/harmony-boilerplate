@@ -2,7 +2,7 @@
 import React from 'react';
 import { BaseStorybookDecorator } from '@base/features/base-decorator';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import { Header, Props as HeaderProps } from './index';
 
 export default {
@@ -13,7 +13,7 @@ export default {
 	},
 	decorators: [BaseStorybookDecorator],
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
-} as ComponentMeta<typeof Header>;
+} as Meta;
 
 const Template: ComponentStory<typeof Header> = (args) => {
 	const HeaderContainer = baseConnect<any, any, HeaderProps>(

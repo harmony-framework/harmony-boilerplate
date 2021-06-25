@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseStorybookDecorator } from '@base/features/base-decorator';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import DeviceCard, { Props as DeviceCardProps } from './index';
 
 export default {
@@ -13,7 +13,7 @@ export default {
 	},
 	decorators: [BaseStorybookDecorator],
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
-} as ComponentMeta<typeof DeviceCard>;
+} as Meta;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof DeviceCard> = (args) => <DeviceCard {...args} />;

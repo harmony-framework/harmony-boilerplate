@@ -2,7 +2,7 @@
 import React from 'react';
 import { BaseStorybookDecorator } from '@base/features/base-decorator';
 import { baseConnect } from '@base/features/base-redux-react-connect';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import { ErrorPage, Props as ErrorPageProps } from './index';
 
 export default {
@@ -13,7 +13,7 @@ export default {
 	},
 	decorators: [BaseStorybookDecorator],
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
-} as ComponentMeta<typeof ErrorPage>;
+} as Meta;
 
 const Template: ComponentStory<typeof ErrorPage> = (args) => {
 	const ErrorPageContainer = baseConnect<any, any, ErrorPageProps>(
