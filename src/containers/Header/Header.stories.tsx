@@ -3,11 +3,11 @@ import React from 'react';
 import { BaseStorybookDecorator } from '@base/features/base-decorator';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ComponentStory, Meta } from '@storybook/react';
-import { Header, Props as HeaderProps } from './index';
+import { Header, OwnProps as HeaderProps } from './index';
 
 export default {
 	title: 'Design System/Containers/Header',
-	component: (props: HeaderProps) => (<Header {...props as any} />),
+	component: (props: HeaderProps) => (<Header {...props} />),
 	argTypes: {
 
 	},

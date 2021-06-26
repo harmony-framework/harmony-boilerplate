@@ -8,7 +8,7 @@ export type Props = {
 
 };
 
-interface OwnProps extends Props, LocalizeContextProps {
+export interface OwnProps extends Props, LocalizeContextProps {
 
 }
 

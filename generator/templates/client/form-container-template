@@ -13,7 +13,7 @@ type FormValues = {
 
 };
 
-interface OwnProps extends Props, LocalizeContextProps {
+export interface OwnProps extends Props, LocalizeContextProps {
 	formValues: (formName: string) => FormValues;
 }
 
