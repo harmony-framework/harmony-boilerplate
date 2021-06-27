@@ -8,7 +8,7 @@ export default {
 	component: DeviceCard,
 	argTypes: {
 		quantity: {
-			description: 'The numbers of this Item in Cart. Once bigger then one button become to disable and title become remove.'
+			description: 'The numbers of this Item in Cart. Once bigger then 1 title become remove.'
 		}
 	},
 	decorators: [BaseStorybookDecorator],
@@ -30,6 +30,7 @@ Buy.args = {
 	},
 	quantity: 0,
 	priceTitle: 'Price',
+	removeButtonTitle: 'Remove',
 	buttonTitle: 'Add to Cart'
 } as DeviceCardProps;
 
@@ -37,5 +38,4 @@ export const Remove = Template.bind({});
 Remove.args = {
 	...Buy.args,
 	quantity: 1,
-	removeButtonTitle: 'Remove'
 } as DeviceCardProps;
