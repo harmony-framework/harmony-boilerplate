@@ -30,6 +30,7 @@ export const createApi = (baseURL = config.ROOT_SERVER_URL): Api => ({
 		});
 
 		return {
+			status: 200,
 			data: mock
 		};
 	}

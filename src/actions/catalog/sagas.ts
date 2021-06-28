@@ -17,7 +17,9 @@ export function* getDevices() {
 	});
 
 	// replace api with api.getDevices to point to server
-	const response: AxiosResponse<Array<Device>> = yield call(api.getDevicesMock);
+	const response: AxiosResponse<Array<Device>> = yield call(api.getDevices);
 
-	yield put(CatalogActions.setDeviceList(response.data));
+	if (response.status === 200) {
+		yield put(CatalogActions.setDeviceList(response.data));
+	}
 }
