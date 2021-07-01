@@ -15,7 +15,7 @@ export default {
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
 } as Meta;
 
-const Template: ComponentStory<typeof Header> = (args) => {
+const Template: ComponentStory<typeof Header> = (args: any) => {
 	const HeaderContainer = baseConnect<any, any, HeaderProps>(
 		Header,
 		() => ({

@@ -14,7 +14,7 @@ export default {
 } as Meta;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof Spinner> = (args) => <Spinner {...args} />;
+const Template: ComponentStory<typeof Spinner> = (args: any) => <Spinner {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

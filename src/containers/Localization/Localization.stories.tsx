@@ -15,7 +15,7 @@ export default {
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
 } as Meta;
 
-const Template: ComponentStory<typeof Localization> = (args) => {
+const Template: ComponentStory<typeof Localization> = (args: any) => {
 	const LocalizationContainer = baseConnect<any, any, LocalizationProps>(
 		Localization,
 		() => ({
