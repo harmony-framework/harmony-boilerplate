@@ -3,8 +3,8 @@ import { Dispatch } from 'redux';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import {
-	Container, Row, CardDeck, Button, Form
-} from 'react-bootstrap';
+	Container, Grid, Button, FormControl, Input
+} from '@material-ui/core';
 import './style.scss';
 import { ApplicationState } from 'actions';
 import { catalogSelector, CatalogActions } from 'actions/catalog';
@@ -86,68 +86,67 @@ class DeviceGallery extends React.Component<Props, State> {
 
 		return (
 			<Container>
-				<Row>
-					<RBAC id="shippment">
-						<h1 id="page-header">{translate('deviceGallery.pageTitle')}</h1>
-					</RBAC>
-				</Row>
-				<br />
-				<Form className="row">
-					<Form.Group>
-						<RBAC id="searchInput">
-							<Form.Control
-								type="text"
-								automation-id="filter-input"
-								placeholder="Search"
-								onChange={(e) => this.setState({ searchValue: e.target.value.toLowerCase() })}
-							/>
+				<Grid container spacing={2}>
+					<Grid item xs={12}>
+						<RBAC id="shippment">
+							<h1 id="page-header">{translate('deviceGallery.pageTitle')}</h1>
 						</RBAC>
-					</Form.Group>
+					</Grid>
+					<Grid item xs={12}>
+						<FormControl>
+							<RBAC id="searchInput">
+								<Input
+									type="text"
+									automation-id="filter-input"
+									placeholder="Search"
+									onChange={(e: any) => this.setState({ searchValue: e.target.value.toLowerCase() })}
+								/>
+							</RBAC>
+						</FormControl>
+					</Grid>
+					<Grid>
+						<Grid container spacing={2}>
+							{deviceList.map((device: Device) => {
+								if (!searchValue || device.name.toLowerCase().includes(searchValue)) {
+									return (
+										<Grid item xs={4} key={device.id}>
+											<DeviceCard
+												device={device}
+												buttonTitle={translate('deviceGallery.addToCartButton')}
+												removeButtonTitle={translate('deviceGallery.removeFromCartButton')}
+												priceTitle={translate('deviceGallery.priceTitle')}
+												onBuyClick={addToCart}
+												onRemoveClick={removeFromCart}
+												quantity={this.getQuantity(device.id)}
+											/>
+										</Grid>
+									);
+								}
 
-				</Form>
-				<Row>
-					<CardDeck>
-						{deviceList.map((device: Device) => {
-							if (!searchValue || device.name.toLowerCase().includes(searchValue)) {
-								return (
-									<DeviceCard
-										key={device.id}
-										device={device}
-										buttonTitle={translate('deviceGallery.addToCartButton')}
-										removeButtonTitle={translate('deviceGallery.removeFromCartButton')}
-										priceTitle={translate('deviceGallery.priceTitle')}
-										onBuyClick={addToCart}
-										onRemoveClick={removeFromCart}
-										quantity={this.getQuantity(device.id)}
-									/>
-								);
-							}
+								return null;
+							})}
+						</Grid>
+					</Grid>
 
-							return null;
-						})}
-					</CardDeck>
-				</Row>
-
-				<Row className="footer-button-row" style={{ display: 'none' }}>
-					<Button
-						className="footer-buttons"
-						variant="success"
-						size="lg"
-						disabled={!cartItems || !cartItems.length}
-						onClick={() => moveToNextStep()}
-					>
-						{translate('deviceGallery.checkoutButton')}
-					</Button>
-					<Button
-						className="footer-buttons"
-						variant="primary"
-						size="lg"
-						disabled={!cartItems || !cartItems.length}
-						onClick={clearCart}
-					>
-						{translate('deviceGallery.clearCartButton')}
-					</Button>
-				</Row>
+					<Grid className="footer-button-row" style={{ display: 'none' }}>
+						<Button
+							className="footer-buttons"
+							color="primary"
+							disabled={!cartItems || !cartItems.length}
+							onClick={() => moveToNextStep()}
+						>
+							{translate('deviceGallery.checkoutButton')}
+						</Button>
+						<Button
+							className="footer-buttons"
+							color="secondary"
+							disabled={!cartItems || !cartItems.length}
+							onClick={clearCart}
+						>
+							{translate('deviceGallery.clearCartButton')}
+						</Button>
+					</Grid>
+				</Grid>
 			</Container>
 		);
 	}

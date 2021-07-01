@@ -6,8 +6,8 @@ import { CartItem } from 'actions/cart/interface';
 import { cartSelector } from 'actions/cart';
 import RoutesPath from 'routes/RoutesPath';
 import {
-	Container, Row, Media
-} from 'react-bootstrap';
+	Container, Grid, Box
+} from '@material-ui/core';
 
 interface Props {
 	cartItems: CartItem[];
@@ -33,16 +33,16 @@ class Checkout extends React.Component<Props> {
 
 		return (
 			<Container>
-				<Row>
+				<Grid>
 					<h1>{translate('checkout.pageTitle')}</h1>
-				</Row>
+				</Grid>
 				<br />
-				<Row>
+				<Grid>
 					<ul style={{ width: '70%' }}>
 						{
 							cartItems.map((item) => {
 								return (
-									<Media key={item.id} as="li">
+									<Box key={item.id} component="li">
 										<img
 											width={64}
 											height={64}
@@ -50,39 +50,35 @@ class Checkout extends React.Component<Props> {
 											src={item.image}
 											alt="Generic placeholder"
 										/>
-										<Media.Body>
-											<h5>
-												{item.name}
-												<div
-													style={{ display: 'inline' }}
-													className="text-success float-right"
-												>
-													${item.price}
-												</div>
-											</h5>
-											<h6>{item.brand}</h6>
-											<p>{item.description}</p>
-										</Media.Body>
-									</Media>
+										<h5>
+											{item.name}
+											<div
+												style={{ display: 'inline' }}
+												className="text-success float-right"
+											>
+												${item.price}
+											</div>
+										</h5>
+										<h6>{item.brand}</h6>
+										<p>{item.description}</p>
+									</Box>
 								);
 							})
 						}
 						<br />
-						<Media as="li" className="float-right">
-							<Media.Body>
-								<h5>
-									{translate('checkout.totalPriceTitle')}: &nbsp;
-									<div
-										style={{ display: 'inline' }}
-										className="text-success float-right"
-									>
-										${this.getTotalPrice(cartItems)}
-									</div>
-								</h5>
-							</Media.Body>
-						</Media>
+						<Box component="li" className="float-right">
+							<h5>
+								{translate('checkout.totalPriceTitle')}: &nbsp;
+								<div
+									style={{ display: 'inline' }}
+									className="text-success float-right"
+								>
+									${this.getTotalPrice(cartItems)}
+								</div>
+							</h5>
+						</Box>
 					</ul>
-				</Row>
+				</Grid>
 			</Container>
 		);
 	}

@@ -2,7 +2,9 @@ import * as React from 'react';
 import {
 	LocalizedElement, LocalizedElementMap
 } from 'react-localize-redux';
-import { Button, Card, Col } from 'react-bootstrap';
+import {
+	Button, Card, Grid, CardContent, Typography, CardActions, CardMedia
+} from '@material-ui/core';
 import { Device } from 'actions/catalog/interface';
 import './style.scss';
 
@@ -22,26 +24,45 @@ const DeviceCard: React.FC<Props> = (props: Props) => {
 	} = props;
 
 	return (
-		<Col key={device.id} xs={0} md={0} className="device-card-col">
+		<Grid container key={device.id} className="device-card-col">
 			<Card className="device-card">
-				<Card.Body>
-					<Card.Img variant="top" src={device.image} className="device-card-img" />
-					<Card.Text />
-					<Card.Title automation-id="card-title">{device.name}</Card.Title>
-					<Card.Text>{device.description}</Card.Text>
-					<Card.Text />
-					<Card.Text>{priceTitle}: <b>${device.price}</b>
-					</Card.Text>
+				<CardContent className="device-card-content">
+					<Grid container spacing={2}>
+						<Grid item xs={12}>
+							<CardMedia
+								className="device-card-img"
+								image={device.image}
+								title="device-card-img"
+							/>
+						</Grid>
+						<Grid item xs={12}>
+							<Typography variant="h5" component="h2" automation-id="card-title">
+								{device.name}
+							</Typography>
+						</Grid>
+						<Grid item xs={12}>
+							<Typography variant="body2" component="p">
+								{device.description}
+							</Typography>
+						</Grid>
+						<Grid item xs={12}>
+							<Typography variant="body1" component="p">
+								{priceTitle}: <b>${device.price}</b>
+							</Typography>
+						</Grid>
+					</Grid>
+				</CardContent>
+				<CardActions style={{ display: 'inherit' }}>
 					<Button
 						automation-id="add-to-cart"
 						onClick={() => { return quantity ? onRemoveClick(device.id) : onBuyClick(device); }}
-						variant={quantity ? 'secondary' : 'primary'}
+						color={quantity ? 'secondary' : 'primary'}
 					>
 						{ quantity ? removeButtonTitle : buttonTitle }
 					</Button>
-				</Card.Body>
+				</CardActions>
 			</Card>
-		</Col>
+		</Grid>
 	);
 };
 

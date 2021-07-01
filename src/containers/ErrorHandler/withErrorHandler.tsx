@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import * as React from 'react';
-import { Alert } from 'react-bootstrap';
+import { Alert, AlertTitle } from '@material-ui/lab';
 import { TranslateFunction } from 'react-localize-redux/es';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
@@ -85,8 +85,8 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 						errorHandled={() => this.handledError()}
 						ErrorComponent={() => {
 							return (
-								<Alert onClose={() => this.handledError()} variant={type} dismissible>
-									<Alert.Heading>{translate(header)}</Alert.Heading>
+								<Alert onClose={() => this.handledError()} severity={type}>
+									<AlertTitle>{translate(header)}</AlertTitle>
 									<p>{translate(body)}</p>
 								</Alert>
 							);
@@ -96,8 +96,8 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 			}
 
 			return (
-				<Alert variant={type} dismissible>
-					<Alert.Heading>{translate(header)}</Alert.Heading>
+				<Alert severity={type}>
+					<AlertTitle>{translate(header)}</AlertTitle>
 					<p>{translate(body)}</p>
 				</Alert>
 			);

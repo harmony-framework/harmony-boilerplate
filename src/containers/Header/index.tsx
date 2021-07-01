@@ -8,8 +8,8 @@ import { ApplicationState } from 'actions';
 import { cartSelector, CartActions } from 'actions/cart';
 import { FlowManagerActions } from 'actions/flowManager';
 import {
-	Row, Button
-} from 'react-bootstrap';
+	Grid, Button
+} from '@material-ui/core';
 import './style.scss';
 import { CartItem, ClearCartFunction } from 'actions/cart/interface';
 import RoutesPath from 'routes/RoutesPath';
@@ -120,26 +120,29 @@ export class Header extends React.Component<OwnProps, HeaderState> {
 
 						</ul>
 
-						<Row>
-							<Button
-								className="footer-buttons"
-								variant="success"
-								size="lg"
-								disabled={!cartItems || !cartItems.length}
-								onClick={() => { this.setCartToggle(); moveToNextStep(); }}
-							>
-								{translate('deviceGallery.checkoutButton')}
-							</Button>
-							<Button
-								className="footer-buttons"
-								variant="primary"
-								size="lg"
-								disabled={!cartItems || !cartItems.length}
-								onClick={clearCart}
-							>
-								{translate('deviceGallery.clearCartButton')}
-							</Button>
-						</Row>
+						<Grid container>
+							<Grid item xs={6}>
+								<Button
+									className="footer-buttons"
+									variant="contained"
+									color="primary"
+									disabled={!cartItems || !cartItems.length}
+									onClick={() => { this.setCartToggle(); moveToNextStep(); }}
+								>
+									{translate('deviceGallery.checkoutButton')}
+								</Button>
+							</Grid>
+							<Grid item xs={6}>
+								<Button
+									className="footer-buttons"
+									variant="contained"
+									disabled={!cartItems || !cartItems.length}
+									onClick={clearCart}
+								>
+									{translate('deviceGallery.clearCartButton')}
+								</Button>
+							</Grid>
+						</Grid>
 					</div>
 				</div>
 			</>

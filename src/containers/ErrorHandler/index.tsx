@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
+import { Button } from '@material-ui/core';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { clearErrorHandler, ErrorHandlerRequest, BaseComponentTypes } from '@base/features/base-error-handler';
@@ -113,7 +114,7 @@ export class ErrorHandler extends React.Component<OwnProps> {
 
 				<Modal.Footer>
 					<Button
-						variant="primary"
+						color="primary"
 						onClick={() => {
 							clearErrorHandler();
 						}}
