@@ -82,6 +82,7 @@ nav:
       - Cart: 'extensions/client/cart.md'
       - Flow Manager: 'extensions/client/flow_manager.md'
       - RBA: 'extensions/client/rba.md'
+      - SEO: 'extensions/client/seo.md'
       - Error Handler: 'extensions/client/error_handler.md'
       - Global Spinner: 'extensions/client/global_spinner.md'
       - Translator: 'extensions/client/multilingual.md'
