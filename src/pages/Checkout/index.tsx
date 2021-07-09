@@ -6,7 +6,7 @@ import { CartItem } from 'actions/cart/interface';
 import { cartSelector } from 'actions/cart';
 import RoutesPath from 'routes/RoutesPath';
 import {
-	Container, Grid, Box
+	Grid, Box
 } from '@material-ui/core';
 
 interface Props {
@@ -32,7 +32,7 @@ class Checkout extends React.Component<Props> {
 		const { cartItems, translate } = this.props;
 
 		return (
-			<Container>
+			<>
 				<Grid>
 					<h1>{translate('checkout.pageTitle')}</h1>
 				</Grid>
@@ -79,7 +79,7 @@ class Checkout extends React.Component<Props> {
 						</Box>
 					</ul>
 				</Grid>
-			</Container>
+			</>
 		);
 	}
 }

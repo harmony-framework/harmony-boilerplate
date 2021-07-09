@@ -3,7 +3,7 @@ import { Dispatch } from 'redux';
 import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import {
-	Container, Grid, Button, FormControl, Input
+	Grid, Button, FormControl, Input
 } from '@material-ui/core';
 import './style.scss';
 import { ApplicationState } from 'actions';
@@ -85,7 +85,7 @@ class DeviceGallery extends React.Component<Props, State> {
 		}
 
 		return (
-			<Container>
+			<>
 				<Grid container spacing={2}>
 					<Grid item xs={12}>
 						<RBAC id="shippment">
@@ -147,7 +147,7 @@ class DeviceGallery extends React.Component<Props, State> {
 						</Button>
 					</Grid>
 				</Grid>
-			</Container>
+			</>
 		);
 	}
 }
