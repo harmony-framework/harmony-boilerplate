@@ -27,6 +27,20 @@ class Request {
 		});
 	}
 
+	setRequestHeaders(originalConfig: AxiosRequestConfig): AxiosRequestConfig {
+		const config = originalConfig;
+		const commonAuthHeader = appConfig.COMMON_AUTHORIZATION_HEADER || '';
+		const token = sessionStorage.getItem(commonAuthHeader);
+		const auth = token ? { [commonAuthHeader]: token } : undefined;
+
+		config.headers = {
+			...originalConfig.headers,
+			...auth
+		};
+
+		return config;
+	}
+
 	broadcastAction(action: any): any {
 		if (!action) return null;
 
@@ -41,9 +55,10 @@ class Request {
 		});
 	}
 
-	async call(config: AxiosRequestConfig) {
+	async call(originalConfig: AxiosRequestConfig) {
 		let response: AxiosResponse;
 		const uuid = uuidv4();
+		const config = this.setRequestHeaders(originalConfig);
 
 		try {
 			const commonAuthHeader = appConfig.COMMON_AUTHORIZATION_HEADER;
