@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { LocalizeContextProps } from 'react-localize-redux';
-import { InjectedFormProps, Form, getFormValues } from 'redux-form';
+import { InjectedFormProps, Form, getFormValues, ConfigProps } from 'redux-form';
 import { baseConnectForm } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
 // import { <%= className %>Actions, <%= classNameLowerCase %>Selector } from 'actions/redux/<%= classNameLowerCase %>';
 
 export type Props = {
 
-};
+} & ConfigProps;
 
 type FormValues = {
 
@@ -43,6 +43,6 @@ export default baseConnectForm<any, any, Props>(
 
 	},
 	{
-		form: '<%= className %>Form'
+
 	}
 );

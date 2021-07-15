@@ -20,7 +20,11 @@ export default (
 		<Switch>
 			<Route exact path={RoutesPath.ROOT} step={stepTypes.DEVICE_GALLERY.name} component={DeviceGalleryPage} />
 			<Route exact path={RoutesPath.CHECKOUT} step={stepTypes.CHECKOUT.name} component={Checkout} />
-			<Route exact path={RoutesPath.FORM_EXAMPLE} component={FormExample} />
+			<Route
+				exact
+				path={RoutesPath.FORM_EXAMPLE}
+				component={() => <FormExample form="FormExample" />}
+			/>
 			<Route
 				exact
 				path={RoutesPath.CHECKOUT_SAMSUNG}
