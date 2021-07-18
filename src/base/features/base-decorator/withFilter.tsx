@@ -5,7 +5,7 @@ import { baseConnect } from '@base/features/base-redux-react-connect';
 declare function Compare(filterValue: any, props: any): boolean;
 
 export interface Config {
-	filterSelector: (state: any) => any;
+	filterSelector: (state: any, props: any) => any;
 	compare: typeof Compare;
 }
 
@@ -28,9 +28,9 @@ export default (config: Config): any => (WrappedComponent: any) => {
 
 	return baseConnect<any, any, any>(
 		WithFilter,
-		(state: any) => {
+		(state: any, props: any) => {
 			return {
-				filterValue: config.filterSelector(state)
+				filterValue: config.filterSelector(state, props)
 			};
 		},
 		() => ({})
