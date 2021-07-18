@@ -14,6 +14,7 @@ import { reducer as localPersistDataReducer } from 'actions/localPersistData';
 import { reducer as sessionPersistDataReducer } from 'actions/sessionPersistData';
 import { LocalPersistDataState } from 'actions/localPersistData/interface';
 import { SessionPersistDataState } from 'actions/sessionPersistData/interface';
+import { FilterState, reducer as baseFilterReducer } from '@base/features/base-filter';
 
 export interface BaseApplicationState {
 	localPersistData: LocalPersistDataState;
@@ -25,6 +26,7 @@ export interface BaseApplicationState {
 	rba: RBAState;
 	globalSpinner: GlobalSpinnerState;
 	flowManager: MultipleFlowManagerState | FlowManagerState;
+	filters: FilterState;
 }
 
 const localPersistConfig = {
@@ -49,5 +51,6 @@ export default {
 	pendingTasks: pendingTasksReducer,
 	rba: rbaReducer,
 	globalSpinner: globalSpinnerReducer,
-	flowManager: flowManagerReducer
+	flowManager: flowManagerReducer,
+	filters: baseFilterReducer
 };

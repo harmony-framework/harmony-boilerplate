@@ -54,5 +54,31 @@
       "name": "EXAMPLE_ROUTE_Xiaomi_C",
       "path": "/EXAMPLE_ROUTE_Xiaomi_C"
     }
-  }
+  },
+  "conditions": [
+    {
+      "conditionName": "someFailedCondition",
+      "onCheck": "someFailedCondition",
+      "displayName": "Failed Condition",
+      "description": "Function that always return Failed"
+    },
+    {
+      "conditionName": "someSuccessCondition",
+      "onCheck": "someSuccessCondition",
+      "displayName": "Success Condition",
+      "description": "Function that always return Success"
+    },
+    {
+      "conditionName": "isTowSamsungInCart",
+      "onCheck": "isTowSamsungInCart",
+      "displayName": "Tow Samsung In Cart",
+      "description": "Apply When Tow Sumsung Device in Cart"
+    },
+    {
+      "conditionName": "isTowXiaomiInCart",
+      "onCheck": "isTowXiaomiInCart",
+      "displayName": "Tow Xiaomi In Cart",
+      "description": "Apply When Tow Xiaomi Device in Cart"
+    }
+  ]
 }
