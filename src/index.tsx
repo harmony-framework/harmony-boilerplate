@@ -12,6 +12,7 @@ import 'public/sass/style.scss';
 
 /* -------- Harmony Features Bootstrap --------- */
 import { Store, persistor, history } from 'base/features';
+import { MediaContextProvider } from 'base/features/base-render-mobile';
 
 /* -------- Routes ---------- */
 import routes from 'routes';
@@ -21,11 +22,13 @@ ReactDOM.render(
 	<Provider store={Store}>
 		<PersistGate persistor={persistor}>
 			<LocalizeProvider store={Store}>
-				<ToastProvider>
-					<Router history={history}>
-						{routes}
-					</Router>
-				</ToastProvider>
+				<MediaContextProvider>
+					<ToastProvider>
+						<Router history={history}>
+							{routes}
+						</Router>
+					</ToastProvider>
+				</MediaContextProvider>
 			</LocalizeProvider>
 		</PersistGate>
 	</Provider>,

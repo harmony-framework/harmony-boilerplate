@@ -6,28 +6,33 @@
 
 Webapp required us to support multiple screen sizes.
 Single render method in react component and detection can take effort.
-Harmony Provide you detection for mobile and invoke special method of render called `renderMobile` once the user open the app in mobile.
+Harmony Provide you built-in open source library for different screens.
+
+Library Reference <a href="https://www.npmjs.com/package/@artsy/fresnel" target="_blank">@artsy/fresnel</a> 
 
 ## Usage
 
 ```js
-import { RenderMobile } from '@base/features/base-decorator';
+class App extends React.Component<Props> {
+	render() {
+		const { children, pendingTasks } = this.props;
+		const loading = pendingTasks?.length;
 
-@RenderMobile()
-class App extends React.Component<IProps> {
-    render() {
 		return (
 			<>
-                <ErrorHandler />
-                <Spinner config={{}} />
+				<ErrorHandler />
+				{(!!loading) && <Spinner />}
 				<Localization />
-				{this.props.children}
+				<Header />
+				<Media greaterThan="sm">
+					{children}
+				</Media>
+				<Media at="sm">
+					<h1>This is Render Example for 0-768 screen size</h1>
+					{children}
+				</Media>
 			</>
 		);
 	}
-
-	renderMobile() {
-        // return view and business rendered for mobile
-    }
 }
 ```

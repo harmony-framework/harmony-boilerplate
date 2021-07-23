@@ -72,7 +72,7 @@
     "lite-server": "2.6.1",
     "mocha": "7.1.2",
     "npm-run-all": "latest",
-    "postcss": "^8.3.5",
+    "postcss": "8.3.6",
     "postcss-loader": "^5.2.0",
     "postcss-preset-env": "6.7.0",
     "react-hot-loader": "4.12.21",
@@ -91,6 +91,7 @@
     "webpack-dev-server": "3.11.2"
   },
   "dependencies": {
+    "@artsy/fresnel": "1.9.0",
     "@material-ui/core": "4.11.4",
     "@material-ui/icons": "4.11.2",
     "@material-ui/lab": "4.0.0-alpha.58",
@@ -117,7 +118,6 @@
     "moment": "2.27.0",
     "react": "~17.0.2",
     "react-bootstrap": "1.6.1",
-    "react-device-detect": "1.12.1",
     "react-dom": "~17.0.2",
     "react-helmet": "6.1.0",
     "react-localize-redux": "3.5.3",
