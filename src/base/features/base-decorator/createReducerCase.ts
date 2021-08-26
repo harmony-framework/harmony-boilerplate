@@ -1,10 +1,18 @@
 import produce from 'immer';
+import { Store } from '@base/features';
 
 export default (originalReducerCase: Function) => {
 	return produce((...args: any) => {
-		/* Do stuff before call reducer */
+		const type = args?.[1]?.type;
+		const payload = { ...args?.[1] };
+
 		const res = originalReducerCase(...args);
-		/* Do stuff after call reducer */
+
+		if (type) {
+			setTimeout(() => {
+				Store.dispatch({ type: `${type}_DONE`, payload });
+			}, 0);
+		}
 		return res;
 	});
 };
