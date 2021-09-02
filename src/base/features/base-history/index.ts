@@ -1,3 +1,5 @@
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory, createHashHistory } from 'history';
 
-export default createBrowserHistory();
+const historyObject = window.cordova ? createHashHistory() : createBrowserHistory();
+
+export default historyObject;
