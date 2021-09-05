@@ -11,7 +11,7 @@
         <meta name="description" content="Branding new web architecture.">
       
       
-        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/cart/">
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/storybook/">
       
       
         <meta name="author" content="Harmony Framework Team">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Cart - Harmony Boilerplate</title>
+        <title>Storybook - Harmony Boilerplate</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cart" class="md-skip">
+        <a href="#storybook" class="md-skip">
           Skip to content
         </a>
       
@@ -89,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Cart
+              Storybook
             
           </span>
         </div>
@@ -337,87 +337,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Cart
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Cart" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../cart/" title="Cart" class="md-nav__link">
       Cart
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cart-concept" class="md-nav__link">
-    Cart Concept
-  </a>
-  
-    <nav class="md-nav" aria-label="Cart Concept">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#redux-actions" class="md-nav__link">
-    Redux Actions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#saga-actions" class="md-nav__link">
-    Saga Actions
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#define-the-item-interface" class="md-nav__link">
-    Define the Item Interface
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cart-in-store-example" class="md-nav__link">
-    Cart in Store Example
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -509,11 +433,103 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../storybook/" title="Storybook" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Storybook
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Storybook" class="md-nav__link md-nav__link--active">
       Storybook
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#storybook" class="md-nav__link">
+    Storybook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-story" class="md-nav__link">
+    Generate Story
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-story-decorator" class="md-nav__link">
+    Base Story Decorator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-story-for-component-by-cli" class="md-nav__link">
+    Create Story for Component by cli
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Story for Component by cli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-story-for-container-by-cli" class="md-nav__link">
+    Create Story for Container by cli
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Story for Container by cli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code_1" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -679,8 +695,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -691,37 +705,57 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cart-concept" class="md-nav__link">
-    Cart Concept
+  <a href="#storybook" class="md-nav__link">
+    Storybook
   </a>
   
-    <nav class="md-nav" aria-label="Cart Concept">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-story" class="md-nav__link">
+    Generate Story
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-story-decorator" class="md-nav__link">
+    Base Story Decorator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-story-for-component-by-cli" class="md-nav__link">
+    Create Story for Component by cli
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Story for Component by cli">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#redux-actions" class="md-nav__link">
-    Redux Actions
+  <a href="#example-code" class="md-nav__link">
+    Example Code
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#saga-actions" class="md-nav__link">
-    Saga Actions
-  </a>
+      </ul>
+    </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#define-the-item-interface" class="md-nav__link">
-    Define the Item Interface
+      
+        <li class="md-nav__item">
+  <a href="#create-story-for-container-by-cli" class="md-nav__link">
+    Create Story for Container by cli
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Create Story for Container by cli">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cart-in-store-example" class="md-nav__link">
-    Cart in Store Example
+  <a href="#example-code_1" class="md-nav__link">
+    Example Code
   </a>
   
 </li>
@@ -743,7 +777,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/harmony-framework/harmony-boilerplate/edit/master/docs/extensions/client/cart.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/harmony-framework/harmony-boilerplate/edit/master/docs/extensions/client/storybook.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -751,81 +785,105 @@
                   
                 
                 
-                <h1 id="cart">Cart</h1>
-<h2 id="cart-concept">Cart Concept</h2>
-<p>The cart feature give you the basic functionality that any cart need.
-The basic redux actions and saga already built-in in harmony.
-- <code>\src\actions\redux\cart</code>
-- <code>\src\actions\sagas\cart</code></p>
-<h3 id="redux-actions">Redux Actions</h3>
-<p><code>\src\actions\redux\cart</code></p>
-<ul>
-<li><code>setCartId</code></li>
-<li><code>addToCart</code></li>
-<li><code>updateCart</code></li>
-<li><code>removeFromCart</code></li>
-<li><code>clearCart</code></li>
-</ul>
-<h3 id="saga-actions">Saga Actions</h3>
-<p><code>\src\actions\sagas\cart</code></p>
-<ul>
-<li><code>addSaga</code> - add item to cart</li>
-<li><code>removeSaga</code> - remove item from cart</li>
-<li><code>clearSaga</code> - clear cart</li>
-</ul>
-<h3 id="define-the-item-interface">Define the Item Interface</h3>
-<p>in <code>\src\actions\redux\cart\interfaces.ts</code> </p>
-<p>you can define the structure of each item/s</p>
-<div class="highlight"><pre><span></span><code><span class="kr">interface</span> <span class="nx">CartItem</span> <span class="p">{</span>
-    <span class="nx">id</span>: <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">brand</span>: <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">description</span>: <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">image?</span>: <span class="kt">string</span><span class="p">;</span>
-    <span class="nx">price</span>: <span class="kt">number</span><span class="p">;</span>
-    <span class="nx">quantity?</span>: <span class="kt">number</span><span class="p">;</span>
-<span class="p">}</span>
+                  <h1>Storybook</h1>
+                
+                <h2 id="storybook">Storybook</h2>
+<p>Harmony include Storybook built-in, althgo most of the usage is related to the official documentation 
+<a href="https://storybook.js.org/" target="_blank">Storybook</a>, 
+There is few things you may need to know with Storybook inside Harmony to make your life easier<br/></p>
+<h2 id="generate-story">Generate Story</h2>
+<p>Each time you create Component with <code>gulp createComponent</code> it also will generate you automatic <code>.stories.tsx</code> file
+<br />
+To create <code>.stories.tsx</code> to Container or Page you can use on the desire directory folder the command gulp <code>gulp createStoryContainer</code> 
+<br /></p>
+<h2 id="base-story-decorator">Base Story Decorator</h2>
+<p>Harmony Provide by default Base Decorator, what make the story to be connected to the store and then you can test more Components, 
+and even container that required data from store.</p>
+<h2 id="create-story-for-component-by-cli">Create Story for Component by cli</h2>
+<p>Each time you create Component with the generator <code>createComponent</code> it automatic will generate to you <code>.stories.tsx</code> file.<br />
+But if you wish you can create Component Story everywhere with cli command <br />
+<br />
+Most the time the only what you left to do is to insert the data under <code>Default.args</code> object.</p>
+<div class="highlight"><pre><span></span><code>$ gulp createStory --name MyComponentName --storyTitle Business Components/MyComponentName
 </code></pre></div>
 
-<div class="admonition tip">
-<p class="admonition-title">Remember - Cart Feature created to provide you basic actions that any cart should have. you can do anything with that sagas for your project needed. The main purpose of that cart is give you fast starter kit with cart.</p>
-</div>
-<h3 id="cart-in-store-example">Cart in Store Example</h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="nx">cart</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">items</span><span class="o">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Yezz LIV1&#39;</span><span class="p">,</span>
-        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Yezz LIV1&#39;</span><span class="p">,</span>
-        <span class="nx">price</span><span class="o">:</span> <span class="mi">316</span><span class="p">,</span>
-        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;TFT capacitive touchscreen, 16M colors Available. Released 2019, September&#39;</span><span class="p">,</span>
-        <span class="nx">brand</span><span class="o">:</span> <span class="s1">&#39;Yezz&#39;</span><span class="p">,</span>
-        <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;/assets/images/src/actions/sagas/catalog/generic-mobile.jpg&#39;</span><span class="p">,</span>
-        <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Xiaomi Redmi 8A&#39;</span><span class="p">,</span>
-        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Xiaomi Redmi 8A&#39;</span><span class="p">,</span>
-        <span class="nx">price</span><span class="o">:</span> <span class="mf">96.99</span><span class="p">,</span>
-        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;IPS LCD capacitive touchscreen, 16M colors Available. Released 2019, September&#39;</span><span class="p">,</span>
-        <span class="nx">brand</span><span class="o">:</span> <span class="s1">&#39;Xiaomi&#39;</span><span class="p">,</span>
-        <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;/assets/images/src/actions/sagas/catalog/generic-mobile.jpg&#39;</span><span class="p">,</span>
-        <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Samsung Galaxy A70s&#39;</span><span class="p">,</span>
-        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Samsung Galaxy A70s&#39;</span><span class="p">,</span>
-        <span class="nx">price</span><span class="o">:</span> <span class="mi">876</span><span class="p">,</span>
-        <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;Super AMOLED capacitive touchscreen, 16M colors Available. Released 2019, September&#39;</span><span class="p">,</span>
-        <span class="nx">brand</span><span class="o">:</span> <span class="s1">&#39;Samsung&#39;</span><span class="p">,</span>
-        <span class="nx">image</span><span class="o">:</span> <span class="s1">&#39;/assets/images/src/actions/sagas/catalog/generic-mobile.jpg&#39;</span><span class="p">,</span>
-        <span class="nx">quantity</span><span class="o">:</span> <span class="mi">1</span>
-      <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="nx">cartId</span><span class="o">:</span> <span class="s1">&#39;2467654&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<h3 id="example-code">Example Code</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// MyComponentName.stories.ts</span>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BaseStorybookDecorator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-decorator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ComponentStory</span><span class="p">,</span> <span class="nx">Meta</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@storybook/react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">DeviceCard</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Props</span> <span class="nx">as</span> <span class="nx">DeviceCardProps</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./index&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Design System/Business Components/Device Card&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="nx">DeviceCard</span><span class="p">,</span>
+    <span class="nx">argTypes</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">quantity</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;The numbers of this Item in Cart. Once bigger then one button become to disable and title become remove.&#39;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">decorators</span><span class="o">:</span> <span class="p">[</span><span class="nx">BaseStorybookDecorator</span><span class="p">],</span>
+    <span class="nx">parameters</span><span class="o">:</span> <span class="p">{</span> <span class="nx">docs</span><span class="o">:</span> <span class="p">{</span> <span class="nx">source</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dynamic&#39;</span><span class="p">,</span> <span class="nx">excludeDecorators</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span> <span class="nx">as</span> <span class="nx">Meta</span><span class="p">;</span>
+
+<span class="c1">// eslint-disable-next-line react/jsx-props-no-spreading</span>
+<span class="kr">const</span> <span class="nx">Template</span><span class="o">:</span> <span class="nx">ComponentStory</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">DeviceCard</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="o">&lt;</span><span class="nx">DeviceCard</span> <span class="p">{...</span><span class="nx">args</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">Default</span> <span class="o">=</span> <span class="nx">Template</span><span class="p">.</span><span class="nx">bind</span><span class="p">({});</span>
+<span class="nx">Default</span><span class="p">.</span><span class="nx">args</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="nx">as</span> <span class="nx">DeviceCardProps</span><span class="p">;</span>
 </code></pre></div>
+
+<h2 id="create-story-for-container-by-cli">Create Story for Container by cli</h2>
+<p>Story Container is the same as normal story, but it connected to the store.<br />
+Then with same way with normal story, you can insert your args as it was the data from the store, and the 
+container will work with this args injected via the <code>mapStateToProps</code>.</p>
+<div class="highlight"><pre><span></span><code>$ gulp createStoryContainer --name MyComponentName --storyTitle Business Components/MyComponentName
+</code></pre></div>
+
+<h3 id="example-code_1">Example Code</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// MyComponentName.stories.ts</span>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BaseStorybookDecorator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-decorator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">baseConnect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-redux-react-connect&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ComponentStory</span><span class="p">,</span> <span class="nx">Meta</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@storybook/react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ErrorPage</span><span class="p">,</span> <span class="nx">Props</span> <span class="nx">as</span> <span class="nx">ErrorPageProps</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./index&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Design System/Containers/ErrorPage&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="p">(</span><span class="nx">props</span><span class="o">:</span> <span class="nx">ErrorPageProps</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">ErrorPage</span> <span class="p">{...</span><span class="nx">props</span> <span class="nx">as</span> <span class="nx">any</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">),</span>
+    <span class="nx">argTypes</span><span class="o">:</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+    <span class="nx">decorators</span><span class="o">:</span> <span class="p">[</span><span class="nx">BaseStorybookDecorator</span><span class="p">],</span>
+    <span class="nx">parameters</span><span class="o">:</span> <span class="p">{</span> <span class="nx">docs</span><span class="o">:</span> <span class="p">{</span> <span class="nx">source</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dynamic&#39;</span><span class="p">,</span> <span class="nx">excludeDecorators</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span> <span class="nx">as</span> <span class="nx">Meta</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">Template</span><span class="o">:</span> <span class="nx">ComponentStory</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">ErrorPage</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">ErrorPageContainer</span> <span class="o">=</span> <span class="nx">baseConnect</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">,</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">ErrorPageProps</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="nx">ErrorPage</span><span class="p">,</span>
+        <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">({</span>
+            <span class="p">...</span><span class="nx">args</span>
+        <span class="p">})</span>
+    <span class="p">);</span>
+
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ErrorPageContainer</span> <span class="p">{...</span><span class="nx">args</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">Default</span> <span class="o">=</span> <span class="nx">Template</span><span class="p">.</span><span class="nx">bind</span><span class="p">({});</span>
+<span class="nx">Default</span><span class="p">.</span><span class="nx">args</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="nx">as</span> <span class="nx">ErrorPageProps</span><span class="p">;</span>
+</code></pre></div>
+
+<div class="admonition tip big data required from store">
+<p class="admonition-title">Tip</p>
+<p>The best practice is to keep your component with small requirments of Props.<br/>
+But if you face a situation that Container required tones of data from the store, you always can copy
+the store for real enviroment where your container should be runing and put it in sepreate file of mock.<br />
+Then you can import it and spread it into your <code>args</code>.</p>
+</div>
                 
               
               
@@ -844,7 +902,7 @@ The basic redux actions and saga already built-in in harmony.
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../requests/" title="Requests" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../render_mobile/" title="Mobile Ready" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -853,19 +911,19 @@ The basic redux actions and saga already built-in in harmony.
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Requests
+                Mobile Ready
               </div>
             </div>
           </a>
         
         
-          <a href="../flow_manager/" title="Flow Manager" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../mobile-app/" title="Mobile App" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Flow Manager
+                Mobile App
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

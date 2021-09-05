@@ -375,6 +375,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../seo/" title="SEO" class="md-nav__link">
+      SEO
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../error_handler/" title="Error Handler" class="md-nav__link">
       Error Handler
     </a>
@@ -463,6 +475,30 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storybook/" title="Storybook" class="md-nav__link">
+      Storybook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mobile-app/" title="Mobile App" class="md-nav__link">
+      Mobile App
+    </a>
   </li>
 
         
@@ -665,25 +701,29 @@
 <h2 id="mobile-render-concept">Mobile Render Concept</h2>
 <p>Webapp required us to support multiple screen sizes.
 Single render method in react component and detection can take effort.
-Harmony Provide you detection for mobile and invoke special method of render called <code>renderMobile</code> once the user open the app in mobile.</p>
+Harmony Provide you built-in open source library for different screens.</p>
+<p>Library Reference <a href="https://www.npmjs.com/package/@artsy/fresnel" target="_blank">@artsy/fresnel</a> </p>
 <h2 id="usage">Usage</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">RenderMobile</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-decorator&#39;</span><span class="p">;</span>
-
-<span class="err">@</span><span class="nx">RenderMobile</span><span class="p">()</span>
-<span class="kr">class</span> <span class="nx">App</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">IProps</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kr">class</span> <span class="nx">App</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="o">&lt;</span><span class="nx">Props</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="p">{</span> <span class="nx">children</span><span class="p">,</span> <span class="nx">pendingTasks</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+        <span class="kr">const</span> <span class="nx">loading</span> <span class="o">=</span> <span class="nx">pendingTasks</span><span class="o">?</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
         <span class="k">return</span> <span class="p">(</span>
             <span class="o">&lt;&gt;</span>
                 <span class="o">&lt;</span><span class="nx">ErrorHandler</span> <span class="o">/&gt;</span>
-                <span class="o">&lt;</span><span class="nx">Spinner</span> <span class="nx">config</span><span class="o">=</span><span class="p">{{}}</span> <span class="o">/&gt;</span>
+                <span class="p">{(</span><span class="o">!!</span><span class="nx">loading</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">Spinner</span> <span class="o">/&gt;</span><span class="p">}</span>
                 <span class="o">&lt;</span><span class="nx">Localization</span> <span class="o">/&gt;</span>
-                <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">children</span><span class="p">}</span>
+                <span class="o">&lt;</span><span class="nx">Header</span> <span class="o">/&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Media</span> <span class="nx">greaterThan</span><span class="o">=</span><span class="s2">&quot;sm&quot;</span><span class="o">&gt;</span>
+                    <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+                <span class="o">&lt;</span><span class="err">/Media&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Media</span> <span class="nx">at</span><span class="o">=</span><span class="s2">&quot;sm&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">This</span> <span class="nx">is</span> <span class="nx">Render</span> <span class="nx">Example</span> <span class="k">for</span> <span class="mi">0</span><span class="o">-</span><span class="mi">768</span> <span class="nx">screen</span> <span class="nx">size</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+                    <span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+                <span class="o">&lt;</span><span class="err">/Media&gt;</span>
             <span class="o">&lt;</span><span class="err">/&gt;</span>
         <span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="nx">renderMobile</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// return view and business rendered for mobile</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -720,13 +760,13 @@ Harmony Provide you detection for mobile and invoke special method of render cal
           </a>
         
         
-          <a href="../components/" title="Generate Component" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../storybook/" title="Storybook" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Generate Component
+                Storybook
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
