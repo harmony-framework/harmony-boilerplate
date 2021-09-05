@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.attia" version="1.0.0" 
+xmlns="http://www.w3.org/ns/widgets"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Harmony</name>
+    <description>
+        Harmony Mobile Appication
+    </description>
+    <author email="ofirattia@gmail.com">
+        Harmony Team
+    </author>
+    <allow-navigation href="*" />
+    <allow-navigation href="bgd://*/*" />
+    <allow-navigation href="file://*/*" />
+
+    <access origin="*" />
+    <access origin="bgd://*/*" />
+    <access origin="file://*/*" />
+
+    <allow-intent href="http://*/*" />
+    <allow-intent href="bgd://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <preference name="android-minSdkVersion" value="26" />
+        <allow-intent href="market:*" />
+        <content src="index.html" />
+        <preference name="Scheme" value="file" />
+        <preference name="Hostname" value="android_asset" />
+        <preference name="customEntryPoint" value="index.html/#" />
+		<preference name="loadUrlTimeoutValue" value="700000" />
+
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+            <application android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher" />
+
+        </edit-config>
+        <preference name="ContentUpdateEnabled" value="false" />
+        <!-- Assets Configuration -->
+        <!-- you can use any density that exists in the Android project -->
+        <!-- Splash - Portrait 
+            Dimensions
+
+            - LDPI:
+                - Portrait: 200x320px
+                - Landscape: 320x200px
+            - MDPI:
+                - Portrait: 320x480px
+                - Landscape: 480x320px
+            - HDPI:
+                - Portrait: 480x800px
+                - Landscape: 800x480px
+            - XHDPI:
+                - Portrait: 720px1280px
+                - Landscape: 1280x720px
+            - XXHDPI
+                - Portrait: 960x1600px
+                - Landscape: 1600x960px
+            - XXXHDPI 
+                - Portrait: 1280x1920px
+                - Landscape: 1920x1280px
+        -->
+        <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
+        <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi"/>
+        <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi"/>
+        <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+        <splash src="res/screen/android/splash-land-xxhdpi.png" density="land-xxhdpi"/>
+
+        <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+        <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+        <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+        <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+        <splash src="res/screen/android/splash-port-xxhdpi.png" density="port-xxhdpi"/>
+        <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+        <icon src="res/icons/android/ldpi.png" density="ldpi" />
+        <icon src="res/icons/android/mdpi.png" density="mdpi" />
+        <icon src="res/icons/android/hdpi.png" density="hdpi" />
+        <icon src="res/icons/android/xhdpi.png" density="xhdpi" />
+        <icon src="res/icons/android/xxhdpi.png" density="xxhdpi" />
+        <icon src="res/icons/android/xxxhdpi.png" density="xxxhdpi" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <preference name="iosScheme" value="bgd" />
+        <preference name="Hostname" value="server/index.html/#/" />
+        <content src="index.html" />
+        <preference name="StatusBarOverlaysWebView" value="false" />
+        <preference name="StatusBarStyle" value="default" />
+
+        <!-- Assets Configuration -->
+        <!-- Sizes 
+        scale	idiom	width	height	size	filename
+            2x*	universal	any	any	2732x2732	Default@2x~universal~anyany.png
+            2x	universal	com	any	1278x2732	Default@2x~universal~comany.png
+            2x	universal	com	com	1334x750	Default@2x~universal~comcom.png
+            3x*	universal	any	any	2208x2208	Default@3x~universal~anyany.png
+            3x	universal	any	com	2208x1242	Default@3x~universal~anycom.png
+            3x	universal	com	any	1242x2208	Default@3x~universal~comany.png
+
+        -->
+        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
+        <splash src="res/screen/ios/Default@2x~universal~comany.png" />
+        <splash src="res/screen/ios/Default@2x~universal~comcom.png" />
+        <splash src="res/screen/ios/Default@3x~universal~anyany.png" />
+        <splash src="res/screen/ios/Default@3x~universal~anycom.png" />
+        <splash src="res/screen/ios/Default@3x~universal~comany.png" />
+
+        <!-- Icons -->
+        <!-- iOS 8.0+ -->
+        <!-- iPhone 6 Plus  -->
+        <icon src="res/icons/ios/icon-60@3x.png" width="180" height="180" />
+        <!-- iOS 7.0+ -->
+        <!-- iPhone / iPod Touch  -->
+        <icon src="res/icons/ios/icon-60.png" width="60" height="60" />
+        <icon src="res/icons/ios/icon-60@2x.png" width="120" height="120" />
+        <!-- iPad -->
+        <icon src="res/icons/ios/icon-76.png" width="76" height="76" />
+        <icon src="res/icons/ios/icon-76@2x.png" width="152" height="152" />
+        <!-- Spotlight Icon -->
+        <icon src="res/icons/ios/icon-40.png" width="40" height="40" />
+        <icon src="res/icons/ios/icon-40@2x.png" width="80" height="80" />
+        <!-- iOS 6.1 -->
+        <!-- iPhone / iPod Touch -->
+        <icon src="res/icons/ios/icon.png" width="57" height="57" />
+        <icon src="res/icons/ios/icon@2x.png" width="114" height="114" />
+        <!-- iPad -->
+        <icon src="res/icons/ios/icon-72.png" width="72" height="72" />
+        <icon src="res/icons/ios/icon-72@2x.png" width="144" height="144" />
+        <!-- iPad Pro -->
+        <icon src="res/icons/ios/icon-167.png" width="167" height="167" />
+        <!-- iPhone Spotlight and Settings Icon -->
+        <icon src="res/icons/ios/icon-small.png" width="29" height="29" />
+        <icon src="res/icons/ios/icon-small@2x.png" width="58" height="58" />
+        <icon src="res/icons/ios/icon-small@3x.png" width="87" height="87" />
+        <!-- iPad Spotlight and Settings Icon -->
+        <icon src="res/icons/ios/icon-50.png" width="50" height="50" />
+        <icon src="res/icons/ios/icon-50@2x.png" width="100" height="100" />
+        <!-- iPad Pro -->
+        <icon src="res/icons/ios/icon-83.5@2x.png" width="167" height="167" />
+        <!-- Misc -->
+        <icon src="res/icons/ios/icon-24@2x.png" width="48" height="48" />
+        <icon src="res/icons/ios/icon-20.png" width="20" height="20" />
+        <icon src="res/icons/ios/icon-1024.png" width="1024" height="1024" />
+        <icon src="res/icons/ios/icon-29@3x.png" width="87" height="87" />
+
+
+    </platform>
+    <!-- Global Configurations -->
+
+    <preference name="ScrollEnabled" value="true" />
+    <preference name="WKSuspendInBackground" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="WKWebViewOnly" value="true" />
+    <preference name="StatusBarStyle" value="default" />
+    <preference name="ContentUpdateURL" value="http://127.0.0.1:7000/api/update-provider/getLatestVersionByAppId" />
+    <preference name="ContentUpdateEnabled" value="false" />
+    <preference name="ApplicationID" value="myapp" />
+
+    <preference name="SplashScreenDelay" value="5000" />
+    <!-- Allowed urls or schemes as intent to be opened -->
+    <preference name="AllowedSchemeURLsAsIntent" value="https://" />
+
+
+</widget>

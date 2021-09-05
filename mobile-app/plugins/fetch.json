@@ -1,0 +1,50 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "file:harmony-plugins/plugins/cordova-plugin-whitelist"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "phonegap-plugin-contentsync": {
+    "source": {
+      "type": "registry",
+      "id": "file:harmony-plugins/plugins/phonegap-plugin-contentsync"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-ionic-webview": {
+    "source": {
+      "type": "registry",
+      "id": "file:harmony-plugins/plugins/cordova-plugin-ionic-webview"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-native-spinner": {
+    "source": {
+      "type": "registry",
+      "id": "file:harmony-plugins/plugins/cordova-plugin-native-spinner"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-splashscreen": {
+    "source": {
+      "type": "registry",
+      "id": "file:harmony-plugins/plugins/cordova-plugin-splashscreen"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "file:harmony-plugins/plugins/cordova-plugin-statusbar"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

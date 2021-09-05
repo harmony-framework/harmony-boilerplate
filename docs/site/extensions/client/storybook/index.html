@@ -1,0 +1,968 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Branding new web architecture.">
+      
+      
+        <link rel="canonical" href="https://harmony-framework.github.io/harmony-boilerplate/extensions/client/storybook/">
+      
+      
+        <meta name="author" content="Harmony Framework Team">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.9">
+    
+    
+      
+        <title>Storybook - Harmony Boilerplate</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.36ee6aaa.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../css/styles.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-33876059-14","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#storybook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://harmony-framework.github.io/harmony-boilerplate/" title="Harmony Boilerplate" class="md-header-nav__button md-logo" aria-label="Harmony Boilerplate">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Harmony Boilerplate
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Storybook
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/harmony-framework/harmony-boilerplate/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    harmony-framework/harmony-boilerplate
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://harmony-framework.github.io/harmony-boilerplate/" title="Harmony Boilerplate" class="md-nav__button md-logo" aria-label="Harmony Boilerplate">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Harmony Boilerplate
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/harmony-framework/harmony-boilerplate/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    harmony-framework/harmony-boilerplate
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Harmony" class="md-nav__link">
+      Harmony
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../develop-with-harmony/" title="Harmony Architecture" class="md-nav__link">
+      Harmony Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Features & Guidelines
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Features & Guidelines" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Features & Guidelines
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../client/" title="Client Introduction" class="md-nav__link">
+      Client Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="Main Configuration" class="md-nav__link">
+      Main Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../base/" title="Base Folder" class="md-nav__link">
+      Base Folder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../development/" title="Code Guards" class="md-nav__link">
+      Code Guards
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5" checked>
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Features
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Features" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Features
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requests/" title="Requests" class="md-nav__link">
+      Requests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cart/" title="Cart" class="md-nav__link">
+      Cart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../flow_manager/" title="Flow Manager" class="md-nav__link">
+      Flow Manager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rba/" title="RBA" class="md-nav__link">
+      RBA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../seo/" title="SEO" class="md-nav__link">
+      SEO
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../error_handler/" title="Error Handler" class="md-nav__link">
+      Error Handler
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../global_spinner/" title="Global Spinner" class="md-nav__link">
+      Global Spinner
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../multilingual/" title="Translator" class="md-nav__link">
+      Translator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../render_mobile/" title="Mobile Ready" class="md-nav__link">
+      Mobile Ready
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Storybook
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Storybook" class="md-nav__link md-nav__link--active">
+      Storybook
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#storybook" class="md-nav__link">
+    Storybook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-story" class="md-nav__link">
+    Generate Story
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-story-decorator" class="md-nav__link">
+    Base Story Decorator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-story-for-component-by-cli" class="md-nav__link">
+    Create Story for Component by cli
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Story for Component by cli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-story-for-container-by-cli" class="md-nav__link">
+    Create Story for Container by cli
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Story for Container by cli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code_1" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mobile-app/" title="Mobile App" class="md-nav__link">
+      Mobile App
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      Generators
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Generators" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Generators
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../components/" title="Generate Component" class="md-nav__link">
+      Generate Component
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../containers/" title="Generate Container" class="md-nav__link">
+      Generate Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../form_containers/" title="Generate Form Container" class="md-nav__link">
+      Generate Form Container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../actions/" title="Generate Action" class="md-nav__link">
+      Generate Action
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../release-notes/" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../team/" title="Harmony Team" class="md-nav__link">
+      Harmony Team
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#storybook" class="md-nav__link">
+    Storybook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-story" class="md-nav__link">
+    Generate Story
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base-story-decorator" class="md-nav__link">
+    Base Story Decorator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-story-for-component-by-cli" class="md-nav__link">
+    Create Story for Component by cli
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Story for Component by cli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-story-for-container-by-cli" class="md-nav__link">
+    Create Story for Container by cli
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Story for Container by cli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-code_1" class="md-nav__link">
+    Example Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/harmony-framework/harmony-boilerplate/edit/master/docs/extensions/client/storybook.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Storybook</h1>
+                
+                <h2 id="storybook">Storybook</h2>
+<p>Harmony include Storybook built-in, althgo most of the usage is related to the official documentation 
+<a href="https://storybook.js.org/" target="_blank">Storybook</a>, 
+There is few things you may need to know with Storybook inside Harmony to make your life easier<br/></p>
+<h2 id="generate-story">Generate Story</h2>
+<p>Each time you create Component with <code>gulp createComponent</code> it also will generate you automatic <code>.stories.tsx</code> file
+<br />
+To create <code>.stories.tsx</code> to Container or Page you can use on the desire directory folder the command gulp <code>gulp createStoryContainer</code> 
+<br /></p>
+<h2 id="base-story-decorator">Base Story Decorator</h2>
+<p>Harmony Provide by default Base Decorator, what make the story to be connected to the store and then you can test more Components, 
+and even container that required data from store.</p>
+<h2 id="create-story-for-component-by-cli">Create Story for Component by cli</h2>
+<p>Each time you create Component with the generator <code>createComponent</code> it automatic will generate to you <code>.stories.tsx</code> file.<br />
+But if you wish you can create Component Story everywhere with cli command <br />
+<br />
+Most the time the only what you left to do is to insert the data under <code>Default.args</code> object.</p>
+<div class="highlight"><pre><span></span><code>$ gulp createStory --name MyComponentName --storyTitle Business Components/MyComponentName
+</code></pre></div>
+
+<h3 id="example-code">Example Code</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// MyComponentName.stories.ts</span>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BaseStorybookDecorator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-decorator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ComponentStory</span><span class="p">,</span> <span class="nx">Meta</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@storybook/react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">DeviceCard</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Props</span> <span class="nx">as</span> <span class="nx">DeviceCardProps</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./index&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Design System/Business Components/Device Card&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="nx">DeviceCard</span><span class="p">,</span>
+    <span class="nx">argTypes</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">quantity</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;The numbers of this Item in Cart. Once bigger then one button become to disable and title become remove.&#39;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">decorators</span><span class="o">:</span> <span class="p">[</span><span class="nx">BaseStorybookDecorator</span><span class="p">],</span>
+    <span class="nx">parameters</span><span class="o">:</span> <span class="p">{</span> <span class="nx">docs</span><span class="o">:</span> <span class="p">{</span> <span class="nx">source</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dynamic&#39;</span><span class="p">,</span> <span class="nx">excludeDecorators</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span> <span class="nx">as</span> <span class="nx">Meta</span><span class="p">;</span>
+
+<span class="c1">// eslint-disable-next-line react/jsx-props-no-spreading</span>
+<span class="kr">const</span> <span class="nx">Template</span><span class="o">:</span> <span class="nx">ComponentStory</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">DeviceCard</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="o">&lt;</span><span class="nx">DeviceCard</span> <span class="p">{...</span><span class="nx">args</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">Default</span> <span class="o">=</span> <span class="nx">Template</span><span class="p">.</span><span class="nx">bind</span><span class="p">({});</span>
+<span class="nx">Default</span><span class="p">.</span><span class="nx">args</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="nx">as</span> <span class="nx">DeviceCardProps</span><span class="p">;</span>
+</code></pre></div>
+
+<h2 id="create-story-for-container-by-cli">Create Story for Container by cli</h2>
+<p>Story Container is the same as normal story, but it connected to the store.<br />
+Then with same way with normal story, you can insert your args as it was the data from the store, and the 
+container will work with this args injected via the <code>mapStateToProps</code>.</p>
+<div class="highlight"><pre><span></span><code>$ gulp createStoryContainer --name MyComponentName --storyTitle Business Components/MyComponentName
+</code></pre></div>
+
+<h3 id="example-code_1">Example Code</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// MyComponentName.stories.ts</span>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">BaseStorybookDecorator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-decorator&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">baseConnect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@base/features/base-redux-react-connect&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ComponentStory</span><span class="p">,</span> <span class="nx">Meta</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@storybook/react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ErrorPage</span><span class="p">,</span> <span class="nx">Props</span> <span class="nx">as</span> <span class="nx">ErrorPageProps</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./index&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Design System/Containers/ErrorPage&#39;</span><span class="p">,</span>
+    <span class="nx">component</span><span class="o">:</span> <span class="p">(</span><span class="nx">props</span><span class="o">:</span> <span class="nx">ErrorPageProps</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">ErrorPage</span> <span class="p">{...</span><span class="nx">props</span> <span class="nx">as</span> <span class="nx">any</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">),</span>
+    <span class="nx">argTypes</span><span class="o">:</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+    <span class="nx">decorators</span><span class="o">:</span> <span class="p">[</span><span class="nx">BaseStorybookDecorator</span><span class="p">],</span>
+    <span class="nx">parameters</span><span class="o">:</span> <span class="p">{</span> <span class="nx">docs</span><span class="o">:</span> <span class="p">{</span> <span class="nx">source</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dynamic&#39;</span><span class="p">,</span> <span class="nx">excludeDecorators</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span> <span class="p">}</span> <span class="p">}</span>
+<span class="p">}</span> <span class="nx">as</span> <span class="nx">Meta</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">Template</span><span class="o">:</span> <span class="nx">ComponentStory</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">ErrorPage</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">ErrorPageContainer</span> <span class="o">=</span> <span class="nx">baseConnect</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">,</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">ErrorPageProps</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="nx">ErrorPage</span><span class="p">,</span>
+        <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">({</span>
+            <span class="p">...</span><span class="nx">args</span>
+        <span class="p">})</span>
+    <span class="p">);</span>
+
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">ErrorPageContainer</span> <span class="p">{...</span><span class="nx">args</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">Default</span> <span class="o">=</span> <span class="nx">Template</span><span class="p">.</span><span class="nx">bind</span><span class="p">({});</span>
+<span class="nx">Default</span><span class="p">.</span><span class="nx">args</span> <span class="o">=</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="nx">as</span> <span class="nx">ErrorPageProps</span><span class="p">;</span>
+</code></pre></div>
+
+<div class="admonition tip big data required from store">
+<p class="admonition-title">Tip</p>
+<p>The best practice is to keep your component with small requirments of Props.<br/>
+But if you face a situation that Container required tones of data from the store, you always can copy
+the store for real enviroment where your container should be runing and put it in sepreate file of mock.<br />
+Then you can import it and spread it into your <code>args</code>.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../render_mobile/" title="Mobile Ready" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Mobile Ready
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../mobile-app/" title="Mobile App" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Mobile App
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

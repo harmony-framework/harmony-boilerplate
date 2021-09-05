@@ -88,6 +88,7 @@ nav:
       - Translator: 'extensions/client/multilingual.md'
       - Mobile Ready: 'extensions/client/render_mobile.md'
       - Storybook: 'extensions/client/storybook.md'
+      - Mobile App: 'extensions/client/mobile-app.md'
     - Generators:
       - Generate Component: 'extensions/client/components.md'
       - Generate Container: 'extensions/client/containers.md'
