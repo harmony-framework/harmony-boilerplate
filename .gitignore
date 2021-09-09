@@ -9,3 +9,5 @@ package-lock.json
 dist
 storybook-static
 /storybook-static
+mobile-app/plugins
+mobile-app/platforms
