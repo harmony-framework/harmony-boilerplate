@@ -1,0 +1,84 @@
+{
+  "flowTypes": {
+    "COP": "COP",
+    "CHQ": "CHQ"
+  },
+  "subFlowTypes": {
+    "onlyRunInCHQExqmple": "onlyRunInCHQExqmple",
+    "onlyDeviceFlow": "onlyDeviceFlow",
+    "towXiaomiFlow": "towXiaomiFlow",
+    "towSamsungFlow": "towSamsungFlow"
+  },
+  "stepTypes": {
+    "DEVICE_GALLERY": {
+      "displayName": "Device Gallery",
+      "name": "DEVICE_GALLERY",
+      "path": "/"
+    },
+    "CHECKOUT": {
+      "displayName": "Checkout",
+      "name": "CHECKOUT",
+      "path": "/checkout"
+    },
+    "CHECKOUT_SAMSUNG": {
+      "displayName": "Checkout for Samsung",
+      "name": "CHECKOUT_SAMSUNG",
+      "path": "/checkout-samsung"
+    },
+    "CHECKOUT_XIAOMI": {
+      "displayName": "Checkout for Xiaomi",
+      "name": "CHECKOUT_XIAOMI",
+      "path": "/checkout-xiaomi"
+    },
+    "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_A": {
+      "name": "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_A",
+      "path": "/EXAMPLE_ROUTE_Xiaomi_SAMSUNG_A"
+    },
+    "EXAMPLE_ROUTE_Xiaomi_B": {
+      "name": "EXAMPLE_ROUTE_Xiaomi_B",
+      "path": "/EXAMPLE_ROUTE_Xiaomi_B"
+    },
+    "EXAMPLE_ROUTE_SAMSUNG_C": {
+      "name": "EXAMPLE_ROUTE_SAMSUNG_C",
+      "path": "/EXAMPLE_ROUTE_SAMSUNG_C"
+    },
+    "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_B": {
+      "name": "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_B",
+      "path": "/EXAMPLE_ROUTE_Xiaomi_SAMSUNG_B"
+    },
+    "EXAMPLE_ROUTE_Xiaomi_A": {
+      "name": "EXAMPLE_ROUTE_Xiaomi_A",
+      "path": "/EXAMPLE_ROUTE_Xiaomi_A"
+    },
+    "EXAMPLE_ROUTE_Xiaomi_C": {
+      "name": "EXAMPLE_ROUTE_Xiaomi_C",
+      "path": "/EXAMPLE_ROUTE_Xiaomi_C"
+    }
+  },
+  "conditions": [
+    {
+      "conditionName": "someFailedCondition",
+      "onCheck": "someFailedCondition",
+      "displayName": "Failed Condition",
+      "description": "Function that always return Failed"
+    },
+    {
+      "conditionName": "someSuccessCondition",
+      "onCheck": "someSuccessCondition",
+      "displayName": "Success Condition",
+      "description": "Function that always return Success"
+    },
+    {
+      "conditionName": "isTowSamsungInCart",
+      "onCheck": "isTowSamsungInCart",
+      "displayName": "Tow Samsung In Cart",
+      "description": "Apply When Tow Sumsung Device in Cart"
+    },
+    {
+      "conditionName": "isTowXiaomiInCart",
+      "onCheck": "isTowXiaomiInCart",
+      "displayName": "Tow Xiaomi In Cart",
+      "description": "Apply When Tow Xiaomi Device in Cart"
+    }
+  ]
+}

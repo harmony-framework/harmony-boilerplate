@@ -1,0 +1,60 @@
+{
+  "CHQ": {
+    "onlyDeviceFlow": {
+      "id": "fb75a554-5362-4723-b6e2-1721269bd5b2",
+      "description": "Only Device Flow",
+      "steps": [
+        "DEVICE_GALLERY",
+        "CHECKOUT"
+      ]
+    },
+    "onlyDeviceFlow,onlyRunInCHQExqmple": {
+      "id": "9eab9fca-69e0-4418-ba82-be45033e7846",
+      "description": "Only CHQ Example subFlow",
+      "steps": [
+        "DEVICE_GALLERY",
+        "CHECKOUT"
+      ]
+    }
+  },
+  "COP": {
+    "towXiaomiFlow,towSamsungFlow": {
+      "id": "b7632eae-0e98-4565-95d4-7b30d2d3af99",
+      "description": "Hybrid Flow",
+      "steps": [
+        "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_A",
+        "DEVICE_GALLERY",
+        "CHECKOUT",
+        "EXAMPLE_ROUTE_Xiaomi_SAMSUNG_B"
+      ]
+    },
+    "towXiaomiFlow": {
+      "id": "c04fa628-f64e-454d-bd0b-59f64e17245f",
+      "description": "Only Xiaomi Flow",
+      "steps": [
+        "EXAMPLE_ROUTE_Xiaomi_A",
+        "EXAMPLE_ROUTE_Xiaomi_B",
+        "DEVICE_GALLERY",
+        "CHECKOUT_XIAOMI",
+        "EXAMPLE_ROUTE_Xiaomi_C"
+      ]
+    },
+    "towSamsungFlow": {
+      "id": "93e8e2b9-885f-4004-9bc0-4370d65c3e39",
+      "description": "Only Samsung Flow",
+      "steps": [
+        "DEVICE_GALLERY",
+        "CHECKOUT_SAMSUNG",
+        "EXAMPLE_ROUTE_SAMSUNG_C"
+      ]
+    },
+    "onlyDeviceFlow": {
+      "id": "4208188b-5795-4d7f-9477-825d6217332f",
+      "description": "Only Device Flow",
+      "steps": [
+        "DEVICE_GALLERY",
+        "CHECKOUT"
+      ]
+    }
+  }
+}

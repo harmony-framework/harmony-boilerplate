@@ -36,7 +36,8 @@ let plugins = [
 		]
 	}),
 	new HtmlWebpackPlugin({
-		template: path.resolve(__dirname, "src/public", "index.ejs")
+		template: path.resolve(__dirname, "src/public", "index.ejs"),
+		process
 	}),
 	new ForkTsCheckerWebpackPlugin()
 ];
