@@ -12,11 +12,11 @@ const path = require("path");
 const isProduction = process.env.NODE_ENV === "production";
 const isMobileApp = process.env.BUILD_TYPE === "mobile";
 
+console.log('process.env.BUILD_TYPE: ', process.env.BUILD_TYPE);
+
 const mobileAppBuildParamsDevServer = {
 	host: '0.0.0.0'
 };
-
-console.log('process.env.BUILD_TYPE: ', process.env.BUILD_TYPE);
 
 const lintConfigProduction = {
 	context: './src',
