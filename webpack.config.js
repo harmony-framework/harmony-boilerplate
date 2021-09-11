@@ -4,19 +4,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const WarningsToErrorsPlugin = require('warnings-to-errors-webpack-plugin');
+const { merge } = require('webpack-merge');
+const mobileConfig = require('./mobile-app/webpack.config');
 
 const deps = require("./package.json").dependencies;
 
 const path = require("path");
 
 const isProduction = process.env.NODE_ENV === "production";
-const isMobileApp = process.env.BUILD_TYPE === "mobile";
-
-console.log('process.env.BUILD_TYPE: ', process.env.BUILD_TYPE);
-
-const mobileAppBuildParamsDevServer = {
-	host: '0.0.0.0'
-};
 
 const lintConfigProduction = {
 	context: './src',
@@ -55,12 +50,12 @@ if (isProduction) {
 	]);
 }
 
-module.exports = {
+module.exports = merge({
 	mode: process.env.NODE_ENV === "production" ? "production" : "development",
 	entry: { index: path.resolve(__dirname, "src", "index.tsx") },
 	devtool: isProduction ? undefined : "cheap-module-source-map",
 	output: {
-		publicPath: process.env.NODE_ENV === "production" ? "/" :`http://${isMobileApp && !isProduction ? '10.0.2.2' : 'localhost'}:8082/`,
+		publicPath: process.env.NODE_ENV === "production" ? "/" : "http://localhost:8082/",
 	},
 	module: {
 		rules: [
@@ -111,7 +106,6 @@ module.exports = {
 		port: 8082,
 		historyApiFallback: true,
 		hot: true,
-		...(isMobileApp && {...mobileAppBuildParamsDevServer}),
 		stats: {
 			colors: true,
 			hash: false,
@@ -125,4 +119,4 @@ module.exports = {
 			publicPath: false
 		}
 	},
-};
+}, mobileConfig);
