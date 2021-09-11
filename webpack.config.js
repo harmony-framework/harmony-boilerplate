@@ -11,6 +11,8 @@ const path = require("path");
 
 const isProduction = process.env.NODE_ENV === "production";
 
+console.log('process.env.BUILD_TYPE: ', process.env.BUILD_TYPE);
+
 const lintConfigProduction = {
 	context: './src',
 	extensions: ['ts', 'tsx'],

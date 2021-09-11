@@ -5,7 +5,8 @@
   "description": "A sample harmony app integrated with cordova",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node config.js && cross-env BUILD_TYPE=mobile npm start --prefix ../",
+    "build": "cd ../ && npm run clean:dist && cross-env BUILD_TYPE=mobile NODE_ENV=production webpack --mode=production && gulp createApp"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -13,12 +14,15 @@
   "author": "Harmony Team",
   "license": "Apache-2.0",
   "devDependencies": {
+    "cordova-android": "^9.0.0",
     "cordova-plugin-ionic-webview": "file:harmony-plugins/plugins/cordova-plugin-ionic-webview",
     "cordova-plugin-native-spinner": "file:harmony-plugins/plugins/cordova-plugin-native-spinner",
     "cordova-plugin-splashscreen": "file:harmony-plugins/plugins/cordova-plugin-splashscreen",
     "cordova-plugin-statusbar": "file:harmony-plugins/plugins/cordova-plugin-statusbar",
     "cordova-plugin-whitelist": "file:harmony-plugins/plugins/cordova-plugin-whitelist",
-    "phonegap-plugin-contentsync": "file:harmony-plugins/plugins/phonegap-plugin-contentsync"
+    "elementtree": "0.1.7",
+    "phonegap-plugin-contentsync": "file:harmony-plugins/plugins/phonegap-plugin-contentsync",
+    "replace": "1.2.1"
   },
   "cordova": {
     "plugins": {
@@ -29,6 +33,8 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-statusbar": {}
     },
-    "platforms": []
+    "platforms": [
+      "android"
+    ]
   }
 }
