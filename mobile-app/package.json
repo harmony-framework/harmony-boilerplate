@@ -5,11 +5,11 @@
   "description": "A sample harmony app integrated with cordova",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development BUILD_TYPE=mobile npm-run-all --serial config parent-start",
-    "build": "cross-env NODE_ENV=production BUILD_TYPE=mobile npm-run-all --serial config parent-build",
+    "start": "cross-env NODE_ENV=development BUILD_TYPE=mobile npm-run-all --serial config harmony-start",
+    "build": "cross-env NODE_ENV=production BUILD_TYPE=mobile npm-run-all --serial config harmony-build",
     "config": "node config.js",
-    "parent-start": "npm start --prefix ../",
-    "parent-build": "cd ../ && npm run clean:dist && webpack --mode=production && gulp createApp"
+    "harmony-start": "npm start --prefix ../",
+    "harmony-build": "cd ../ && npm run clean:dist && webpack --mode=production && gulp createApp"
   },
   "keywords": [
     "ecosystem:cordova"
