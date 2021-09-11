@@ -7,7 +7,6 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --open chrome",
     "build": "npm run clean:dist && cross-env NODE_ENV=production webpack --mode=production",
-    "build-mobile": "npm run clean:dist && cross-env BUILD_TYPE=mobile NODE_ENV=production webpack --mode=production && gulp createApp",
     "lite": "npm run build && lite-server",
     "test": "npm run build && jest",
     "clean:dist": "rimraf dist",
