@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production BUILD_TYPE=mobile npm-run-all --serial config harmony-build",
     "config": "node config.js",
     "harmony-start": "npm start --prefix ../",
-    "harmony-build": "cd ../ && npm run clean:dist && webpack --mode=production && gulp createApp"
+    "harmony-build": "cd ../ && npm run build && gulp createApp"
   },
   "keywords": [
     "ecosystem:cordova"
