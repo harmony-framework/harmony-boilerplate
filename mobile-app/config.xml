@@ -23,7 +23,7 @@
     <platform name="android">
         <preference name="android-minSdkVersion" value="26" />
         <allow-intent href="market:*" />
-        <content src="http://10.0.2.2:8082/index.html" />
+        <content src="index.html" />
         <preference name="Scheme" value="file" />
         <preference name="Hostname" value="android_asset" />
         <preference name="customEntryPoint" value="index.html/#" />
@@ -55,7 +55,7 @@
         <allow-intent href="itms-apps:*" />
         <preference name="iosScheme" value="bgd" />
         <preference name="Hostname" value="server/index.html/#/" />
-        <content src="http://localhost:8082/index.html" />
+        <content src="index.html" />
         <preference name="StatusBarOverlaysWebView" value="false" />
         <preference name="StatusBarStyle" value="default" />
         <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
