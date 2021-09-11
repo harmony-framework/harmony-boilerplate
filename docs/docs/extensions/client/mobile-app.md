@@ -1,38 +1,51 @@
+#Mobile App
+
 ## Installations
 
 #### Pre-Required
 
 - install cordova on your machine: `npm i cordova -g` ( latest cordova version tested 10.0.0 )
-- Working with <b>Android</b> - Make sure you have Android Studio
-- Working with <b>iOS</b> - Make sure you have Xcode (Applied only for MAC users)
+##### Android
+- Make sure you have Android Studio
+
+##### iOS
+- Make sure you have Xcode (Applied only for MAC users)
 
 
 #### Add Platforms
 Inside `mobile-app` folder, run the following commands:
 
 - `npm install`
-- <b>Android</b> - `cordova platform add cordova-ios@^6.1.1`
-- <b>iOS</b> - `cordova platform add cordova-android@^9.0.0`
+
+##### Android
+- `cordova platform add cordova-android@^9.0.0`
+
+##### iOS
+- `cordova platform add cordova-ios@^6.1.1`
 
 Once you added the platforms, it will add the plugins from harmony-plugins directory
 
 ## Development
 
-Inside `mobile-app` folder, run the following commands:
+Inside `mobile-app` folder, run the following command:
 
 !!! info
     Make sure your Emulator is up. <br />
 
-- `npm start`
-- <b>Android</b> - `cordova run android`
-- <b>iOS</b> - `cordova run ios`
+##### Android
+- `npm start --platform=android`
+
+##### iOS
+- `npm start --platform=ios`
 
 ## Production
-Inside `mobile-app` folder, run the following commands:
+Inside `mobile-app` folder, run the following command:
 
-- `npm run build`
-- <b>Android</b> - `cordova build android`
-- <b>iOS</b> - `cordova build ios`
+##### Android
+- `npm start --platform=android`
+
+##### iOS
+- `npm start --platform=ios`
 
 ## Useful Information
 
@@ -41,6 +54,15 @@ Inside `mobile-app` folder, run the following commands:
 !!! warning
     Make sure you replace the existing assets with yours (follow the same resulution for each image, located in res folder)
 
+#### Only Build Cordova manually
+
+- `cordova build android`
+- `cordova build ios`
+
+#### Only Run Cordova manually
+
+- `cordova run android`
+- `cordova run ios`
 
 #### Applying changes in the source project
 
