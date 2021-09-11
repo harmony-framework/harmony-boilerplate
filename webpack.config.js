@@ -10,6 +10,11 @@ const deps = require("./package.json").dependencies;
 const path = require("path");
 
 const isProduction = process.env.NODE_ENV === "production";
+const isMobileApp = process.env.BUILD_TYPE === "mobile";
+
+const mobileAppBuildParamsDevServer = {
+	host: '0.0.0.0'
+};
 
 console.log('process.env.BUILD_TYPE: ', process.env.BUILD_TYPE);
 
@@ -55,7 +60,7 @@ module.exports = {
 	entry: { index: path.resolve(__dirname, "src", "index.tsx") },
 	devtool: isProduction ? undefined : "cheap-module-source-map",
 	output: {
-		publicPath: process.env.NODE_ENV === "production" ? "/" : "http://localhost:8082/",
+		publicPath: process.env.NODE_ENV === "production" ? "/" :`http://${isMobileApp && !isProduction ? '10.0.2.2' : 'localhost'}:8082/`,
 	},
 	module: {
 		rules: [
@@ -106,6 +111,7 @@ module.exports = {
 		port: 8082,
 		historyApiFallback: true,
 		hot: true,
+		...(isMobileApp && {...mobileAppBuildParamsDevServer}),
 		stats: {
 			colors: true,
 			hash: false,

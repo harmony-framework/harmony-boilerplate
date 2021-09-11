@@ -5,8 +5,8 @@
   "description": "A sample harmony app integrated with cordova",
   "main": "index.js",
   "scripts": {
-    "start": "node config.js && cross-env BUILD_TYPE=mobile npm start --prefix ../",
-    "build": "cd ../ && npm run clean:dist && cross-env BUILD_TYPE=mobile NODE_ENV=production webpack --mode=production && gulp createApp"
+    "start": "cross-env NODE_ENV=development BUILD_TYPE=mobile node config.js && npm run start:mobileapp --prefix ../",
+    "build": "cd ../ && npm run clean:dist && cross-env BUILD_TYPE=mobile NODE_ENV=production node config.js && webpack --mode=production && gulp createApp"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -20,9 +20,9 @@
     "cordova-plugin-splashscreen": "file:harmony-plugins/plugins/cordova-plugin-splashscreen",
     "cordova-plugin-statusbar": "file:harmony-plugins/plugins/cordova-plugin-statusbar",
     "cordova-plugin-whitelist": "file:harmony-plugins/plugins/cordova-plugin-whitelist",
+    "cross-env": "5.2.0",
     "elementtree": "0.1.7",
-    "phonegap-plugin-contentsync": "file:harmony-plugins/plugins/phonegap-plugin-contentsync",
-    "replace": "1.2.1"
+    "phonegap-plugin-contentsync": "file:harmony-plugins/plugins/phonegap-plugin-contentsync"
   },
   "cordova": {
     "plugins": {

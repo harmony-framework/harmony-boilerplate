@@ -2,13 +2,12 @@
 
 const fs = require('fs');
 const path = require('path');
-const replace = require('replace');
 const et = require('elementtree');
 
-const ENV = require('./env');
+const ENV = process.env.NODE_ENV;
 const src = {
-  android: (ENV === 'development' ? 'http://10.0.2.2:8082/' : '') + 'index.html',
-  ios: (ENV === 'development' ? 'http://localhost:8082/' : '') + 'index.html',
+  android: (ENV === 'development' ? 'http://10.0.2.2:8082/' : '') + '',
+  ios: (ENV === 'development' ? 'http://localhost:8082/' : '') + '',
 };
 const config = path.resolve('./config.xml');
 
