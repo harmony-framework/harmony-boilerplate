@@ -38,7 +38,7 @@ Inside `mobile-app` folder, run the following commands:
 
 #### Assets
 
-!! warning
+!!! warning
     Make sure you replace the existing assets with yours (follow the same resulution for each image, located in res folder)
 
 
