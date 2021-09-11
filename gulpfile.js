@@ -227,9 +227,6 @@ gulp.task('createRedux', () => {
 	);
 });
 
-gulp.task('createApp', () => {
-	return gulp.src(['dist/**/*']).pipe(gulp.dest('mobile-app/www'));
-});
 
 /*** HELPERS ***/
 
