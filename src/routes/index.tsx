@@ -18,7 +18,6 @@ const { stepTypes } = FlowManagerConfig;
 export default (
 	<App>
 		<Switch>
-			<Route exact path={RoutesPath.ROOT} step={stepTypes.DEVICE_GALLERY.name} component={DeviceGalleryPage} />
 			<Route exact path={RoutesPath.CHECKOUT} step={stepTypes.CHECKOUT.name} component={Checkout} />
 			<Route
 				exact
@@ -38,6 +37,7 @@ export default (
 				component={() => <h1>Checkout for Xiaomi</h1>}
 			/>
 			<Route exact path={RoutesPath.ERROR_PAGE} component={() => <ErrorPage />} />
+			<Route path={RoutesPath.ROOT} step={stepTypes.DEVICE_GALLERY.name} component={DeviceGalleryPage} />
 		</Switch>
 	</App>
 );
