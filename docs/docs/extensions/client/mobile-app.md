@@ -1,47 +1,62 @@
-## Pre-req
+## Installations
 
-1. You need to install cordova on your machine.
-	- Working with Android - Make sure you have Android Studio
-	- Working with iOS - Make sure you have Xcode (Applied only for MAC users)
+#### Pre-Required
 
-## Add Platforms
+- install cordova on your machine: `npm i cordova -g` ( latest cordova version tested 10.0.0 )
+- Working with <b>Android</b> - Make sure you have Android Studio
+- Working with <b>iOS</b> - Make sure you have Xcode (Applied only for MAC users)
 
-- Run npm install in the mobile-app folder
-- cordova platform add cordova-ios@^6.1.1
-- cordova platform add cordova-android@^9.0.0
+
+#### Add Platforms
+Inside `mobile-app` folder, run the following commands:
+
+- `npm install`
+- <b>Android</b> - `cordova platform add cordova-ios@^6.1.1`
+- <b>iOS</b> - `cordova platform add cordova-android@^9.0.0`
 
 Once you added the platforms, it will add the plugins from harmony-plugins directory
 
-## Plugins - Manual (Optional)
+## Development
 
-- cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-ionic-webview
-- cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-inappbrowser
-- cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-native-spinner
-- cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-splashscreen
-- cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-statusbar
-- cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-whitelist
-- cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/phonegap-plugin-contentsync
+Inside `mobile-app` folder, run the following commands:
 
-## Build
+!!! info
+    Make sure your Emulator is up. <br />
 
-1. cordova build android
-2. cordova build ios (Only for MAC users)
+- `npm start`
+- <b>Android</b> - `cordova run android`
+- <b>iOS</b> - `cordova run ios`
 
-## Applying changes in the source project
+## Production
+Inside `mobile-app` folder, run the following commands:
 
-1. cordova prepare android
-2. cordova prepare ios
+- `npm run build`
+- <b>Android</b> - `cordova build android`
+- <b>iOS</b> - `cordova build ios`
 
-## Assets
+## Useful Information
 
-Make sure you replace the existing assets with yours (follow the same resulution for each image, located in res folder)
+#### Assets
 
-## Removing Platforms
-1. cordova platform remove ios
-2. cordova platform remove android
+!! warning
+    Make sure you replace the existing assets with yours (follow the same resulution for each image, located in res folder)
 
-## First time init
 
-1. Execute the following commands after installing cordova:
-	- cordova platform add cordova-ios@^6.1.1
-	- cordova platform add cordova-android@^9.0.0
+#### Applying changes in the source project
+
+- `cordova prepare android`
+- `cordova prepare ios`
+
+#### Removing Platforms
+- `cordova platform remove ios`
+- `cordova platform remove android`
+
+#### Plugins - Manual (Optional)
+
+- `cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-ionic-webview`
+- `cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-inappbrowser`
+- `cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-native-spinner`
+- `cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-splashscreen`
+- `cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-statusbar`
+- `cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/cordova-plugin-whitelist`
+- `cordova plugin add harmony-boilerplate/mobile-app/harmony-plugins/plugins/phonegap-plugin-contentsync`
