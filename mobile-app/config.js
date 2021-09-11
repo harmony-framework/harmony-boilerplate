@@ -6,10 +6,10 @@ const et = require('elementtree');
 
 const ENV = process.env.NODE_ENV;
 const src = {
-  android: (ENV === 'development' ? 'http://10.0.2.2:8082/' : '') + '',
-  ios: (ENV === 'development' ? 'http://localhost:8082/' : '') + '',
+  android: (ENV === 'development') ? 'http://10.0.2.2:8082/' : 'index.html',
+  ios: (ENV === 'development') ? 'http://localhost:8082/' : 'index.html',
 };
-const config = path.resolve('./config.xml');
+const config = path.resolve(__dirname, "config.xml");
 
 try {
   var configXML = new et.ElementTree(
