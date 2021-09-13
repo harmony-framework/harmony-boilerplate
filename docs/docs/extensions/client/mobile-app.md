@@ -6,10 +6,11 @@
 
 - install cordova on your machine: `npm i cordova -g` ( latest cordova version tested 10.0.0 )
 ##### Android
-- Make sure you have Android Studio
+- Install Android Studio
+- Add new Path in Environment Variable - C:\Users\<username>\.gradle\wrapper\dists\gradle-7.0.2-bin\857tjihv64xamwrf0h14cai3r\gradle-7.0.2\bin 
 
 ##### iOS
-- Make sure you have Xcode (Applied only for MAC users)
+- Install Xcode (Applied only for MAC users)
 
 
 #### Add Platforms
