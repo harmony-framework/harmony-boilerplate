@@ -52,7 +52,7 @@ gulp.task('createComponent', () => {
 	let storyTitle = getArg('storyTitle');
 	let nameUppercase = capitalizeFirstLate(componentName);
 
-	if (!validateName(componentName, '--name') || !validateName(componentName, '--storyTitle')) return;
+	if (!validateName(componentName, '--name') || !validateName(storyTitle, '--storyTitle')) return;
 
 	createTemplate(
 		'./generator/templates/client/component-template',
