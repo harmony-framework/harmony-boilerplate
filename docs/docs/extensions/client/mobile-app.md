@@ -13,6 +13,7 @@
 
 
 #### Add Platforms
+Make sure you have `www` folder in `mobile-app` folder.
 Inside `mobile-app` folder, run the following commands:
 
 - `npm install`
