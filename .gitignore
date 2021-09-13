@@ -7,3 +7,4 @@ package-lock.json
 /.idea
 /.vscode/launch.json
 dist
+mobile-app
