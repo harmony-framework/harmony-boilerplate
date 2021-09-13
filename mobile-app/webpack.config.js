@@ -7,7 +7,7 @@ const platform = process.env.npm_config_platform;
 const devPublicPath = (platform === "android") ? "http://10.0.2.2:8082/" : "http://localhost:8082/";
 let isDone = false;
 
-if (!platform) {
+if (isMobileApp && !platform) {
 	throw Error('Did you miss --platform ? platform are mandatory. Example: npm run build --platform=android');
 }
 
