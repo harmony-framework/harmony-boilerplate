@@ -12,6 +12,8 @@
     "totalPriceTitle": "Prix Total"
   },
   "errors": {
+    "clientConsoleErrorHeader": "Console Error",
+    "clientConsoleErrorBody": "There is Console Error on the client side, please check the console errors for more information.",
     "specificErrorHandlerToComponentHeader": "Component with Error",
     "specificErrorHandlerToComponentBody": "This is handled by error handler with component",
     "errorHeaderExample": "Error",

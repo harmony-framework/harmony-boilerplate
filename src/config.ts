@@ -5,6 +5,7 @@ interface Config {
 	COMMON_AUTHORIZATION_HEADER?: string;
 	COMMON_URL_PARAMS?: Array<{key: string; value: string}>;
 	appName?: string;
+	STRICT_CONSOLE_ERROR?: boolean;
 }
 
 declare global {
@@ -24,6 +25,7 @@ const initConfig = (): Config => {
 			COMMON_AUTHORIZATION_HEADER: 'uxfauthorization',
 			COMMON_URL_PARAMS: [{ key: 'salesChannel', value: 'retail' }],
 			ROOT_WS_URL: 'ws://localhost:3030',
+			STRICT_CONSOLE_ERROR: true,
 		};
 	} else if (process.env.NODE_ENV === 'production') {
 		/* ---------- Config Production --------- */
@@ -32,7 +34,8 @@ const initConfig = (): Config => {
 			ROOT_SERVER_URL: 'http://localhost:5555/v1/',
 			COMMON_AUTHORIZATION_HEADER: 'uxfauthorization',
 			COMMON_URL_PARAMS: [{ key: 'salesChannel', value: 'retail' }],
-			ROOT_WS_URL: 'ws://localhost:3030'
+			ROOT_WS_URL: 'ws://localhost:3030',
+			STRICT_CONSOLE_ERROR: true,
 		};
 	}
 

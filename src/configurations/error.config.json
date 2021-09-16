@@ -1,6 +1,14 @@
 {
   "pathToErrorCode": "data.errorCode",
   "handlers": {
+    "clientConsoleError_400": {
+      "component": "toaster",
+      "payload": {
+        "type": "error",
+        "header": "errors.clientConsoleErrorHeader",
+        "body": "errors.clientConsoleErrorBody"
+      }
+    },
     "someErrorCode_500": {
       "component": "toaster",
       "payload": {
@@ -9,7 +17,7 @@
         "body": "errors.errorBodyExample"
       }
     },
-    "devicesListFailed_403": {
+    "devicesListFailed_500": {
       "component": "modal",
       "payload": {
         "header": "errors.errorHeaderExample",

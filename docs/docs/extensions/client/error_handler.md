@@ -111,3 +111,10 @@ Each time error occurred this component will be invoke the render and will go in
 The switch case decide which component to render and what to do for each error component.
 
 So here you can easily do what ever you like and customize the modal and even add your own components for handler.
+
+## Strict Client Console Errors
+
+Harmony keep to be strict with best practices and clean console from errors. <br />
+Therefor by default we drop developer to error page and notify with toaster for any console error. <br /><br/>
+
+To turn off this functionality go to main `src/config.ts` file and set `STRICT_CONSOLE_ERROR` to `false`

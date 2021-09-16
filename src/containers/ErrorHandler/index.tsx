@@ -85,11 +85,13 @@ export class ErrorHandler extends React.Component<OwnProps> {
 			</div>
 		);
 
-		toastManager.add(content, {
-			appearance: type
-		});
+		setTimeout(() => {
+			toastManager.add(content, {
+				appearance: type
+			});
 
-		clearErrorHandler();
+			clearErrorHandler();
+		});
 
 		return null;
 	}

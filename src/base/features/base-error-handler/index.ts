@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
 import { AxiosResponse } from 'axios';
 import _ from 'lodash';
 import Store from '@base/features/base-store';
 import ErrorHandlerConfig from 'configurations/error.config.json';
+import { config } from 'config';
 import { TypesNames } from './reducer';
 
 const { pathToErrorCode, handlers } = ErrorHandlerConfig;
@@ -63,6 +65,32 @@ export const dispatchErrorHandler = (response: AxiosResponse) => {
 		Store.dispatch({
 			payload: { component: BaseComponentTypes.ERROR_PAGE },
 			type: TypesNames.ERROR_HANDLER_INVOKE
+		});
+	}
+};
+
+const oldError = console.error;
+
+console.error = (error: any) => {
+	// Print to console the original error message
+	oldError(error);
+
+	if (config.STRICT_CONSOLE_ERROR) {
+		const errorPayload = {
+			data: { errorCode: 'clientConsoleError' },
+			statusText: 'client console error'
+		} as AxiosResponse;
+
+		// Invoke Error Toaster
+		setTimeout(() => {
+			dispatchErrorHandler({ ...errorPayload, status: 400 });
+			clearErrorHandler();
+		});
+
+		// Invoke Error Page
+		setTimeout(() => {
+			dispatchErrorHandler({ ...errorPayload, status: 500 });
+			clearErrorHandler();
 		});
 	}
 };
