@@ -7,7 +7,7 @@
 - install cordova on your machine: `npm i cordova -g` ( latest cordova version tested 10.0.0 )
 ##### Android
 - Install Android Studio
-- Install Gradle
+- Install Gradle ( can be installed automatic if your run cordova build android in android studio )
 - Add new Path in Environment Variable for Gradle - example: <br />
 `C:\Users\<username>\.gradle\wrapper\dists\gradle-7.0.2-bin\857tjihv64xamwrf0h14cai3r\gradle-7.0.2\bin`
 
@@ -26,6 +26,14 @@ Inside `mobile-app` folder, run the following commands:
 
 ##### iOS
 - `cordova platform add cordova-ios@^6.1.1`
+
+#### Run First Build
+
+##### Android
+- `cordova build android`
+
+##### iOS
+- `cordova build ios`
 
 Once you added the platforms, it will add the plugins from harmony-plugins directory
 
