@@ -115,6 +115,7 @@
     "bootstrap": "4.6.0",
     "guid": "0.0.12",
     "history": "4.10.1",
+    "html-replace-webpack-plugin": "2.6.0",
     "immer": "9.0.1",
     "lodash": "4.17.21",
     "moment": "2.27.0",
