@@ -28,7 +28,7 @@ Inside `mobile-app` folder, run the following commands:
 
 #### Run First Build
 
-##### Android
+##### Android ( from android studio )
 - `cordova build android`
 
 ##### iOS
@@ -53,10 +53,10 @@ Inside `mobile-app` folder, run the following command:
 Inside `mobile-app` folder, run the following command:
 
 ##### Android
-- `npm start --platform=android`
+- `npm run build --platform=android`
 
 ##### iOS
-- `npm start --platform=ios`
+- `npm run build --platform=ios`
 
 ## Useful Information
 
