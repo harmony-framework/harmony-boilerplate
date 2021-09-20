@@ -1,40 +1,18 @@
 #Mobile App
 
-## Installations
+## Quick Start
+<b>Quick Start</b><br/><br/>
+Inside `mobile-app` folder, run the following command:
 
-#### Pre-Required
-
-- install cordova on your machine: `npm i cordova -g` ( latest cordova version tested 10.0.0 )
 ##### Android
 - Install Android Studio
-- Add new Path in Environment Variable for Gradle - example: <br />
-`C:\Users\<username>\.gradle\wrapper\dists\gradle-7.0.2-bin\857tjihv64xamwrf0h14cai3r\gradle-7.0.2\bin`
+- `npm run installations --platform=android` (run in android studio)
+- `npm run start --platform=android`
 
 ##### iOS
 - Install Xcode (Applied only for MAC users)
-
-
-#### Add Platforms
-Make sure you have `www` folder in `mobile-app` folder. <br />
-Inside `mobile-app` folder, run the following commands:
-
-- `npm install`
-
-##### Android
-- `cordova platform add cordova-android@^9.0.0`
-
-##### iOS
-- `cordova platform add cordova-ios@^6.1.1`
-
-#### Run First Build
-
-##### Android ( from android studio )
-- `cordova build android`
-
-##### iOS
-- `cordova build ios`
-
-Once you added the platforms, it will add the plugins from harmony-plugins directory
+- `npm run installations --platform=ios`
+- `npm run start --platform=ios`
 
 ## Development
 
@@ -64,6 +42,44 @@ Inside `mobile-app` folder, run the following command:
 
 !!! warning
     Make sure you replace the existing assets with yours (follow the same resulution for each image, located in res folder)
+
+#### Installations Manually
+
+##### Pre-Required
+
+#### Harmony
+- make sure Harmony already installed - `npm install` ( from root project )
+
+- install cordova on your machine: `npm i cordova -g` ( latest cordova version tested 10.0.0 )
+###### Android
+- Install Android Studio
+
+###### iOS
+- Install Xcode (Applied only for MAC users)
+
+
+##### Add Platforms
+Make sure you have `www` folder in `mobile-app` folder. <br />
+Inside `mobile-app` folder, run the following commands:
+
+- `npm install`
+
+###### Android
+- `cordova platform add cordova-android@^9.0.0`
+
+###### iOS
+- `cordova platform add cordova-ios@^6.1.1`
+
+##### Run First Build
+
+###### Android ( from android studio )
+- `cordova build android`
+
+###### iOS
+- `cordova build ios`
+
+Once you added the platforms, it will add the plugins from harmony-plugins directory
+
 
 #### Only Build Cordova manually
 

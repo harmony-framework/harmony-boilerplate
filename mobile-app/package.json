@@ -7,6 +7,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development BUILD_TYPE=mobile npm-run-all --serial config harmony-start",
     "build": "cross-env NODE_ENV=production BUILD_TYPE=mobile npm-run-all --serial config harmony-build",
+    "installations": "gulp install",
     "config": "node config.js",
     "harmony-start": "npm start --prefix ../",
     "harmony-build": "npm run --prefix ../ build && gulp createApp"
