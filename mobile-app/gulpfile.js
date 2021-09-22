@@ -29,7 +29,7 @@ gulp.task('install', () => {
 
 			try {
 				console.log(addPlatform);
-				await execShPromise(addPlatform,);
+				await execShPromise(addPlatform);
 			} catch (e) {
 				console.log(e);
 			}
