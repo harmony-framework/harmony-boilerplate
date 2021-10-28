@@ -71,9 +71,9 @@ export const dispatchErrorHandler = (response: AxiosResponse) => {
 
 const oldError = console.error;
 
-console.error = (error: any) => {
+console.error = (error: any, ...optional: any) => {
 	// Print to console the original error message
-	oldError(error);
+	oldError(error, ...optional);
 
 	if (config.STRICT_CONSOLE_ERROR) {
 		const errorPayload = {
