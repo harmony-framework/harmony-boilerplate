@@ -449,6 +449,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#strict-client-console-errors" class="md-nav__link">
+    Strict Client Console Errors
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -705,6 +712,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#strict-client-console-errors" class="md-nav__link">
+    Strict Client Console Errors
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -816,6 +830,10 @@ it will inject for you to the props <code>ErrorComponent</code>, and you can dec
 Each time error occurred this component will be invoke the render and will go inside a switch case.
 The switch case decide which component to render and what to do for each error component.</p>
 <p>So here you can easily do what ever you like and customize the modal and even add your own components for handler.</p>
+<h2 id="strict-client-console-errors">Strict Client Console Errors</h2>
+<p>Harmony keep to be strict with best practices and clean console from errors. <br />
+Therefor by default we drop developer to error page and notify with toaster for any console error. <br /><br/></p>
+<p>To turn off this functionality go to main <code>src/config.ts</code> file and set <code>STRICT_CONSOLE_ERROR</code> to <code>false</code></p>
                 
               
               
