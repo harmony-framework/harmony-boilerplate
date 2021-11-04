@@ -3,13 +3,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const custom = require('../webpack.config.js');
 
 module.exports = {
+	core: {
+		builder: "webpack5"
+	},
 	'stories': [
 		'../src/**/*.stories.mdx',
 		'../src/**/*.stories.@(js|jsx|ts|tsx)',
 	],
 	'addons': [
 		'@storybook/addon-links',
-		'@storybook/addon-essentials'
+		'@storybook/addon-essentials',
+		'@storybook/addon-postcss'
 	],
 	webpackFinal: async (config) => {
 		return {
