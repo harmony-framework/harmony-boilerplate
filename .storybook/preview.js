@@ -4,7 +4,7 @@ import 'public/sass/style.scss';
 import BaseStorybookDecorator from '@base/features/base-decorator/storybook';
 import { addDecorator } from '@storybook/react';
 
-addDecorator(BaseStorybookDecorator)
+addDecorator(BaseStorybookDecorator);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
