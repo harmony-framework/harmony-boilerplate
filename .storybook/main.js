@@ -22,6 +22,14 @@ module.exports = {
 				rules: [
 					...config.module.rules,
 					{
+						test: /\.(tsx|ts)?$/,
+						loader: 'ts-loader',
+						exclude: /node_modules/,
+						options: {
+							transpileOnly: true
+						}
+					},
+					{
 						test: /\.s[ac]ss$/i,
 						use: ["style-loader", "css-loader?url=false", "sass-loader"]
 					}
