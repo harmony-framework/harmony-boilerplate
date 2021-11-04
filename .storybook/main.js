@@ -28,8 +28,5 @@ module.exports = {
 				...custom.resolve,
 			}
 		};
-	},
-	core: {
-		builder: "webpack5"
 	}
 };
