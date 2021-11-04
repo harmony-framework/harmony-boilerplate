@@ -1,5 +1,4 @@
 import React from 'react';
-import { BaseStorybookDecorator } from '@base/features/base-decorator';
 import { ComponentStory, Meta } from '@storybook/react';
 import DeviceCard, { Props as DeviceCardProps } from './index';
 
@@ -11,7 +10,6 @@ export default {
 			description: 'The numbers of this Item in Cart. Once bigger then 1 title become remove.'
 		}
 	},
-	decorators: [BaseStorybookDecorator],
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
 } as Meta;
 

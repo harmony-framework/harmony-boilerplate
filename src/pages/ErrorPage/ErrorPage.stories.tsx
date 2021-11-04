@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { BaseStorybookDecorator } from '@base/features/base-decorator';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ComponentStory, Meta } from '@storybook/react';
 import { ErrorPage, Props as ErrorPageProps } from './index';
@@ -11,7 +10,6 @@ export default {
 	argTypes: {
 
 	},
-	decorators: [BaseStorybookDecorator],
 	parameters: { docs: { source: { type: 'dynamic', excludeDecorators: true } } }
 } as Meta;
 
