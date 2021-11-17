@@ -2,7 +2,7 @@ import * as React from 'react';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import { CustomRoute } from '@base/features/base-decorator';
 import { setCurrentStep } from 'actions/flowManager/manager';
-import { Container } from '@material-ui/core';
+import { Container } from '@mui/material';
 
 const routeDecorator = (WrappedComponent: any, step?: string) => {
 	class PageContainer extends React.Component<any> {

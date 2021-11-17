@@ -4,7 +4,7 @@ import { TranslateFunction } from 'react-localize-redux';
 import { baseConnect } from '@base/features/base-redux-react-connect';
 import {
 	Grid, Button, FormControl, Input
-} from '@material-ui/core';
+} from '@mui/material';
 import './style.scss';
 import { ApplicationState } from 'actions';
 import { catalogSelector, CatalogActions } from 'actions/catalog';
@@ -97,7 +97,7 @@ class DeviceGallery extends React.Component<Props, State> {
 							<RBAC id="searchInput">
 								<Input
 									type="text"
-									automation-id="filter-input"
+									data-automation-id="filter-input"
 									placeholder="Search"
 									onChange={(e: any) => this.setState({ searchValue: e.target.value.toLowerCase() })}
 								/>

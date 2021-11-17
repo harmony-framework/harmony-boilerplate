@@ -1,10 +1,8 @@
 import * as React from 'react';
-import {
-	LocalizedElement, LocalizedElementMap
-} from 'react-localize-redux';
+import { LocalizedElement, LocalizedElementMap } from 'react-localize-redux';
 import {
 	Button, Card, Grid, CardContent, Typography, CardActions, CardMedia
-} from '@material-ui/core';
+} from '@mui/material';
 import { Device } from 'actions/catalog/interface';
 import './style.scss';
 
@@ -36,7 +34,7 @@ const DeviceCard: React.FC<Props> = (props: Props) => {
 							/>
 						</Grid>
 						<Grid item xs={12}>
-							<Typography variant="h5" component="h2" automation-id="card-title">
+							<Typography variant="h5" component="h2" data-automation-id="card-title">
 								{device.name}
 							</Typography>
 						</Grid>
@@ -54,7 +52,7 @@ const DeviceCard: React.FC<Props> = (props: Props) => {
 				</CardContent>
 				<CardActions style={{ display: 'inherit' }}>
 					<Button
-						automation-id="add-to-cart"
+						data-automation-id="add-to-cart"
 						onClick={() => { return quantity ? onRemoveClick(device.id) : onBuyClick(device); }}
 						color={quantity ? 'secondary' : 'primary'}
 					>
