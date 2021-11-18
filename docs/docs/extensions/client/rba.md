@@ -39,7 +39,7 @@ In your render you will need to use it as following:
 <RBAC id="searchInput">
     <Form.Control
         type="text"
-        automation-id="filter-input"
+        data-automation-id="filter-input"
         placeholder="Search"
         onChange={(e) => this.setState({ searchValue: e.target.value.toLowerCase() })}
     />

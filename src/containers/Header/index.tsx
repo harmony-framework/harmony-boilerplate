@@ -7,9 +7,7 @@ import { baseConnect } from '@base/features/base-redux-react-connect';
 import { ApplicationState } from 'actions';
 import { cartSelector, CartActions } from 'actions/cart';
 import { FlowManagerActions } from 'actions/flowManager';
-import {
-	Grid, Button
-} from '@material-ui/core';
+import { Grid, Button } from '@mui/material';
 import './style.scss';
 import { CartItem, ClearCartFunction } from 'actions/cart/interface';
 import RoutesPath from 'routes/RoutesPath';
@@ -70,7 +68,7 @@ export class Header extends React.Component<OwnProps, HeaderState> {
 						<ul className="navbar-right">
 							<li>
 								<Button
-									automation-id="open-cart"
+									data-automation-id="open-cart"
 									onClick={() => { this.setCartToggle(); }}
 									id="cart"
 								>
@@ -98,7 +96,7 @@ export class Header extends React.Component<OwnProps, HeaderState> {
 							</div>
 						</div>
 
-						<ul className="shopping-cart-items" automation-id="shopping-cart-items">
+						<ul className="shopping-cart-items" data-automation-id="shopping-cart-items">
 							{
 								cartItems.map((item) => {
 									return (
@@ -135,7 +133,7 @@ export class Header extends React.Component<OwnProps, HeaderState> {
 							<Grid item xs={6}>
 								<Button
 									className="footer-buttons"
-									variant="contained"
+									variant="outlined"
 									disabled={!cartItems || !cartItems.length}
 									onClick={clearCart}
 								>

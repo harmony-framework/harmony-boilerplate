@@ -5,9 +5,7 @@ import { ApplicationState } from 'actions';
 import { CartItem } from 'actions/cart/interface';
 import { cartSelector } from 'actions/cart';
 import RoutesPath from 'routes/RoutesPath';
-import {
-	Grid, Box
-} from '@material-ui/core';
+import { Grid, Box } from '@mui/material';
 
 interface Props {
 	cartItems: CartItem[];

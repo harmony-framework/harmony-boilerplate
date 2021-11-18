@@ -19,13 +19,13 @@ describe('Device Gallery', () => {
 	});
 
 	it('Should filter input be accessible', async () => {
-		await expect(page).toFill('input[automation-id="filter-input"]', 'A70s');
+		await expect(page).toFill('input[data-automation-id="filter-input"]', 'A70s');
 	});
 
 	it('Should display "Samsung Galaxy A70s" card', async () => {
-		await page.waitForSelector('div[automation-id="card-title"]');
+		await page.waitForSelector('div[data-automation-id="card-title"]');
 		const textContent = await page.evaluate(() => {
-			const selector = document.querySelector('div[automation-id="card-title"]');
+			const selector = document.querySelector('div[data-automation-id="card-title"]');
 			if (selector) {
 				return selector.textContent;
 			}
@@ -35,10 +35,10 @@ describe('Device Gallery', () => {
 	});
 
 	it('Should add to cart', async () => {
-		await expect(page).toClick('button[automation-id="add-to-cart"]');
+		await expect(page).toClick('button[data-automation-id="add-to-cart"]');
 	});
 	it('Should open cart', async () => {
-		await expect(page).toClick('a[automation-id="open-cart"]');
+		await expect(page).toClick('a[data-automation-id="open-cart"]');
 	});
 	it('Should cart contain items', async () => {
 		await page.waitForSelector('ul');

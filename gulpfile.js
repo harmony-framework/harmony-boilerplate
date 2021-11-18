@@ -13,7 +13,7 @@ const CLIENT_DIST_PATH = './dist';
 
 /** ------------------- CLIENT ----------------------------- **/
 
-gulp.task('createContainer', () => {
+gulp.task('createContainer', (done) => {
 	let className = capitalizeFirstLate(getArg('className'));
 	let classNameLowerCase = lowerCaseFirstLater(className);
 
@@ -27,9 +27,10 @@ gulp.task('createContainer', () => {
 			classNameLowerCase
 		}
 	);
+	done();
 });
 
-gulp.task('createFormContainer', () => {
+gulp.task('createFormContainer', (done) => {
 	let className = capitalizeFirstLate(getArg('className'));
 	let classNameLowerCase = lowerCaseFirstLater(className);
 
@@ -43,11 +44,11 @@ gulp.task('createFormContainer', () => {
 			classNameLowerCase
 		}
 	);
-
+	done();
 });
 
 
-gulp.task('createComponent', () => {
+gulp.task('createComponent', (done) => {
 	let componentName = lowerCaseFirstLater(getArg('name'));
 	let storyTitle = getArg('storyTitle');
 	let nameUppercase = capitalizeFirstLate(componentName);
@@ -69,11 +70,11 @@ gulp.task('createComponent', () => {
 			storyTitle
 		}
 	);
-
+	done();
 });
 
 
-gulp.task('createStoryContainer', () => {
+gulp.task('createStoryContainer', (done) => {
 	let componentName = lowerCaseFirstLater(getArg('name'));
 	let storyTitle = getArg('storyTitle');
 	let nameUppercase = capitalizeFirstLate(componentName);
@@ -89,8 +90,10 @@ gulp.task('createStoryContainer', () => {
 			storyTitle
 		}
 	);
+	done();
 });
-gulp.task('createStory', () => {
+
+gulp.task('createStory', (done) => {
 	let componentName = lowerCaseFirstLater(getArg('name'));
 	let storyTitle = getArg('storyTitle');
 	let nameUppercase = capitalizeFirstLate(componentName);
@@ -106,14 +109,14 @@ gulp.task('createStory', () => {
 			storyTitle
 		}
 	);
+	done();
 });
 
 
-gulp.task('createAction', () => {
+gulp.task('createAction', (done) => {
 	let actionName = lowerCaseFirstLater(getArg('name'));
 
 	if (!validateName(actionName, '--name', false)) return;
-
 
 	// create redux template
 	createTemplate(
@@ -164,14 +167,13 @@ gulp.task('createAction', () => {
 			actionNameUppercase: capitalizeFirstLate(actionName)
 		}
 	);
-
+	done();
 });
 
-gulp.task('createSaga', () => {
+gulp.task('createSaga', (done) => {
 	let sagaName = lowerCaseFirstLater(getArg('name'));
 
 	if (!validateName(sagaName, '--name', false)) return;
-
 
 	createTemplate(
 		'./generator/templates/client/saga-template',
@@ -199,10 +201,10 @@ gulp.task('createSaga', () => {
 			sagaNameUppercase: capitalizeFirstLate(sagaName)
 		}
 	);
-
+	done();
 });
 
-gulp.task('createRedux', () => {
+gulp.task('createRedux', (done) => {
 	let reducerName = lowerCaseFirstLater(getArg('name'));
 	let reducerNameCapital = capitalizeFirstLate(getArg('name'));
 
@@ -225,6 +227,7 @@ gulp.task('createRedux', () => {
 			reducerNameCapital
 		}
 	);
+	done();
 });
 
 
