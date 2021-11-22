@@ -1,3 +1,5 @@
+import { MOCK_TYPES } from './requests/mock-service-worker/interface';
+
 interface Config {
 	ROOT_SERVER_URL?: string;
 	ROOT_WS_URL?: string;
@@ -6,6 +8,8 @@ interface Config {
 	COMMON_URL_PARAMS?: Array<{key: string; value: string}>;
 	appName?: string;
 	STRICT_CONSOLE_ERROR?: boolean;
+	USE_MOCK?: boolean;
+	MOCK_TYPE?: MOCK_TYPES;
 }
 
 declare global {
@@ -26,6 +30,8 @@ const initConfig = (): Config => {
 			COMMON_URL_PARAMS: [{ key: 'salesChannel', value: 'retail' }],
 			ROOT_WS_URL: 'ws://localhost:3030',
 			STRICT_CONSOLE_ERROR: true,
+			USE_MOCK: true,
+			MOCK_TYPE: MOCK_TYPES.WHITE_LIST
 		};
 	} else if (process.env.NODE_ENV === 'production') {
 		/* ---------- Config Production --------- */

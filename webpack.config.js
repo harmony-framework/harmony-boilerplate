@@ -29,13 +29,21 @@ const lintConfigDevelopment = {
 	emitWarning: true
 };
 
+const pluginsPatternsDevelopment = [
+	{ from: './src/public/assets', to: 'assets' },
+	{ from: './src/public/config', to: 'config' },
+	{ from: './src/public/mockServiceWorker.js', to: 'mockServiceWorker.js' }
+]
+
+const pluginsPatternsProduction = [
+	{ from: './src/public/assets', to: 'assets' },
+	{ from: './src/public/config', to: 'config' },
+]
+
 let plugins = [
 	new ESLintPlugin(isProduction ? lintConfigProduction : lintConfigDevelopment),
 	new CopyWebpackPlugin({
-		patterns: [
-			{ from: './src/public/assets', to: 'assets' },
-			{ from: './src/public/config', to: 'config' }
-		]
+		patterns: isProduction ? pluginsPatternsProduction : pluginsPatternsDevelopment
 	}),
 	new HtmlWebpackPlugin({
 		template: path.resolve(__dirname, "src/public", "index.ejs"),
