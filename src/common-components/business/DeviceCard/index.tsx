@@ -21,6 +21,8 @@ const DeviceCard: React.FC<Props> = (props: Props) => {
 		device, buttonTitle, priceTitle, onBuyClick, quantity, removeButtonTitle, onRemoveClick
 	} = props;
 
+	if (!device) return null;
+
 	return (
 		<Grid container key={device.id} className="device-card-col">
 			<Card className="device-card">
