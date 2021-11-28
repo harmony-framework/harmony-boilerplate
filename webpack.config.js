@@ -107,8 +107,8 @@ module.exports = merge({
 	} : undefined,
 	performance: {
 		hints: 'error',
-		maxAssetSize: isProduction ? 1001000 : Infinity,
-		maxEntrypointSize: isProduction ? 1001000 : Infinity
+		maxAssetSize: Infinity,
+		maxEntrypointSize: Infinity
 	},
 	devServer: {
 		port: 8082,
