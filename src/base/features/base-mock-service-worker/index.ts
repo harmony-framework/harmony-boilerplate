@@ -8,7 +8,7 @@ const prepareServiceWorkerForMockAPIs = () => {
 	worker.start({
 		onUnhandledRequest: 'bypass',
 		serviceWorker: {
-			url: './mockServiceWorker.js'
+			url: '/mockServiceWorker.js'
 		}
 	});
 };
