@@ -114,6 +114,10 @@ module.exports = merge({
 		port: 8082,
 		historyApiFallback: true,
 		hot: true,
+		onListening: (context) => {
+			context.listeningApp.keepAliveTimeout = 600000;
+			context.listeningApp.headersTimeout = 600000;
+		},
 		stats: {
 			colors: true,
 			hash: false,
