@@ -9,6 +9,8 @@ const routeDecorator = (WrappedComponent: any, step?: string) => {
 		componentDidMount() {
 			if (step) {
 				setCurrentStep(step);
+			} else {
+				setCurrentStep('OUT_FROM_FLOW');
 			}
 		}
 
