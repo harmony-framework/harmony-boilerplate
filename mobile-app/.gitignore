@@ -41,6 +41,6 @@ node_modules
 /platforms
 
 # Webpack bundle
-www
+/www
 
 
