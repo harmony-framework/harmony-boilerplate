@@ -85,3 +85,26 @@ createUser: (data) => {
     });
 }
 ```
+
+## API Call Options
+
+In api call you can send in options some props to define error handler manually:
+```typescript
+    export interface CallOptions {
+        unauthorized?: boolean; // true - will not send autorization token in the header for that API
+        ignoreErrorHandler?: boolean; // ignore erorr handler for that API
+        generalErrorInfo?: { errorCode: string; status: number }; // for this API, for ANY failed, return this error code and status
+    }
+```
+
+<br />
+
+Usage Example:
+
+```typescript
+	getDevices: () => request.call({
+		baseURL: 'http://6ew7g.mocklab.io/' || baseURL,
+		method: 'get',
+		url: '/getlatestWithCustomResponseCode'
+	}, { unauthorized: true, generalErrorInfo: { errorCode: 'getDevicesFiledForSomeReason', status: 500 } })
+```

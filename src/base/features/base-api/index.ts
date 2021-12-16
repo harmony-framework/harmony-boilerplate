@@ -8,6 +8,12 @@ import { endSpinner, startSpinner } from '@base/features/base-global-spinner';
 
 const { pathToErrorCode } = ErrorHandlerConfig;
 
+export interface CallOptions {
+	unauthorized?: boolean;
+	ignoreErrorHandler?: boolean;
+	generalErrorInfo?: { errorCode: string; status: number };
+}
+
 class Request {
 	constructor() {
 		if (appConfig.COMMON_URL_PARAMS) {
@@ -27,16 +33,18 @@ class Request {
 		});
 	}
 
-	setRequestHeaders(originalConfig: AxiosRequestConfig): AxiosRequestConfig {
+	setRequestHeaders(originalConfig: AxiosRequestConfig, options?: CallOptions): AxiosRequestConfig {
 		const config = originalConfig;
 		const commonAuthHeader = appConfig.COMMON_AUTHORIZATION_HEADER || '';
 		const token = sessionStorage.getItem(commonAuthHeader);
 		const auth = token ? { [commonAuthHeader]: token } : undefined;
 
-		config.headers = {
-			...originalConfig.headers,
-			...auth
-		};
+		if (auth && token !== 'undefined' && !options?.unauthorized) {
+			config.headers = {
+				...originalConfig.headers,
+				...auth
+			};
+		}
 
 		return config;
 	}
@@ -55,10 +63,10 @@ class Request {
 		});
 	}
 
-	async call(originalConfig: AxiosRequestConfig) {
+	async call(originalConfig: AxiosRequestConfig, options?: CallOptions) {
 		let response: AxiosResponse;
 		const uuid = uuidv4();
-		const config = this.setRequestHeaders(originalConfig);
+		const config = this.setRequestHeaders(originalConfig, options);
 
 		try {
 			const commonAuthHeader = appConfig.COMMON_AUTHORIZATION_HEADER;
@@ -71,10 +79,10 @@ class Request {
 				this.setCommonHeader(commonAuthHeader, response.headers[commonAuthHeader]);
 			}
 
-			const errorCode = _.get(response, pathToErrorCode);
+			const errorCode = _.get(response, pathToErrorCode) || options?.generalErrorInfo;
 
-			if (errorCode && response.status !== 200) {
-				dispatchErrorHandler({ ...response });
+			if (errorCode && response.status !== 200 && !options?.ignoreErrorHandler) {
+				dispatchErrorHandler({ ...response }, options?.generalErrorInfo);
 			}
 
 			return response;
@@ -82,7 +90,10 @@ class Request {
 			const error = e.response || {};
 
 			endSpinner(config.url, uuid);
-			dispatchErrorHandler(error);
+
+			if (!options?.ignoreErrorHandler) {
+				dispatchErrorHandler(error, options?.generalErrorInfo);
+			}
 
 			return error;
 		}

@@ -30,14 +30,18 @@ export const clearErrorHandler = () => {
 	Store.dispatch({ type: TypesNames.ERROR_HANDLER_HANDLED });
 };
 
-export const dispatchErrorHandler = (response: AxiosResponse) => {
+export const dispatchErrorHandler = (response: AxiosResponse, generalErrorInfo?: { errorCode: string; status: number }) => {
 	try {
 		const { status } = response;
 		const errorCode = _.get(response, pathToErrorCode);
-		const errorData = handlers[`${errorCode}_${status}`];
+		let errorData = handlers[`${errorCode}_${status}`];
 
 		if (errorData?.component?.toLocaleLowerCase() === BaseComponentTypes.IGNORE) {
 			return;
+		}
+
+		if (!errorData) {
+			errorData = handlers[`${generalErrorInfo?.errorCode}_${generalErrorInfo?.status}`];
 		}
 
 		if (errorData) {
