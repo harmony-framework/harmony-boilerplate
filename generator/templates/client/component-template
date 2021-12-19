@@ -3,9 +3,9 @@ import { withLocalize, LocalizeContextProps } from 'react-localize-redux';
 
 export type Props = {
 
-} & LocalizeContextProps;
+};
 
-const <%= name %>: React.FC<Props> = (props: Props) => {
+const <%= name %>: React.FC<Props & LocalizeContextProps> = (props: Props& LocalizeContextProps) => {
 	return (
 		<div>
 			write here your own core component
@@ -13,4 +13,4 @@ const <%= name %>: React.FC<Props> = (props: Props) => {
 	);
 };
 
-export default withLocalize<Props>(<%= name %>);
+export default withLocalize<Props & LocalizeContextProps>(<%= name %>);
