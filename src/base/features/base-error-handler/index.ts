@@ -33,7 +33,7 @@ export const clearErrorHandler = () => {
 export const dispatchErrorHandler = (response: AxiosResponse, generalErrorInfo?: { errorCode: string; status: number }) => {
 	try {
 		const { status } = response;
-		const errorCode = _.get(response, pathToErrorCode);
+		let errorCode = _.get(response, pathToErrorCode);
 		let errorData = handlers[`${errorCode}_${status}`];
 
 		if (errorData?.component?.toLocaleLowerCase() === BaseComponentTypes.IGNORE) {
@@ -42,6 +42,7 @@ export const dispatchErrorHandler = (response: AxiosResponse, generalErrorInfo?:
 
 		if (!errorData) {
 			errorData = handlers[`${generalErrorInfo?.errorCode}_${generalErrorInfo?.status}`];
+			errorCode = generalErrorInfo?.errorCode;
 		}
 
 		if (errorData) {
