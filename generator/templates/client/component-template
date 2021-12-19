@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { withLocalize, LocalizeContextProps } from 'react-localize-redux';
 
 export type Props = {
 
-};
+} & LocalizeContextProps;
 
 const <%= name %>: React.FC<Props> = (props: Props) => {
 	return (
@@ -12,4 +13,4 @@ const <%= name %>: React.FC<Props> = (props: Props) => {
 	);
 };
 
-export default <%= name %>;
+export default withLocalize<Props>(<%= name %>);
