@@ -111,7 +111,7 @@ const WithErrorHandler = (config: Config) => (Component: any): any => {
 					return this.renderNotification(handleErrorData);
 				}
 				default: {
-					return <Component {...this.props} />;
+					return <Component errorHandled={() => this.handledError()} {...this.props} />;
 				}
 			}
 		}
